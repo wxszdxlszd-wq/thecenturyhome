@@ -1,0 +1,8 @@
+# The Old House Playbook — robots.txt
+# member/kit.html is a PUBLIC marketing page (free preview slides) and MAY be indexed.
+# Only the paid slide bodies (/member/content/) are kept out of search indexes
+# (weak client-side protection, KTD2) plus the unlock page.
+User-agent: *
+Disallow: /member/content/
+Disallow: /unlock.html
+Allow: /

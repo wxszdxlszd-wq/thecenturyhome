@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Century Home Renovation Kit — Quiz &amp; Free Preview | The Old House Playbook</title>
+  <meta name="description" content="Three quick questions, then a free 5-slide preview of The Century Home Renovation Kit: 7 deliverables, a 90-day sequence, real 2025-26 budgets. Buy once ($9.90) and unlock all 13 paid slides with the password from your email.">
+
+  <!-- ============================================
+       FONTS — Bodoni Moda + Geist + Geist Mono
+       ============================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       THEME — The Old House Playbook Kit Deck
+       ============================================ */
+    :root {
+      --paper: #F6F1E7;
+      --paper-2: #EFE8DA;
+      --card: #FCF9F1;
+      --ink: #22262B;
+      --ink-soft: rgba(34, 38, 43, .78);
+      --ink-mute: rgba(34, 38, 43, .55);
+      --pine: #3E5C4B;
+      --terracotta: #C4703F;
+      --terracotta-lt: #D98A52;
+      --brass: #B08D57;
+      --cream: #F1E7D3;
+      --rule: rgba(34, 38, 43, .16);
+      --rule-soft: rgba(34, 38, 43, .08);
+
+      --stage-bg: #141613;
+      --slide-bg: #ffffff;
+
+      --font-display: 'Bodoni Moda', Georgia, serif;
+      --font-body: 'Geist', 'Segoe UI', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --title-size: 96px;
+      --kicker-size: 24px;
+      --subtitle-size: 34px;
+      --body-size: 28px;
+      --slide-padding: 96px;
+      --content-gap: 32px;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-normal: 0.6s;
+    }
+
+    /* ============================================
+       VIEWPORT-BASE.CSS — FIXED 16:9 STAGE (full)
+       ============================================ */
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg); }
+    .deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg); }
+    .deck-stage {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      overflow: hidden; transform-origin: 0 0; background: var(--slide-bg);
+    }
+    .slide {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      display: block; visibility: hidden; opacity: 0; pointer-events: none;
+      background: var(--slide-bg);
+    }
+    .slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+    img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+    .deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+    @media print {
+      html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+      .deck-viewport { position: static; overflow: visible; background: #fff; }
+      .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+      .slide {
+        position: relative; display: block !important; visibility: visible !important;
+        opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px;
+        break-after: page; page-break-after: always;
+      }
+      .slide:last-child { break-after: auto; page-break-after: auto; }
+      .deck-controls { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+    }
+
+    /* ============================================
+       DECK CHROME (fixed, outside stage)
+       ============================================ */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .deck-topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 30px;
+      font-family: var(--font-mono); font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(253, 251, 245, .82);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .62), transparent);
+      pointer-events: none;
+    }
+    .deck-topbar a, .deck-topbar button { pointer-events: auto; }
+    .deck-topbar .brand { color: #C6A76F; font-weight: 700; text-decoration: none; }
+    .deck-topbar .controls { display: flex; align-items: center; gap: 18px; }
+    .deck-topbar button {
+      background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .28); color: #fff;
+      font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+      padding: 8px 16px; cursor: pointer; border-radius: 2px;
+    }
+    .deck-topbar button:hover { background: rgba(255, 255, 255, .26); }
+    .deck-topbar .buy { background: var(--terracotta); border-color: var(--terracotta); color: #fff; font-weight: 700; text-decoration: none; padding: 8px 16px; border-radius: 2px; }
+    .deck-topbar .counter { min-width: 90px; text-align: right; font-size: 14px; }
+
+    .deck-bottombar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+      display: flex; align-items: center; gap: 22px; padding: 20px 30px 26px;
+      background: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
+      pointer-events: none;
+    }
+    .deck-bottombar > * { pointer-events: auto; }
+    .deck-progress { flex: 1; height: 3px; background: rgba(255, 255, 255, .2); overflow: hidden; }
+    .deck-progress-fill { height: 100%; width: 0; background: var(--terracotta); transition: width .3s var(--ease-out-expo); }
+    .deck-navbtn {
+      width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .32);
+      background: rgba(0, 0, 0, .3); color: #fff; font-size: 22px; cursor: pointer; transition: background .2s;
+    }
+    .deck-navbtn:hover { background: rgba(255, 255, 255, .24); }
+
+    .deck-toc {
+      position: fixed; top: 74px; right: 26px; bottom: 110px; z-index: 950;
+      width: min(560px, 72vw); background: var(--card); color: var(--ink);
+      border: 1px solid var(--rule); box-shadow: 0 40px 100px rgba(0, 0, 0, .55);
+      transform: translateX(calc(100% + 30px)); transition: transform .4s var(--ease-out-expo);
+      display: flex; flex-direction: column;
+    }
+    .deck-toc.is-open { transform: none; }
+    .deck-toc h3 { font-family: var(--font-display); font-size: 32px; font-weight: 500; padding: 28px 32px 18px; border-bottom: 2px solid var(--terracotta); }
+    .deck-toc ol { list-style: none; overflow-y: auto; padding: 12px; flex: 1; }
+    .deck-toc button {
+      display: block; width: 100%; text-align: left; background: none; border: none;
+      border-left: 3px solid transparent; font-family: var(--font-body); font-size: 17px;
+      color: var(--ink-soft); padding: 10px 14px; cursor: pointer;
+    }
+    .deck-toc button:hover { background: var(--paper-2); color: var(--ink); }
+    .deck-toc button.is-current { border-left-color: var(--terracotta); color: var(--ink); font-weight: 600; }
+
+    /* ============================================
+       SLIDE LAYOUTS (1920 × 1080)
+       ============================================ */
+    .slide-content {
+      position: absolute; inset: 0; padding: var(--slide-padding);
+      display: flex; flex-direction: column; width: 1920px; height: 1080px; box-sizing: border-box;
+      z-index: 1;
+    }
+    .slide-kicker {
+      font-family: var(--font-mono); font-size: var(--kicker-size); letter-spacing: .3em;
+      text-transform: uppercase; color: var(--terracotta); display: flex; align-items: center; gap: 20px; margin-bottom: 34px;
+    }
+    .slide-kicker::before { content: ''; width: 58px; height: 3px; background: var(--terracotta); flex-shrink: 0; }
+    .slide-title {
+      font-family: var(--font-display); font-size: var(--title-size); font-weight: 500;
+      line-height: 1.02; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 26px;
+    }
+    .slide-title em { font-style: italic; color: var(--terracotta); }
+    .slide-sub {
+      font-family: var(--font-body); font-size: var(--subtitle-size); font-weight: 300;
+      color: var(--ink-soft); line-height: 1.55; max-width: 1500px; margin-bottom: 42px;
+    }
+    .slide-list { list-style: none; display: flex; flex-direction: column; gap: 24px; max-width: 1560px; }
+    .slide-list li {
+      display: flex; gap: 24px; align-items: baseline; font-family: var(--font-body);
+      font-size: var(--body-size); font-weight: 300; line-height: 1.45; color: var(--ink-soft);
+    }
+    .slide-list li::before { content: '—'; color: var(--terracotta); font-family: var(--font-mono); flex-shrink: 0; }
+    .slide-list .sl-t { font-weight: 600; color: var(--ink); }
+    .slide-note {
+      margin-top: auto; background: rgba(255, 255, 255, .88); border-left: 6px solid var(--terracotta);
+      padding: 22px 30px; font-family: var(--font-body); font-size: 23px; font-weight: 300;
+      color: var(--ink-soft); line-height: 1.55; max-width: 1500px;
+    }
+    .slide-table-wrap { overflow: hidden; max-width: 1600px; background: rgba(255, 255, 255, .88); border: 1px solid var(--rule-soft); }
+    .slide-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 24px; }
+    .slide-table th {
+      font-family: var(--font-mono); font-size: 16px; letter-spacing: .14em; text-transform: uppercase;
+      text-align: left; color: var(--pine); background: rgba(239, 232, 218, .9); padding: 16px 22px;
+      border-bottom: 2px solid var(--rule);
+    }
+    .slide-table td { padding: 15px 22px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-soft); font-weight: 300; vertical-align: top; }
+    .slide-table td:first-child { font-weight: 600; color: var(--ink); }
+    .slide-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1600px; }
+    .slide-cols h3 { font-family: var(--font-display); font-size: 42px; font-weight: 500; color: var(--ink); border-bottom: 2px solid var(--rule-soft); padding-bottom: 12px; margin-bottom: 24px; }
+    .slide-cols .slide-list { max-width: none; }
+    .cover-actions { display: flex; gap: 22px; margin-top: 56px; flex-wrap: wrap; }
+    .btn-slide {
+      display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-mono);
+      font-size: 21px; letter-spacing: .13em; text-transform: uppercase; font-weight: 600;
+      padding: 22px 40px; border-radius: 2px; cursor: pointer; border: 1px solid transparent;
+      transition: transform .3s var(--ease-out-expo), background .3s; text-decoration: none;
+    }
+    .btn-slide--primary { background: var(--terracotta); color: #fff; }
+    .btn-slide--primary:hover { background: var(--terracotta-lt); transform: translateY(-4px); }
+    .btn-slide--ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+    .btn-slide--ghost:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+    /* Topical background images — bright overlay keeps text readable */
+    .slide { background-position: center; background-size: cover; }
+    .slide::before {
+      content: ""; position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 255, 255, 0.86) 100%);
+    }
+    .slide:not([data-slide="quiz"])::before { display: block; }
+    .slide[data-slide="quiz"]::before { display: none; }
+
+    /* ============================================
+       QUIZ SLIDE — 3 quick questions
+       ============================================ */
+    .quiz-q { display: none; }
+    .quiz-q.is-current { display: flex; flex-direction: column; }
+    .quiz-q .q-label {
+      font-family: var(--font-mono); font-size: 20px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 30px 0 16px;
+    }
+    .quiz-q .q-title { font-family: var(--font-display); font-size: 62px; font-weight: 500; color: var(--ink); margin-bottom: 36px; }
+    .quiz-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1560px; }
+    .quiz-opt {
+      text-align: left; padding: 24px 26px; background: rgba(255, 255, 255, .88);
+      border: 1px solid var(--rule); border-radius: 6px; cursor: pointer;
+      font-family: var(--font-body); font-size: 25px; font-weight: 500; color: var(--ink);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .quiz-opt:hover { border-color: var(--terracotta); transform: translateY(-3px); }
+    .quiz-opt.is-selected { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+    .quiz-opt small { display: block; font-weight: 300; font-size: 16px; color: var(--ink-mute); margin-top: 6px; }
+    .quiz-opt.is-selected small { color: rgba(255, 255, 255, .85); }
+    .quiz-step { font-family: var(--font-mono); font-size: 17px; letter-spacing: .14em; color: var(--ink-mute); margin-top: 24px; }
+    .quiz-skip {
+      align-self: flex-start; margin-top: 18px; background: none; border: none; cursor: pointer;
+      font-family: var(--font-body); font-size: 19px; color: var(--ink-mute);
+    }
+    .quiz-skip:hover { color: var(--terracotta); }
+    .quiz-result { display: none; margin-top: 36px; max-width: 1560px; }
+    .quiz-result.is-show { display: block; }
+    .quiz-result .qr-text { font-family: var(--font-body); font-size: 28px; font-weight: 300; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
+    .quiz-result .qr-actions { display: flex; gap: 22px; flex-wrap: wrap; }
+
+    /* ============================================
+       GATE SLIDE — unlock before the paid chapters
+       ============================================ */
+    .gate-inner {
+      margin-top: 52px; background: rgba(255, 255, 255, .93); border: 1px solid var(--rule);
+      max-width: 860px; padding: 50px 54px; box-shadow: 0 30px 90px rgba(0, 0, 0, .12);
+    }
+    .gate-inner p { font-family: var(--font-body); font-size: 24px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
+    .gate-inner input[type="password"] {
+      width: 100%; padding: 18px 22px; border: 1px solid var(--rule); border-radius: 3px;
+      background: var(--paper-2); font-family: var(--font-mono); font-size: 24px; text-align: center;
+      color: var(--ink); outline: none; margin-bottom: 18px;
+    }
+    .gate-inner input[type="password"]:focus { border-color: var(--pine); }
+    .gate-actions { display: flex; gap: 20px; flex-wrap: wrap; }
+    .lock-msg { font-family: var(--font-mono); font-size: 16px; color: var(--pine); min-height: 24px; margin-top: 14px; }
+    .lock-msg.is-error { color: #a33; }
+    .gate-note { margin-top: 24px; font-family: var(--font-mono); font-size: 16px; letter-spacing: .1em; color: var(--ink-mute); }
+
+    /* Paid slides stay hidden until unlocked */
+    .slide.slide-paid { visibility: hidden; opacity: 0; pointer-events: none; }
+
+    /* ============================================
+       REVEAL ANIMATIONS
+       ============================================ */
+    .reveal { opacity: 0; transform: translateY(34px); transition: opacity var(--duration-normal) var(--ease-out-expo), transform var(--duration-normal) var(--ease-out-expo); }
+    .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+    .slide.visible .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .slide.visible .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .slide.visible .reveal:nth-child(4) { transition-delay: 0.24s; }
+    .slide.visible .reveal:nth-child(5) { transition-delay: 0.32s; }
+  </style>
+</head>
+
+<body>
+  <div class="deck-viewport">
+
+    <main class="deck-stage" id="deckStage">
+
+      <!-- ═══ QUIZ — 3 quick questions (first slide) ═══ -->
+      <section class="slide active" data-slide="quiz">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">The Old House Playbook · 1-minute quiz</span>
+          <h2 class="slide-title reveal">Three questions.<br><em>One plan.</em></h2>
+          <p class="slide-sub reveal">Answer honestly — it takes about a minute, and the Kit
+            will feel like it was written for your house.</p>
+
+          <div class="quiz-q is-current" data-q="1">
+            <span class="q-label">Question 1 of 3</span>
+            <div class="q-title">What's your renovation budget?</div>
+            <div class="quiz-opts">
+              <button class="quiz-opt" type="button" data-key="small">Under $25k<small>Patchwork &amp; repairs</small></button>
+              <button class="quiz-opt" type="button" data-key="mid">$25k – $75k<small>Kitchen + bath, floors</small></button>
+              <button class="quiz-opt" type="button" data-key="big">$75k+<small>Whole-house renovation</small></button>
+            </div>
+          </div>
+
+          <div class="quiz-q" data-q="2">
+            <span class="q-label">Question 2 of 3</span>
+            <div class="q-title">How old is the house?</div>
+            <div class="quiz-opts">
+              <button class="quiz-opt" type="button" data-key="young">Under 50 years<small>Modern construction</small></button>
+              <button class="quiz-opt" type="button" data-key="mid">50 – 100 years<small>Mid-century</small></button>
+              <button class="quiz-opt" type="button" data-key="old">100+ years<small>A true century home</small></button>
+            </div>
+          </div>
+
+          <div class="quiz-q" data-q="3">
+            <span class="q-label">Question 3 of 3</span>
+            <div class="q-title">What's the scope?</div>
+            <div class="quiz-opts">
+              <button class="quiz-opt" type="button" data-key="room">One room<small>Start small, learn the house</small></button>
+              <button class="quiz-opt" type="button" data-key="kbbath">Kitchen &amp; bath<small>The daily-money rooms</small></button>
+              <button class="quiz-opt" type="button" data-key="whole">Whole house<small>Everything, in order</small></button>
+            </div>
+          </div>
+
+          <span class="quiz-step">Questions answered: <b>0</b> / 3</span>
+          <button class="quiz-skip" type="button">Skip the quiz →</button>
+
+          <div class="quiz-result">
+            <p class="qr-text"></p>
+            <div class="qr-actions">
+              <button class="btn-slide btn-slide--primary" type="button" id="quiz-continue">Continue to the free preview →</button>
+              <a class="btn-slide btn-slide--ghost" href="../index.html#pricing">Get the Kit — $9.90</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PREVIEW 1 · What the Kit solves ═══ -->
+      <section class="slide" data-slide="preview-solves" style="background-image:url('../assets/img/img-06.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">Free preview · The problem</span>
+          <h2 class="slide-title reveal">What This Kit <em>Solves</em></h2>
+          <ul class="slide-list reveal">
+            <li><span class="sl-t">"Where do I start?"</span> — A 30-minute audit that tells you exactly what kind of house you're dealing with.</li>
+            <li><span class="sl-t">"What does it cost?"</span> — A line-itemed 2025-26 worksheet, with the 20% surprise reserve.</li>
+            <li><span class="sl-t">"What order does the work go in?"</span> — A 90-day sequence so you never redo last month's work.</li>
+            <li><span class="sl-t">"Will I wreck the character?"</span> — Restore vs. replace rules for plaster, windows, doors, floors.</li>
+            <li><span class="sl-t">"Can I trust the contractor?"</span> — Ten interview questions that filter out generalists.</li>
+          </ul>
+          <p class="slide-note reveal">Every chapter answers one fear with a printable deliverable.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PREVIEW 2 · The 7 deliverables ═══ -->
+      <section class="slide" data-slide="preview-deliverables" style="background-image:url('../assets/img/img-04.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">Free preview · What you receive</span>
+          <h2 class="slide-title reveal">The Seven <em>Deliverables</em></h2>
+          <div class="slide-cols reveal">
+            <div>
+              <h3>Planning</h3>
+              <ul class="slide-list">
+                <li><span class="sl-t">1. The 3 questions</span> — water, systems, character before you spend a dollar.</li>
+                <li><span class="sl-t">2. The 30-minute audit</span> — 12 timed checks with dollar flags.</li>
+                <li><span class="sl-t">3. Budget &amp; reserve math</span> — the 10-line worksheet plus the 20% rule.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Execution</h3>
+              <ul class="slide-list">
+                <li><span class="sl-t">4. The 90-day sequence</span> — water → systems → structure → walls → floors.</li>
+                <li><span class="sl-t">5. Style guide</span> — keep the bones, style the skin.</li>
+                <li><span class="sl-t">6. Salvage &amp; room priority</span> — where money goes first.</li>
+                <li><span class="sl-t">7. Contractor playbook</span> — 10 questions, 13 pitfalls, change-order clauses.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="slide-note reveal">Slides 8-20 unlock with the password from your purchase email.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PREVIEW 3 · Sample audit rows (roof) ═══ -->
+      <section class="slide" data-slide="preview-audit" style="background-image:url('../assets/img/roof-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">Free preview · Real content, 3 of 12 rows</span>
+          <h2 class="slide-title reveal">Sample — The <em>30-Minute Audit</em></h2>
+          <p class="slide-sub reveal">The paid Kit's Chapter 2 has all 12 checks with dollar flags. Three real rows from it:</p>
+          <div class="slide-table-wrap reveal">
+            <table class="slide-table">
+              <thead><tr><th>Check</th><th>What to look for</th><th>Flag</th></tr></thead>
+              <tbody>
+                <tr><td>Roof &amp; exterior (5 min)</td><td>Permit date 20+ years with 2+ layers</td><td>$8k-18k</td></tr>
+                <tr><td>Electrical panel (3 min)</td><td>Knob-and-tube or pre-1980 panel</td><td>$8k-20k</td></tr>
+                <tr><td>Windows (3 min)</td><td>Restore vs $800-1,200 replacement each</td><td>Restore</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="slide-note reveal">The full chapter is 12 checks, timed, with the "who do I call" notes.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PREVIEW 4 · Sample budget rows (calculator) ═══ -->
+      <section class="slide" data-slide="preview-budget" style="background-image:url('../assets/img/budget-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">Free preview · Real content, 4 of 10 rows</span>
+          <h2 class="slide-title reveal">Sample — The <em>Budget Worksheet</em></h2>
+          <p class="slide-sub reveal">An 1,800 sq ft century home, professional labor, mid-cost region. Four rows from the full table:</p>
+          <div class="slide-table-wrap reveal">
+            <table class="slide-table">
+              <thead><tr><th>Line item</th><th>Low</th><th>High</th><th>Why it matters</th></tr></thead>
+              <tbody>
+                <tr><td>Electrical rewire</td><td>$8,000</td><td>$20,000</td><td>Knob-and-tube before walls close</td></tr>
+                <tr><td>Plaster repair</td><td>$4,000</td><td>$12,000</td><td>vs $12k-20k drywall gut</td></tr>
+                <tr><td>Window restoration</td><td>$3,000</td><td>$9,000</td><td>15 windows, restored</td></tr>
+                <tr><td>Surprise reserve</td><td>10%</td><td>20%</td><td>The non-negotiable column</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="slide-note reveal">The full worksheet adds six more line items and the region multiplier (0.8-1.3x).</p>
+        </div>
+      </section>
+
+      <!-- ═══ PREVIEW 5 · Evidence + CTA ═══ -->
+      <section class="slide" data-slide="preview-evidence" style="background-image:url('../assets/img/survey-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">The evidence · Free preview</span>
+          <h2 class="slide-title reveal">Built on real projects, <em>not theory</em></h2>
+          <ul class="slide-list reveal">
+            <li><span class="sl-t">3 case studies</span> — tracked before &amp; after, real invoices.</li>
+            <li><span class="sl-t">14 companies &amp; preservation experts</span> — every price range checked against real bids.</li>
+            <li><span class="sl-t">100+ owner survey</span> — 93% said this Kit saves money and keeps them ahead of the contractor.</li>
+          </ul>
+          <div class="cover-actions reveal">
+            <a class="btn-slide btn-slide--primary" href="../index.html#pricing">Get the Kit — $9.90</a>
+            <button class="btn-slide btn-slide--ghost" type="button" id="preview-to-gate">Unlock the full Kit →</button>
+          </div>
+          <p class="slide-note reveal">Field data · 3 case studies · 14 companies &amp; experts · 100+ owner survey — 93% say it saves money.</p>
+        </div>
+      </section>
+
+      <!-- ═══ UNLOCK GATE — preview done, unlock to continue ═══ -->
+      <section class="slide" data-slide="gate" style="background-image:url('../assets/img/img-13.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content">
+          <span class="slide-kicker reveal">Members only</span>
+          <h2 class="slide-title reveal">Unlock the <em>Full Kit</em></h2>
+          <p class="slide-sub reveal">The free preview is over. All 13 paid chapters — the complete
+            audit, budget math, 90-day sequence, style guide, salvage plan and contractor playbook —
+            are behind one password.</p>
+          <div class="gate-inner reveal">
+            <p>Enter the password from your purchase email.</p>
+            <form id="gate-form" novalidate>
+              <label for="gate-password" style="position:absolute;left:-9999px;">Member password</label>
+              <input type="password" id="gate-password" placeholder="Password" autocomplete="off" required />
+              <div class="gate-actions">
+                <button class="btn-slide btn-slide--primary" type="submit">Unlock all 13 chapters</button>
+                <a class="btn-slide btn-slide--ghost" href="../index.html#pricing">Get the Kit — $9.90</a>
+              </div>
+            </form>
+            <p class="lock-msg" id="gate-msg" aria-live="polite"></p>
+            <p class="gate-note">One-time payment · lifetime access · real 2025-26 US market data</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+           PAID CHAPTERS 8-20 — hidden until unlocked
+           (.slide-paid; bodies render from content/kit.json)
+           ════════════════════════════════════════════════════ -->
+      <section class="slide slide-paid" data-slide="start" style="background-image:url('../assets/img/img-13.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 1 · Do this first</span><h2 class="slide-title">Where to Start: The Three Questions</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="audit-1" style="background-image:url('../assets/img/roof-02.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 2 · The 30-Minute Old-House Audit</span><h2 class="slide-title">Part I — Exterior &amp; Systems</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="audit-2" style="background-image:url('../assets/img/img-03.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 2 · The 30-Minute Old-House Audit</span><h2 class="slide-title">Part II — Windows, Hazards &amp; Paperwork</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="budget-1" style="background-image:url('../assets/img/budget-02.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 3 · Budget &amp; Reserve Math</span><h2 class="slide-title">The Worksheet — 1,800 sq ft Century Home</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="budget-2" style="background-image:url('../assets/img/budget-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 3 · Budget &amp; Reserve Math</span><h2 class="slide-title">The Five Budget Rules</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="seq-1" style="background-image:url('../assets/img/yard-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 4 · The 90-Day Sequence</span><h2 class="slide-title">Days 1-30 — Secure, Inspect, Stop the Water</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="seq-2" style="background-image:url('../assets/img/img-11.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 4 · The 90-Day Sequence</span><h2 class="slide-title">Days 30-90 — Walls, Paint, Floors, Trim</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="style-1" style="background-image:url('../assets/img/salvage-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 5 · The Style Guide</span><h2 class="slide-title">Keep the Bones</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="style-2" style="background-image:url('../assets/img/bath-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 5 · The Style Guide</span><h2 class="slide-title">Style the Skin</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="furnish-1" style="background-image:url('../assets/img/salvage-02.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 6 · Furnish, Salvage &amp; Room Priority</span><h2 class="slide-title">Six Hunting Grounds</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="furnish-2" style="background-image:url('../assets/img/img-09.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Chapter 6 · Furnish, Salvage &amp; Room Priority</span><h2 class="slide-title">Room Priority — Where Money Goes First</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="contractor-1" style="background-image:url('../assets/img/contractor-01.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Bonus · Contractor Playbook</span><h2 class="slide-title">Ten Interview Questions (1-5)</h2><div class="slide-body" data-body></div></div>
+      </section>
+      <section class="slide slide-paid" data-slide="contractor-2" style="background-image:url('../assets/img/contractor-02.jpg');background-size:cover;background-position:center;">
+        <div class="slide-content"><span class="slide-kicker">Bonus · Contractor Playbook</span><h2 class="slide-title">Questions 6-10 &amp; the 13 Pitfalls</h2><div class="slide-body" data-body></div></div>
+      </section>
+
+    </main>
+
+    <!-- ============================================
+         DECK CHROME (fixed, outside stage)
+         ============================================ -->
+    <header class="deck-topbar" role="banner">
+      <a class="brand" href="../index.html">The Old House Playbook</a>
+      <div class="controls">
+        <button type="button" id="tocToggle" aria-expanded="false">Contents</button>
+        <button type="button" id="fullscreenBtn">Fullscreen</button>
+        <button type="button" id="printBtn">Print</button>
+        <a class="buy" href="../index.html#pricing">Buy · $9.90</a>
+        <span class="counter" id="counter">1 / 7</span>
+      </div>
+    </header>
+
+    <div class="deck-bottombar">
+      <button type="button" class="deck-navbtn" id="prevBtn" aria-label="Previous slide">←</button>
+      <div class="deck-progress"><div class="deck-progress-fill" id="progressFill"></div></div>
+      <button type="button" class="deck-navbtn" id="nextBtn" aria-label="Next slide">→</button>
+    </div>
+
+    <aside class="deck-toc" id="tocPanel" aria-label="Slide contents">
+      <h3>Contents</h3>
+      <ol id="tocList"></ol>
+    </aside>
+
+  </div>
+
+  <!-- External only: site config + unlock API (single source of truth) -->
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/unlock.js"></script>
+
+  <script>
+    /* ============================================
+       SLIDE PRESENTATION CONTROLLER — pool-based.
+       Paid slides (.slide-paid) join the pool only
+       after a successful unlock.
+       ============================================ */
+    (function () {
+      'use strict';
+
+      var stage = document.getElementById('deckStage');
+      var all = Array.prototype.slice.call(stage.querySelectorAll('.slide'));
+      var slides = all.filter(function (s) { return !s.classList.contains('slide-paid'); });
+      var counter = document.getElementById('counter');
+      var progressFill = document.getElementById('progressFill');
+      var tocPanel = document.getElementById('tocPanel');
+      var tocList = document.getElementById('tocList');
+      var tocToggle = document.getElementById('tocToggle');
+      var fullscreenBtn = document.getElementById('fullscreenBtn');
+      var printBtn = document.getElementById('printBtn');
+      var prevBtn = document.getElementById('prevBtn');
+      var nextBtn = document.getElementById('nextBtn');
+      var current = 0;
+
+      /* ── Stage scaling: whole 1920×1080 canvas ── */
+      function scaleStage() {
+        var factor = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * factor) / 2;
+        var y = (window.innerHeight - 1080 * factor) / 2;
+        stage.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(' + factor + ')';
+      }
+
+      /* ── Slide switching: .active/.visible only ── */
+      function showSlide(index) {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        slides.forEach(function (s, i) {
+          s.classList.toggle('active', i === current);
+          s.classList.toggle('visible', i === current);
+        });
+        counter.textContent = (current + 1) + ' / ' + slides.length;
+        progressFill.style.width = (((current + 1) / slides.length) * 100).toFixed(2) + '%';
+        try { history.replaceState(null, '', '#' + (current + 1)); } catch (e) {}
+        Array.prototype.forEach.call(tocList.querySelectorAll('button'), function (b, i) {
+          b.classList.toggle('is-current', i === current);
+        });
+      }
+
+      function next() { showSlide(current + 1); }
+      function prev() { showSlide(current - 1); }
+
+      /* ── Input ── */
+      document.addEventListener('keydown', function (e) {
+        var tag = (e.target && e.target.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+        switch (e.key) {
+          case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
+          case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+          case 'Home': e.preventDefault(); showSlide(0); break;
+          case 'End': e.preventDefault(); showSlide(slides.length - 1); break;
+        }
+      });
+
+      var wheelLock = false;
+      window.addEventListener('wheel', function (e) {
+        if (wheelLock) return;
+        if (e.deltaY > 40) { next(); wheelLock = true; }
+        else if (e.deltaY < -40) { prev(); wheelLock = true; }
+        setTimeout(function () { wheelLock = false; }, 450);
+      }, { passive: true });
+
+      var touchX = null;
+      stage.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener('touchend', function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 60) { if (dx < 0) next(); else prev(); }
+        touchX = null;
+      }, { passive: true });
+
+      document.querySelector('.deck-viewport').addEventListener('click', function (e) {
+        var t = e.target;
+        if (t.closest('a, button, input, .deck-toc, .deck-topbar, .deck-bottombar, .quiz-opt, .quiz-skip')) return;
+        var r = stage.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right) return;
+        var x = e.clientX - r.left;
+        if (x < r.width * 0.2) prev();
+        else if (x > r.width * 0.8) next();
+      });
+
+      /* ── Chrome ── */
+      if (prevBtn) prevBtn.addEventListener('click', prev);
+      if (nextBtn) nextBtn.addEventListener('click', next);
+      if (tocToggle && tocPanel) {
+        tocToggle.addEventListener('click', function () {
+          var open = tocPanel.classList.toggle('is-open');
+          tocToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (tocPanel.classList.contains('is-open') && !e.target.closest('.deck-toc') && !e.target.closest('#tocToggle')) {
+            tocPanel.classList.remove('is-open');
+          }
+        });
+      }
+      if (fullscreenBtn && document.documentElement.requestFullscreen) {
+        fullscreenBtn.addEventListener('click', function () {
+          if (document.fullscreenElement) document.exitFullscreen();
+          else document.documentElement.requestFullscreen();
+        });
+      }
+      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+
+      /* ── TOC from the current pool ── */
+      function buildTOC() {
+        tocList.innerHTML = '';
+        slides.forEach(function (s, i) {
+          var kicker = (s.querySelector('.slide-kicker') || {}).textContent || '';
+          var titleEl = s.querySelector('.slide-title');
+          var title = (titleEl && (titleEl.innerText || titleEl.textContent) || '').replace(/\s+/g, ' ').trim() || ('Slide ' + (i + 1));
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = (i + 1) + '. ' + (kicker ? kicker + ' — ' : '') + title;
+          btn.addEventListener('click', function () {
+            showSlide(i);
+            tocPanel.classList.remove('is-open');
+          });
+          tocList.appendChild(btn);
+        });
+        Array.prototype.forEach.call(tocList.querySelectorAll('button'), function (b, i) {
+          b.classList.toggle('is-current', i === current);
+        });
+      }
+
+      /* ── Unlock: reveal paid slides, rebuild pool, jump to first paid ── */
+      function revealPaid() {
+        slides = all;
+        buildTOC();
+        showSlide(7); // first paid chapter
+      }
+
+      /* ── Init ── */
+      scaleStage();
+      window.addEventListener('resize', scaleStage);
+      buildTOC();
+      var hash = parseInt((location.hash || '').replace('#', ''), 10);
+      showSlide(!isNaN(hash) && hash >= 1 && hash <= slides.length ? hash - 1 : 0);
+
+      window.Deck = {
+        next: next, prev: prev, showSlide: showSlide, revealPaid: revealPaid,
+        get current() { return current; }, get total() { return slides.length; }
+      };
+    })();
+
+    /* ============================================
+       QUIZ — three quick questions
+       ============================================ */
+    (function () {
+      'use strict';
+      var qs = Array.prototype.slice.call(document.querySelectorAll('.quiz-q'));
+      var step = document.querySelector('.quiz-step b');
+      var result = document.querySelector('.quiz-result');
+      var resultText = result.querySelector('.qr-text');
+      var skip = document.querySelector('.quiz-skip');
+      var answers = {};
+      var qIndex = 0;
+
+      function showQ(i) {
+        qs.forEach(function (q, idx) { q.classList.toggle('is-current', idx === i); });
+      }
+
+      qs.forEach(function (q) {
+        q.querySelectorAll('.quiz-opt').forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            q.querySelectorAll('.quiz-opt').forEach(function (b) { b.classList.remove('is-selected'); });
+            opt.classList.add('is-selected');
+            answers[q.dataset.q] = opt.dataset.key;
+            if (step) step.textContent = String(Object.keys(answers).length);
+            if (qIndex < qs.length - 1) {
+              qIndex += 1;
+              showQ(qIndex);
+            } else {
+              finish();
+            }
+          });
+        });
+      });
+
+      function finish() {
+        var a = answers;
+        var lines = [];
+        var age = a['2'] || 'mid';
+        var budget = a['1'] || 'mid';
+        var scope = a['3'] || 'whole';
+        if (age === 'old' || age === 'mid') {
+          lines.push('Old-house specialists will quote you first — exactly what the contractor playbook prepares you for.');
+        } else {
+          lines.push('Even younger houses hide old surprises — the audit catches them before you sign.');
+        }
+        if (budget === 'small') {
+          lines.push('With a tighter budget, the audit and salvage chapters get you the most house for the least money.');
+        } else if (budget === 'big') {
+          lines.push('At this scale the 90-day sequence and budget worksheet protect your down payment.');
+        } else {
+          lines.push('The budget worksheet plus the 20% reserve rule is built for exactly this range.');
+        }
+        if (scope === 'room') {
+          lines.push('Starting with one room? The Kit\'s one-room test keeps you disciplined.');
+        } else if (scope === 'whole') {
+          lines.push('Whole-house work rewards strict order — the 90-day sequence is your road map.');
+        } else {
+          lines.push('Kitchen and bath first is the highest-payoff move in an old house.');
+        }
+        resultText.textContent = 'Based on your answers — ' + lines.join(' ');
+        result.classList.add('is-show');
+      }
+
+      if (skip) skip.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
+      var cont = document.getElementById('quiz-continue');
+      if (cont) cont.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
+      showQ(0);
+    })();
+
+    /* ============================================
+       UNLOCK + RENDERER — paid bodies from kit.json
+       ============================================ */
+    (function () {
+      'use strict';
+      var KIT_URL = 'content/kit.json';
+      var cfg = window.SITE_CONFIG || {};
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function sha256Hex(str) {
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function (buf) {
+          return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        });
+      }
+
+      function bodyHTML(slide) {
+        var h = '';
+        if (slide.sub) h += '<p class="slide-sub">' + esc(slide.sub) + '</p>';
+        if (slide.table) {
+          h += '<div class="slide-table-wrap"><table class="slide-table"><thead><tr>';
+          slide.table.headers.forEach(function (x) { h += '<th>' + esc(x) + '</th>'; });
+          h += '</tr></thead><tbody>';
+          slide.table.rows.forEach(function (row) {
+            h += '<tr>';
+            row.forEach(function (c, i) { h += (i === 0 ? '<td><strong>' : '<td>') + esc(c) + (i === 0 ? '</strong>' : '') + '</td>'; });
+            h += '</tr>';
+          });
+          h += '</tbody></table></div>';
+        }
+        if (slide.bullets) {
+          h += '<ul class="slide-list">';
+          slide.bullets.forEach(function (b) {
+            h += '<li>';
+            if (b.t) h += '<span class="sl-t">' + esc(b.t) + '</span> ';
+            if (b.d) h += esc(b.d);
+            if (b.flag) h += '<span class="sl-flag">' + esc(b.flag) + '</span>';
+            h += '</li>';
+          });
+          h += '</ul>';
+        }
+        if (slide.notes) {
+          slide.notes.forEach(function (n) { h += '<p class="slide-note">' + esc(n) + '</p>'; });
+        }
+        return h;
+      }
+
+      function render(data, withContent) {
+        var filled = 0;
+        data.lockedSlides.forEach(function (slide) {
+          var sec = document.querySelector('.slide[data-slide="' + slide.id + '"]');
+          if (!sec) return;
+          var kicker = sec.querySelector('.slide-kicker');
+          var title = sec.querySelector('.slide-title');
+          var body = sec.querySelector('.slide-body');
+          if (kicker) kicker.textContent = slide.kicker;
+          if (title) title.textContent = slide.title;
+          if (body) {
+            body.innerHTML = withContent ? bodyHTML(slide) : '';
+            if (withContent) filled++;
+          }
+          sec.setAttribute('data-unlocked', withContent ? '1' : '0');
+        });
+        return filled;
+      }
+
+      function loadAndRender(withContent) {
+        return fetch(KIT_URL).then(function (r) {
+          if (!r.ok) throw new Error('fetch ' + r.status);
+          return r.json();
+        }).then(function (data) {
+          render(data, withContent);
+        }).catch(function () { /* keep paid slides empty */ });
+      }
+
+      var form = document.getElementById('gate-form');
+      var msg = document.getElementById('gate-msg');
+      if (form && msg) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var val = (form.querySelector('input[type="password"]').value || '').trim();
+          if (!val) {
+            msg.className = 'lock-msg is-error';
+            msg.textContent = 'Please enter the password from your purchase email.';
+            return;
+          }
+          var btn = form.querySelector('button');
+          if (btn) { btn.disabled = true; btn.textContent = 'Checking…'; }
+          sha256Hex(val).then(function (hex) {
+            if (hex === cfg.unlockHash) {
+              window.Unlock.setUnlocked();
+              msg.className = 'lock-msg';
+              msg.textContent = 'Unlocked! Loading your Kit…';
+              loadAndRender(true).then(function () {
+                if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
+                if (window.Deck) window.Deck.revealPaid();
+              });
+            } else {
+              msg.className = 'lock-msg is-error';
+              msg.textContent = "That password doesn't match. Check your purchase email (and spam folder).";
+              if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
+            }
+          }).catch(function () {
+            msg.className = 'lock-msg is-error';
+            msg.textContent = 'Something went wrong. Try again in a moment.';
+            if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
+          });
+        });
+      }
+
+      var gateBtn = document.getElementById('preview-to-gate');
+      if (gateBtn) gateBtn.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.Unlock && window.Unlock.isUnlocked()) {
+          loadAndRender(true).then(function () { if (window.Deck) window.Deck.revealPaid(); });
+        } else {
+          loadAndRender(false);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
