@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="After: the same room restored in mid-century style">
+  <defs>
+    <linearGradient id="awall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe4cd"/>
+      <stop offset="1" stop-color="#e2d2b2"/>
+    </linearGradient>
+    <linearGradient id="afloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a6a3c"/>
+      <stop offset="1" stop-color="#5a3d20"/>
+    </linearGradient>
+    <linearGradient id="asky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fb3c9"/>
+      <stop offset="1" stop-color="#e9c88f"/>
+    </linearGradient>
+  </defs>
+  <!-- wall -->
+  <rect width="800" height="520" fill="url(#awall)"/>
+  <!-- picture rail -->
+  <rect y="70" width="800" height="6" fill="#c9b98f" opacity="0.5"/>
+  <rect y="70" width="800" height="6" fill="#c9b98f" opacity="0.5"/>
+  <!-- wall art -->
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="90" height="70" fill="#8a6a3c" stroke="#5a3d20" stroke-width="6"/>
+    <circle cx="45" cy="35" r="18" fill="#e9c88f"/>
+    <path d="M8 60 L45 34 L82 60 Z" fill="#c9b98f"/>
+  </g>
+  <!-- window with curtains -->
+  <g transform="translate(290,80)">
+    <rect x="-20" y="-10" width="240" height="260" fill="#5a3d20"/>
+    <rect x="0" y="0" width="200" height="240" fill="#fffaf0" stroke="#8a6a3c" stroke-width="8"/>
+    <rect x="0" y="0" width="200" height="240" fill="url(#asky)"/>
+    <line x1="100" y1="0" x2="100" y2="240" stroke="#8a6a3c" stroke-width="6"/>
+    <line x1="0" y1="120" x2="200" y2="120" stroke="#8a6a3c" stroke-width="6"/>
+    <!-- curtain panels -->
+    <path d="M-20 260 L-20 0 Q40 40 -20 60 Z" fill="#b4552d"/>
+    <path d="M240 260 L240 0 Q160 40 240 60 Z" fill="#b4552d"/>
+  </g>
+  <!-- baseboard -->
+  <rect y="404" width="800" height="12" fill="#5a3d20"/>
+  <!-- wood floor -->
+  <rect y="416" width="800" height="104" fill="url(#afloor)"/>
+  <g stroke="#3f2c16" stroke-width="2" opacity="0.7">
+    <line x1="0" y1="446" x2="800" y2="446"/><line x1="0" y1="478" x2="800" y2="478"/><line x1="0" y1="508" x2="800" y2="508"/>
+    <line x1="180" y1="416" x2="170" y2="520"/><line x1="420" y1="416" x2="430" y2="520"/><line x1="650" y1="416" x2="640" y2="520"/>
+  </g>
+  <!-- sunburst clock -->
+  <g transform="translate(560,190)">
+    <circle r="52" fill="#2c2012" stroke="#c29a55" stroke-width="5"/>
+    <g stroke="#c29a55" stroke-width="3.4">
+      <line x1="0" y1="-62" x2="0" y2="-72"/><line x1="0" y1="62" x2="0" y2="72"/>
+      <line x1="-62" y1="0" x2="-72" y2="0"/><line x1="62" y1="0" x2="72" y2="0"/>
+      <line x1="-44" y1="-44" x2="-51" y2="-51"/><line x1="44" y1="-44" x2="51" y2="-51"/>
+      <line x1="-44" y1="44" x2="-51" y2="51"/><line x1="44" y1="44" x2="51" y2="51"/>
+    </g>
+    <circle r="44" fill="#3a2c1a" stroke="#d8b56c" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="-16" y2="-18" stroke="#e8c98a" stroke-width="3.4" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="11" y2="-24" stroke="#e8c98a" stroke-width="2.6" stroke-linecap="round"/>
+    <circle r="3.4" fill="#e8c98a"/>
+  </g>
+  <!-- credenza -->
+  <g transform="translate(60,360)">
+    <rect x="0" y="20" width="180" height="56" rx="3" fill="#7a5a33"/>
+    <rect x="0" y="20" width="180" height="8" fill="#8a6a3c"/>
+    <g fill="#b98d4e"><rect x="24" y="52" width="6" height="20" rx="2"/><rect x="150" y="52" width="6" height="20" rx="2"/></g>
+    <path d="M8 76 l-10 16" stroke="#5a3d20" stroke-width="6" stroke-linecap="round"/>
+    <path d="M172 76 l10 16" stroke="#5a3d20" stroke-width="6" stroke-linecap="round"/>
+    <path d="M96 20 c0 -14 16 -18 16 -34 c0 -10 -9 -12 -9 -12 s-9 2 -9 12 c0 16 16 20 16 34" fill="#6f6a43" transform="translate(-16,0)"/>
+  </g>
+  <!-- sofa -->
+  <g transform="translate(480,400)">
+    <ellipse cx="80" cy="52" rx="95" ry="18" fill="#2c2012" opacity="0.3"/>
+    <rect x="-8" y="4" width="176" height="48" rx="9" fill="#6f6a43"/>
+    <rect x="-8" y="4" width="176" height="13" rx="6" fill="#7d7850"/>
+    <rect x="164" y="-1" width="18" height="53" rx="9" fill="#635f3c"/>
+    <rect x="-20" y="-1" width="18" height="53" rx="9" fill="#635f3c"/>
+    <path d="M6 52 l-12 18" stroke="#3a2c1b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 52 l12 18" stroke="#3a2c1b" stroke-width="6" stroke-linecap="round"/>
+    <rect x="20" y="16" width="62" height="30" rx="7" fill="#7a7450"/>
+    <rect x="92" y="16" width="62" height="30" rx="7" fill="#6f6a43"/>
+  </g>
+  <!-- floor lamp -->
+  <g transform="translate(700,410)">
+    <line x1="0" y1="0" x2="0" y2="100" stroke="#a8813f" stroke-width="4.5"/>
+    <path d="M-26 0 L0 -30 L26 0 Z" fill="#f2e3c2"/>
+    <circle cx="0" cy="-27" r="3" fill="#f2c47a"/>
+  </g>
+  <!-- rug -->
+  <ellipse cx="360" cy="480" rx="170" ry="30" fill="#b4552d" opacity="0.85"/>
+  <ellipse cx="360" cy="480" rx="126" ry="21" fill="#c89b3c" opacity="0.7"/>
+  <ellipse cx="360" cy="480" rx="70" ry="11" fill="#6f6a43" opacity="0.8"/>
+  <!-- plant -->
+  <g transform="translate(250,390)">
+    <path d="M16 44 L13 74" stroke="#7a5a33" stroke-width="6" stroke-linecap="round"/>
+    <path d="M13 74 c-9 12 -5 22 2 30" fill="none" stroke="#7a5a33" stroke-width="6" stroke-linecap="round"/>
+    <path d="M13 74 c9 12 5 22 -2 30" fill="none" stroke="#7a5a33" stroke-width="6" stroke-linecap="round"/>
+    <g fill="#4d5133">
+      <path d="M13 44 c-22 -5 -26 -24 -10 -29 c-3 13 2 20 10 25 z"/>
+      <path d="M13 44 c22 -5 26 -24 10 -29 c3 13 -2 20 -10 25 z"/>
+      <path d="M13 40 c-15 -15 -8 -30 4 -30 c-5 12 -2 20 -4 30 z"/>
+      <path d="M13 40 c15 -15 8 -30 -4 -30 c5 12 2 20 4 30 z"/>
+    </g>
+  </g>
+  <!-- warm light -->
+  <rect width="800" height="520" fill="#f2c47a" opacity="0.05"/>
+</svg>
