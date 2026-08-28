@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "A zero-build static site implementing the「AI 知识出海」model: **free content layer → landing page → PPT 预览滑页 → Gumroad checkout → password unlock → 付费滑页全文**.",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxszdxlszd-wq/thecenturyhome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wxszdxlszd-wq/thecenturyhome/issues"
+  },
+  "homepage": "https://github.com/wxszdxlszd-wq/thecenturyhome#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
