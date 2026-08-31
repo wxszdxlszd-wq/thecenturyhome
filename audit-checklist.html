@@ -7,7 +7,7 @@
   <meta name="description" content="A printable 30-minute walkthrough that tells you exactly what kind of old house you're dealing with and what to fix first. Free forever.">
   <meta property="og:title" content="The 30-Minute Old-House Audit">
   <meta property="og:description" content="Print it. Walk the house. Know where to start.">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="site.css">
   <style>
     @media print {
       .frame, .site-footer, #webgpu-overlay, .no-print { display: none !important; }
@@ -21,21 +21,23 @@
       .check-row .cr-body span { color: #444 !important; }
     }
   </style>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon-apple.png">
 </head>
 <body>
 
   <header class="frame">
-    <a class="frame__brand" href="../index.html" data-transition>
+    <a class="frame__brand" href="index.html" data-transition>
       <span class="frame__mark"></span>
       <span>The Old House Playbook</span>
     </a>
     <nav class="frame__nav">
-      <a href="../index.html" data-transition>Home</a>
-      <a href="../blog/mistakes.html" data-transition>Mistakes</a>
-      <a href="../tools/budget-calculator.html" data-transition>Calculator</a>
-      <a href="../free/audit-checklist.html" data-transition>Free Audit</a>
-      <a href="../unlock.html" data-transition>Member</a>
-      <a class="frame__cta" href="../index.html#pricing" data-buy>$9.90 Access</a>
+      <a href="index.html" data-transition>Home</a>
+      <a href="mistakes.html" data-transition>Mistakes</a>
+      <a href="budget-calculator.html" data-transition>Calculator</a>
+      <a href="audit-checklist.html" data-transition>Free Audit</a>
+      <a href="unlock.html" data-transition>Member</a>
+      <a class="frame__cta" href="index.html#pricing" data-buy>$19.90 Access</a>
     </nav>
     <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
   </header>
@@ -47,7 +49,7 @@
       <p>Print this page, grab a flashlight and a notepad, and walk every room in order. In half an hour you'll know exactly what kind of house you're dealing with — and what to fix first.</p>
       <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;" class="no-print">
         <button class="btn btn--gold" type="button" onclick="window.print()">Print Checklist</button>
-        <a class="btn btn--ghost" href="../index.html#pricing" data-buy>Get Full Playbook — $9.90</a>
+        <a class="btn btn--ghost" href="index.html#pricing" data-buy>Get Full Playbook — $19.90</a>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1.8rem;">
         <span style="font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid #e57373;color:#ef9a9a;border-radius:2px;padding:.2rem .55rem;">● Fix now</span>
@@ -256,7 +258,7 @@
           <div class="section-label" style="justify-content:center;">You Know What You're Dealing With</div>
           <div style="font-family:var(--f-display);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--white);margin:1rem 0 1.2rem;">Ready for the plan?</div>
           <p style="color:var(--text-1);max-width:34rem;margin:0 auto 2rem;font-weight:300;">The full Playbook turns this audit into a budget, a 90-day sequence, a style guide, and a contractor screening kit. Instant Ko-fi delivery — lifetime access.</p>
-          <a class="btn btn--gold" href="../index.html#pricing" data-buy>Get the Playbook — $9.90</a>
+          <a class="btn btn--gold" href="index.html#pricing" data-buy>Get the Playbook — $19.90</a>
           <p style="margin-top:1rem;font-size:.78rem;color:var(--text-2);">Instant delivery via <a href="https://ko-fi.com/s/86751002e2" rel="noopener" target="_blank" style="color:var(--gold);">Ko-fi</a> · Password unlock · No subscription</p>
         </div>
 
@@ -268,15 +270,15 @@
     <div class="footer-inner">
       <div class="footer-brand">© 2026 · The Old House Playbook</div>
       <ul class="footer-links">
-        <li><a href="../tools/budget-calculator.html">Calculator</a></li>
-        <li><a href="../free/audit-checklist.html">Free Audit</a></li>
-        <li><a href="../blog/mistakes.html">Case Studies</a></li>
-        <li><a href="../unlock.html">Member Area</a></li>
+        <li><a href="budget-calculator.html">Calculator</a></li>
+        <li><a href="audit-checklist.html">Free Audit</a></li>
+        <li><a href="mistakes.html">Case Studies</a></li>
+        <li><a href="unlock.html">Member Area</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="../assets/js/config.js"></script>
-  <script src="../assets/js/site.js"></script>
+  <script src="config.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>

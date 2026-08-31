@@ -3,7 +3,7 @@
 A zero-build static site implementing the「AI 知识出海」model:
 **free content layer → landing page → PPT 预览滑页 → Gumroad checkout → password unlock → 付费滑页全文**.
 
-Product: **The Century Home Renovation Kit · $9.90**（一次性付费，收款链接在 `config.js → gumroadUrl`，当前配置为 Ko-fi）。
+Product: **The Century Home Renovation Kit · $19.90**（一次性付费，收款链接在 `config.js → gumroadUrl`，当前配置为 Ko-fi）。
 视觉：**轻欧式×怀俄明**（heritage-ranch editorial）——象牙米白纸感 + 松绿/陶土/黄铜/皮革棕，
 **Bodoni Moda**（编辑感衬线标题）+ **Geist / Geist Mono**（正文/标签，Google Fonts）。图片全部来自
 用户指定的 Pinterest 搜索页（高清原图，清单见 `assets/img/IMAGES.md` 与 `pinterest-manifest.json`）。
@@ -22,7 +22,7 @@ Product: **The Century Home Renovation Kit · $9.90**（一次性付费，收款
 
 | Path | Purpose |
 |---|---|
-| `/` (index.html) | Landing / product funnel（$9.90，含 3D 旋转画廊） |
+| `/` (index.html) | Landing / product funnel（$19.90，含 3D 旋转画廊） |
 | `/member/kit.html` | **PPT 滑页交付**：前 6 页预览公开可索引，后 13 页付费（标题骨架可见，正文解锁后渲染） |
 | `/member/content/kit.json` | 付费滑页正文数据（解锁后由内联渲染器注入） |
 | `/unlock.html` | 密码解锁页 |
@@ -42,7 +42,7 @@ node preview-server.js
 
 ## Go-live checklist（上线门禁，全部完成后发布）
 
-1. **确认收款链接** — `assets/js/config.js` → `gumroadUrl`（当前已配置为 **Ko-fi** 产品链接；如改回 Gumroad 直接替换即可，价格 $9.90 与站点一致）。
+1. **确认收款链接** — `assets/js/config.js` → `gumroadUrl`（当前已配置为 **Ko-fi** 产品链接；如改回 Gumroad 直接替换即可，价格 $19.90 与站点一致）。
 2. **先在 Gumroad 邮件模板里设定买家将收到的明文密码**。
 3. **哈希同一个密码** → `config.js` → `unlockHash`（两处必须一致，否则买家无法解锁）。
    - PowerShell: `[System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes("YOUR_PASSWORD"))).Replace("-","").ToLower()`

@@ -390,3 +390,45 @@
   .kitpricing { grid-template-columns: 1fr; min-height: auto; }
   .kitpricing .pricing-window { width: 100%; max-width: none; }
 }
+
+/* ─── Free tools strip + author byline + stories links (top-blog style) ─── */
+.tools-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.tool-card {
+  display: block;
+  background: #fbfbf9;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 2rem 2.1rem 1.8rem;
+  text-decoration: none;
+  transition: transform .25s cubic-bezier(0.22,1,0.36,1), box-shadow .25s, border-color .25s;
+}
+.tool-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,.08); border-color: #e2d9c8; }
+.tool-num { font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta,#c4703f); display: block; margin-bottom: 10px; }
+.tool-card h3 { font-family: var(--f-body,'Geist',sans-serif); font-size: 1.28rem; font-weight: 600; color: #141414; margin: 0 0 8px; }
+.tool-card p { font-size: .94rem; color: #555; line-height: 1.7; margin: 0 0 18px; font-weight: 300; }
+.tool-cta { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta,#c4703f); }
+.author-note {
+  max-width: 900px;
+  margin: 0 auto 2.4rem;
+  padding: 14px 18px;
+  background: #fffdf7;
+  border-left: 3px solid var(--terracotta,#c4703f);
+  font-size: .9rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+}
+.author-note a { color: var(--terracotta,#c4703f); }
+.stories-more { font-size: .9rem; color: #777; margin: 0 0 2.2rem; }
+.stories-more a { color: var(--terracotta,#c4703f); text-decoration: underline; margin-right: 10px; }
+
+@media (max-width: 760px) {
+  .tools-strip { grid-template-columns: 1fr; }
+  .tool-card { padding: 1.6rem 1.5rem 1.4rem; }
+}

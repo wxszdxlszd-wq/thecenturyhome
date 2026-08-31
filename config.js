@@ -23,6 +23,6 @@ window.SITE_CONFIG = {
   formEndpoint: "",
 
   // Sale note shown under pricing (leave empty to hide).
-  saleNote: "One-time payment · $9.90. Instant delivery by email.",
+  saleNote: "One-time payment · $19.90. Instant delivery by email.",
 };
 

@@ -48,7 +48,7 @@
           msgEl.className = "unlock-msg is-success";
           msgEl.setAttribute("aria-live", "polite");
           msgEl.textContent = "Unlocked! Taking you to your kit…";
-          setTimeout(function () { window.location.href = "member/kit.html"; }, 600);
+          setTimeout(function () { window.location.href = "kit.html"; }, 600);
         } else {
           msgEl.className = "unlock-msg is-error";
           msgEl.setAttribute("aria-live", "polite");

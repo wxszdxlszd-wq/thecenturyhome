@@ -14,7 +14,7 @@
   var corridorImages = [
     "img-02.jpg", "img-03.jpg", "img-04.jpg", "img-06.jpg", "img-08.jpg",
     "img-09.jpg", "img-10.jpg", "img-11.jpg", "img-13.jpg"
-  ].map(function (n) { return "assets/img/" + n; });
+  ].map(function (n) { return "" + n; });
 
   var SLOT_TRAVEL = [0, 0.06, 0.145, 0.255, 0.375, 0.485, 0.585];
   var SLOT_SCALE_RATIO = [0.1, 0.16, 0.27, 0.43, 0.68, 1, 1.35];
