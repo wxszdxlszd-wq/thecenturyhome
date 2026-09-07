@@ -1,886 +1,2514 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Century Home Renovation Kit — Quiz &amp; Free Preview | The Old House Playbook</title>
-  <meta name="description" content="Three quick questions, then a free 5-slide preview of The Century Home Renovation Kit: 7 deliverables, a 90-day sequence, real 2025-26 budgets. Buy once ($19.90) and unlock all 13 paid slides with the password from your email.">
-
-  <!-- ============================================
-       FONTS — Bodoni Moda + Geist + Geist Mono
-       ============================================ -->
+  <title>The Century Home Renovation Kit — Free Preview · The Old House Playbook</title>
+  <meta name="description" content="The complete McKinsey-style guide and 7 printable deliverables for century-home renovation: 30-minute audit, budget worksheet, 90-day sequence, restore-first style guide, and contractor interview scorecard.">
+  <link rel="canonical" href="https://thecenturyhome.com/member/kit.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Product","name":"The Century Home Renovation Kit","description":"7 printable checklists, a 90-day sequence and real 2025-2026 US budgets for century-home renovation.","image":"https://thecenturyhome.com/assets/img/product-finished-living-room.webp","offers":{"@type":"Offer","price":"19.90","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+  </script>
   <style>
-    /* ============================================
-       THEME — The Old House Playbook Kit Deck
-       ============================================ */
-    :root {
-      --paper: #F6F1E7;
-      --paper-2: #EFE8DA;
-      --card: #FCF9F1;
-      --ink: #22262B;
-      --ink-soft: rgba(34, 38, 43, .78);
-      --ink-mute: rgba(34, 38, 43, .55);
-      --pine: #3E5C4B;
-      --terracotta: #C4703F;
-      --terracotta-lt: #D98A52;
-      --brass: #B08D57;
-      --cream: #F1E7D3;
-      --rule: rgba(34, 38, 43, .16);
-      --rule-soft: rgba(34, 38, 43, .08);
+/* ═════════════════════════════════════════════════════════════════
+   THE CENTURY HOME RENOVATION KIT — MCKINSEY CONSULTING DESIGN SYSTEM
+   High-contrast, razor-sharp typography, zero transparency bugs.
+═════════════════════════════════════════════════════════════════ */
 
-      --stage-bg: #141613;
-      --slide-bg: #ffffff;
+:root {
+  --mk-navy: #0B0E14;
+  --mk-navy-2: #141822;
+  --mk-navy-card: #1A1F2C;
+  --mk-gold: #F3C77C;
+  --mk-gold-dark: #C9963B;
+  --mk-gold-soft: rgba(243, 199, 124, 0.15);
+  --mk-slate-light: #F8FAFC;
+  --mk-slate-border: #E2E8F0;
+  --mk-text-dark: #0F172A;
+  --mk-text-body: #334155;
+  --mk-text-muted: #64748B;
+  --mk-text-light: #FFFFFF;
+  --mk-text-light-sub: #F1F5F9;
+  --mk-text-light-muted: #CBD5E1;
+}
 
-      --font-display: 'Bodoni Moda', Georgia, serif;
-      --font-body: 'Geist', 'Segoe UI', sans-serif;
-      --font-mono: 'Geist Mono', monospace;
+/* ── Progress bar ── */
+.kit-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #C9963B, #F3C77C);
+  transition: width 0.1s linear;
+}
 
-      --title-size: 96px;
-      --kicker-size: 24px;
-      --subtitle-size: 34px;
-      --body-size: 28px;
-      --slide-padding: 96px;
-      --content-gap: 32px;
+/* ── Global Contrast Overrides for Kit Page ── */
+.kit-page {
+  color: var(--mk-text-dark);
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FFFFFF;
+}
 
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --duration-normal: 0.6s;
-    }
+/* ════════════════════════════════════════
+   ZONE A1 · HERO (DARK, HIGH CONTRAST)
+════════════════════════════════════════ */
+.kit-hero-v3 {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, #1F2637 0%, #0E121A 65%, #080A0E 100%);
+  color: var(--mk-text-light);
+  padding: 5rem 0 4rem;
+}
+.kit-hero-v3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(243, 199, 124, 0.04) 0 1px, transparent 1px 64px),
+              repeating-linear-gradient(90deg, rgba(243, 199, 124, 0.04) 0 1px, transparent 1px 64px);
+  pointer-events: none;
+}
+.kit-hero-v3 .container {
+  position: relative;
+  z-index: 2;
+}
+.kh3-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.kh3-copy {
+  max-width: 580px;
+}
+.kh3-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mk-gold);
+  margin-bottom: 1.2rem;
+  background: rgba(243, 199, 124, 0.12);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(243, 199, 124, 0.3);
+}
+.kh3-copy h1 {
+  font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+.kh3-copy h1 em {
+  font-style: normal;
+  color: var(--mk-gold);
+  background: linear-gradient(180deg, #FFF6E5 0%, #F3C77C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.kh3-sub {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--mk-text-light-sub);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.kh3-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.kh3-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.1rem 0.8rem;
+  background: #151A24;
+  text-align: center;
+}
+.kh3-stat b {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--mk-gold);
+  line-height: 1;
+}
+.kh3-stat small {
+  font-size: 0.78rem;
+  color: var(--mk-text-light-sub);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.kh3-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.kh3-note {
+  margin-top: 1.2rem;
+  font-size: 0.84rem;
+  color: var(--mk-text-light-muted);
+  font-weight: 500;
+}
+.kh3-visual {
+  position: relative;
+}
+.kh3-visual-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(243, 199, 124, 0.35);
+  box-shadow: 0 32px 64px -16px rgba(0,0,0,0.8);
+  position: relative;
+  background: #000;
+}
+.kh3-visual-wrap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.kh3-caption-bar {
+  background: rgba(14, 18, 26, 0.95);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.kh3-caption-bar span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.kh3-caption-bar .badge-live {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--mk-gold);
+  background: rgba(243, 199, 124, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+.kh3-float {
+  position: absolute;
+  background: #141822;
+  border: 1px solid var(--mk-gold);
+  border-radius: 12px;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.84rem;
+  color: #FFFFFF;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  z-index: 3;
+}
+.kh3-float--tl { top: 8%; left: -6%; }
+.kh3-float--br { bottom: 12%; right: -5%; }
+.kh3-float b {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--mk-gold);
+  line-height: 1.1;
+}
 
-    /* ============================================
-       VIEWPORT-BASE.CSS — FIXED 16:9 STAGE (full)
-       ============================================ */
-    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg); }
-    .deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg); }
-    .deck-stage {
-      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
-      overflow: hidden; transform-origin: 0 0; background: var(--slide-bg);
-    }
-    .slide {
-      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
-      display: block; visibility: hidden; opacity: 0; pointer-events: none;
-      background: var(--slide-bg);
-    }
-    .slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
-    img, video, canvas, svg { max-width: 100%; max-height: 100%; }
-    .deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
-    @media print {
-      html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
-      .deck-viewport { position: static; overflow: visible; background: #fff; }
-      .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
-      .slide {
-        position: relative; display: block !important; visibility: visible !important;
-        opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px;
-        break-after: page; page-break-after: always;
-      }
-      .slide:last-child { break-after: auto; page-break-after: auto; }
-      .deck-controls { display: none !important; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
-    }
+@media(max-width: 960px) {
+  .kh3-grid { grid-template-columns: 1fr; }
+  .kh3-float { display: none; }
+}
 
-    /* ============================================
-       DECK CHROME (fixed, outside stage)
-       ============================================ */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    .deck-topbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 30px;
-      font-family: var(--font-mono); font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
-      color: rgba(253, 251, 245, .82);
-      background: linear-gradient(to bottom, rgba(0, 0, 0, .62), transparent);
-      pointer-events: none;
-    }
-    .deck-topbar a, .deck-topbar button { pointer-events: auto; }
-    .deck-topbar .brand { color: #C6A76F; font-weight: 700; text-decoration: none; }
-    .deck-topbar .controls { display: flex; align-items: center; gap: 18px; }
-    .deck-topbar button {
-      background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .28); color: #fff;
-      font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
-      padding: 8px 16px; cursor: pointer; border-radius: 2px;
-    }
-    .deck-topbar button:hover { background: rgba(255, 255, 255, .26); }
-    .deck-topbar .buy { background: var(--terracotta); border-color: var(--terracotta); color: #fff; font-weight: 700; text-decoration: none; padding: 8px 16px; border-radius: 2px; }
-    .deck-topbar .counter { min-width: 90px; text-align: right; font-size: 14px; }
+/* ════════════════════════════════════════
+   ZONE A2 · 3 PROBLEM CARDS (FLIP INTERACTIVE)
+════════════════════════════════════════ */
+.section-white {
+  background: #FFFFFF;
+  color: var(--mk-text-dark);
+}
+.section-light {
+  background: #F8FAFC;
+  color: var(--mk-text-dark);
+  border-top: 1px solid var(--mk-slate-border);
+  border-bottom: 1px solid var(--mk-slate-border);
+}
 
-    .deck-bottombar {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
-      display: flex; align-items: center; gap: 22px; padding: 20px 30px 26px;
-      background: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
-      pointer-events: none;
-    }
-    .deck-bottombar > * { pointer-events: auto; }
-    .deck-progress { flex: 1; height: 3px; background: rgba(255, 255, 255, .2); overflow: hidden; }
-    .deck-progress-fill { height: 100%; width: 0; background: var(--terracotta); transition: width .3s var(--ease-out-expo); }
-    .deck-navbtn {
-      width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .32);
-      background: rgba(0, 0, 0, .3); color: #fff; font-size: 22px; cursor: pointer; transition: background .2s;
-    }
-    .deck-navbtn:hover { background: rgba(255, 255, 255, .24); }
+.s-head-high {
+  margin-bottom: 2.8rem;
+}
+.s-head-high .s-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mk-gold-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.s-head-high h2 {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.8rem;
+  line-height: 1.15;
+}
+.s-head-high h2 em {
+  font-style: normal;
+  color: #B45309;
+}
+.s-head-high p {
+  font-size: 1.1rem;
+  color: #334155;
+  max-width: 60ch;
+  line-height: 1.6;
+  margin: 0;
+}
 
-    .deck-toc {
-      position: fixed; top: 74px; right: 26px; bottom: 110px; z-index: 950;
-      width: min(560px, 72vw); background: var(--card); color: var(--ink);
-      border: 1px solid var(--rule); box-shadow: 0 40px 100px rgba(0, 0, 0, .55);
-      transform: translateX(calc(100% + 30px)); transition: transform .4s var(--ease-out-expo);
-      display: flex; flex-direction: column;
-    }
-    .deck-toc.is-open { transform: none; }
-    .deck-toc h3 { font-family: var(--font-display); font-size: 32px; font-weight: 500; padding: 28px 32px 18px; border-bottom: 2px solid var(--terracotta); }
-    .deck-toc ol { list-style: none; overflow-y: auto; padding: 12px; flex: 1; }
-    .deck-toc button {
-      display: block; width: 100%; text-align: left; background: none; border: none;
-      border-left: 3px solid transparent; font-family: var(--font-body); font-size: 17px;
-      color: var(--ink-soft); padding: 10px 14px; cursor: pointer;
-    }
-    .deck-toc button:hover { background: var(--paper-2); color: var(--ink); }
-    .deck-toc button.is-current { border-left-color: var(--terracotta); color: var(--ink); font-weight: 600; }
+.flip-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  margin-top: 2rem;
+}
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  min-height: 380px;
+}
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card.is-flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+.flip-card__front, .flip-card__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+.flip-card__front {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+.flip-card__front-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #1E293B;
+}
+.flip-card__front-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.flip-card:hover .flip-card__front-img img {
+  transform: scale(1.04);
+}
+.flip-card__front-img .photo-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.flip-card__front-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+}
+.flip-card__front-body h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.4rem;
+  line-height: 1.25;
+}
+.flip-card__front-body p {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+.flip-card__front-body .flip-action-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #B45309;
+  margin-top: 1rem;
+}
 
-    /* ============================================
-       SLIDE LAYOUTS (1920 × 1080)
-       ============================================ */
-    .slide-content {
-      position: absolute; inset: 0; padding: var(--slide-padding);
-      display: flex; flex-direction: column; width: 1920px; height: 1080px; box-sizing: border-box;
-      z-index: 1;
-    }
-    .slide-kicker {
-      font-family: var(--font-mono); font-size: var(--kicker-size); letter-spacing: .3em;
-      text-transform: uppercase; color: var(--terracotta); display: flex; align-items: center; gap: 20px; margin-bottom: 34px;
-    }
-    .slide-kicker::before { content: ''; width: 58px; height: 3px; background: var(--terracotta); flex-shrink: 0; }
-    .slide-title {
-      font-family: var(--font-display); font-size: var(--title-size); font-weight: 500;
-      line-height: 1.02; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 26px;
-    }
-    .slide-title em { font-style: italic; color: var(--terracotta); }
-    .slide-sub {
-      font-family: var(--font-body); font-size: var(--subtitle-size); font-weight: 300;
-      color: var(--ink-soft); line-height: 1.55; max-width: 1500px; margin-bottom: 42px;
-    }
-    .slide-list { list-style: none; display: flex; flex-direction: column; gap: 24px; max-width: 1560px; }
-    .slide-list li {
-      display: flex; gap: 24px; align-items: baseline; font-family: var(--font-body);
-      font-size: var(--body-size); font-weight: 300; line-height: 1.45; color: var(--ink-soft);
-    }
-    .slide-list li::before { content: '—'; color: var(--terracotta); font-family: var(--font-mono); flex-shrink: 0; }
-    .slide-list .sl-t { font-weight: 600; color: var(--ink); }
-    .slide-note {
-      margin-top: auto; background: rgba(255, 255, 255, .88); border-left: 6px solid var(--terracotta);
-      padding: 22px 30px; font-family: var(--font-body); font-size: 23px; font-weight: 300;
-      color: var(--ink-soft); line-height: 1.55; max-width: 1500px;
-    }
-    .slide-table-wrap { overflow: hidden; max-width: 1600px; background: rgba(255, 255, 255, .88); border: 1px solid var(--rule-soft); }
-    .slide-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 24px; }
-    .slide-table th {
-      font-family: var(--font-mono); font-size: 16px; letter-spacing: .14em; text-transform: uppercase;
-      text-align: left; color: var(--pine); background: rgba(239, 232, 218, .9); padding: 16px 22px;
-      border-bottom: 2px solid var(--rule);
-    }
-    .slide-table td { padding: 15px 22px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-soft); font-weight: 300; vertical-align: top; }
-    .slide-table td:first-child { font-weight: 600; color: var(--ink); }
-    .slide-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1600px; }
-    .slide-cols h3 { font-family: var(--font-display); font-size: 42px; font-weight: 500; color: var(--ink); border-bottom: 2px solid var(--rule-soft); padding-bottom: 12px; margin-bottom: 24px; }
-    .slide-cols .slide-list { max-width: none; }
-    .cover-actions { display: flex; gap: 22px; margin-top: 56px; flex-wrap: wrap; }
-    .btn-slide {
-      display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-mono);
-      font-size: 21px; letter-spacing: .13em; text-transform: uppercase; font-weight: 600;
-      padding: 22px 40px; border-radius: 2px; cursor: pointer; border: 1px solid transparent;
-      transition: transform .3s var(--ease-out-expo), background .3s; text-decoration: none;
-    }
-    .btn-slide--primary { background: var(--terracotta); color: #fff; }
-    .btn-slide--primary:hover { background: var(--terracotta-lt); transform: translateY(-4px); }
-    .btn-slide--ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
-    .btn-slide--ghost:hover { border-color: var(--terracotta); color: var(--terracotta); }
+.flip-card__back {
+  transform: rotateY(180deg);
+  background: #0E131E;
+  color: #FFFFFF;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--mk-gold);
+}
+.flip-card__back-top h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--mk-gold);
+  margin: 0 0 0.8rem;
+  line-height: 1.3;
+}
+.flip-card__back-top p {
+  font-size: 0.95rem;
+  color: #E2E8F0;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+.flip-card__back-top b {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.flip-card__back-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flip-card__back-meta span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--mk-gold);
+}
 
-    /* Topical background images — bright overlay keeps text readable */
-    .slide { background-position: center; background-size: cover; }
-    .slide::before {
-      content: ""; position: absolute; inset: 0; z-index: 0;
-      background: linear-gradient(120deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 255, 255, 0.86) 100%);
-    }
-    .slide:not([data-slide="quiz"])::before { display: block; }
-    .slide[data-slide="quiz"]::before { display: none; }
+.flip-hint-center {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748B;
+}
 
-    /* ============================================
-       QUIZ SLIDE — 3 quick questions
-       ============================================ */
-    .quiz-q { display: none; }
-    .quiz-q.is-current { display: flex; flex-direction: column; }
-    .quiz-q .q-label {
-      font-family: var(--font-mono); font-size: 20px; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--ink-mute); margin: 30px 0 16px;
-    }
-    .quiz-q .q-title { font-family: var(--font-display); font-size: 62px; font-weight: 500; color: var(--ink); margin-bottom: 36px; }
-    .quiz-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1560px; }
-    .quiz-opt {
-      text-align: left; padding: 24px 26px; background: rgba(255, 255, 255, .88);
-      border: 1px solid var(--rule); border-radius: 6px; cursor: pointer;
-      font-family: var(--font-body); font-size: 25px; font-weight: 500; color: var(--ink);
-      transition: border-color .2s, background .2s, transform .2s;
-    }
-    .quiz-opt:hover { border-color: var(--terracotta); transform: translateY(-3px); }
-    .quiz-opt.is-selected { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
-    .quiz-opt small { display: block; font-weight: 300; font-size: 16px; color: var(--ink-mute); margin-top: 6px; }
-    .quiz-opt.is-selected small { color: rgba(255, 255, 255, .85); }
-    .quiz-step { font-family: var(--font-mono); font-size: 17px; letter-spacing: .14em; color: var(--ink-mute); margin-top: 24px; }
-    .quiz-skip {
-      align-self: flex-start; margin-top: 18px; background: none; border: none; cursor: pointer;
-      font-family: var(--font-body); font-size: 19px; color: var(--ink-mute);
-    }
-    .quiz-skip:hover { color: var(--terracotta); }
-    .quiz-result { display: none; margin-top: 36px; max-width: 1560px; }
-    .quiz-result.is-show { display: block; }
-    .quiz-result .qr-text { font-family: var(--font-body); font-size: 28px; font-weight: 300; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
-    .quiz-result .qr-actions { display: flex; gap: 22px; flex-wrap: wrap; }
+@media(max-width: 820px) {
+  .flip-row { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+  .flip-card { min-height: 340px; }
+}
 
-    /* ============================================
-       GATE SLIDE — unlock before the paid chapters
-       ============================================ */
-    .gate-inner {
-      margin-top: 52px; background: rgba(255, 255, 255, .93); border: 1px solid var(--rule);
-      max-width: 860px; padding: 50px 54px; box-shadow: 0 30px 90px rgba(0, 0, 0, .12);
-    }
-    .gate-inner p { font-family: var(--font-body); font-size: 24px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 24px; }
-    .gate-inner input[type="password"] {
-      width: 100%; padding: 18px 22px; border: 1px solid var(--rule); border-radius: 3px;
-      background: var(--paper-2); font-family: var(--font-mono); font-size: 24px; text-align: center;
-      color: var(--ink); outline: none; margin-bottom: 18px;
-    }
-    .gate-inner input[type="password"]:focus { border-color: var(--pine); }
-    .gate-actions { display: flex; gap: 20px; flex-wrap: wrap; }
-    .lock-msg { font-family: var(--font-mono); font-size: 16px; color: var(--pine); min-height: 24px; margin-top: 14px; }
-    .lock-msg.is-error { color: #a33; }
-    .gate-note { margin-top: 24px; font-family: var(--font-mono); font-size: 16px; letter-spacing: .1em; color: var(--ink-mute); }
+/* ════════════════════════════════════════
+   ZONE A3 · MCKINSEY 3 MISTAKES COMIC
+════════════════════════════════════════ */
+.comic-box {
+  margin-top: 2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #0F172A;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+  background: #FFFFFF;
+}
+.comic-box img {
+  width: 100%;
+  display: block;
+}
+.comic-box-bar {
+  background: #0E131E;
+  color: #FFFFFF;
+  padding: 1rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.comic-box-bar b {
+  font-size: 0.92rem;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+.comic-box-bar span {
+  font-size: 0.82rem;
+  color: var(--mk-gold);
+  font-weight: 600;
+}
 
-    /* Paid slides stay hidden until unlocked */
-    .slide.slide-paid { visibility: hidden; opacity: 0; pointer-events: none; }
+/* ════════════════════════════════════════
+   NEW SECTION · REAL FIELD PHOTO GALLERY (实图案例库)
+════════════════════════════════════════ */
+.real-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.rg-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+.rg-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #0F172A;
+}
+.rg-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.rg-card:hover .rg-card-img img {
+  transform: scale(1.05);
+}
+.rg-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.rg-card-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.rg-card-body h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.4rem;
+}
+.rg-card-body p {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+  flex: 1;
+}
+.rg-card-foot {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #B45309;
+}
 
-    /* ============================================
-       REVEAL ANIMATIONS
-       ============================================ */
-    .reveal { opacity: 0; transform: translateY(34px); transition: opacity var(--duration-normal) var(--ease-out-expo), transform var(--duration-normal) var(--ease-out-expo); }
-    .slide.visible .reveal { opacity: 1; transform: translateY(0); }
-    .slide.visible .reveal:nth-child(2) { transition-delay: 0.08s; }
-    .slide.visible .reveal:nth-child(3) { transition-delay: 0.16s; }
-    .slide.visible .reveal:nth-child(4) { transition-delay: 0.24s; }
-    .slide.visible .reveal:nth-child(5) { transition-delay: 0.32s; }
+/* ════════════════════════════════════════
+   ZONE B · 7 CHAPTER CATALOG CARDS
+════════════════════════════════════════ */
+.catalog-grid-v4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+.cat-card-v4 {
+  background: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+.cat-card-v4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  border-color: #CBD5E1;
+}
+.cat-card-v4__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #0E131E;
+  overflow: hidden;
+}
+.cat-card-v4__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.cat-card-v4:hover .cat-card-v4__img img {
+  transform: scale(1.04);
+}
+.cat-card-v4__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #0F172A;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.cat-card-v4__type {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--mk-gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+.cat-card-v4__body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cat-card-v4__kicker {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #B45309;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.cat-card-v4__body h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+.cat-card-v4__body p {
+  font-size: 0.94rem;
+  color: #334155;
+  line-height: 1.55;
+  margin: 0 0 1.2rem;
+  flex: 1;
+}
+.cat-card-v4__foot {
+  border-top: 1px solid var(--mk-slate-border);
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cat-card-v4__foot span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0F172A;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.cat-card-v4__foot .preview-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #166534;
+  background: #DCFCE7;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ════════════════════════════════════════
+   ZONE B · CHAPTER DETAIL MODAL PANELS
+════════════════════════════════════════ */
+.ch-panel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(11, 14, 20, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+.ch-panel.is-open {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.ch-panel__card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 860px;
+  width: 100%;
+  margin: 2rem auto;
+  box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  animation: panelIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.ch-panel__hero {
+  position: relative;
+  width: 100%;
+  background: #0E131E;
+}
+.ch-panel__hero img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  display: block;
+}
+.ch-panel__hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.8rem 2.2rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 14, 20, 0.95) 80%);
+  color: #FFFFFF;
+}
+.ch-panel__hero-overlay span {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mk-gold);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.ch-panel__hero-overlay h2 {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 800;
+  margin: 0;
+  color: #FFFFFF;
+}
+.ch-panel__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0F172A;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 10;
+  transition: all 0.2s;
+}
+.ch-panel__close:hover {
+  background: var(--mk-gold);
+  color: #0F172A;
+  border-color: var(--mk-gold);
+}
+.ch-panel__body {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Part separator inside modal */
+.modal-part-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B45309;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid #FEF3C7;
+  margin: 1.5rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-part-label:first-child {
+  margin-top: 0;
+}
+
+.modal-item-row {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #F1F5F9;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem;
+  align-items: center;
+}
+.modal-item-row b {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0F172A;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.modal-item-row p {
+  font-size: 0.88rem;
+  color: #334155;
+  margin: 0;
+  line-height: 1.5;
+}
+.modal-item-row .tag-cost {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #991B1B;
+  background: #FEE2E2;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.modal-item-row .tag-safe {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #166534;
+  background: #DCFCE7;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.ch-panel__photo-preview {
+  margin: 1.2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+}
+.ch-panel__photo-preview img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.ch-panel__photo-caption {
+  background: #F8FAFC;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.ch-panel__locked {
+  filter: blur(4px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.ch-panel__lock-overlay {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #FFFFFF);
+  border-top: 2px dashed #CBD5E1;
+  margin-top: 1rem;
+}
+.ch-panel__lock-overlay h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.5rem;
+}
+.ch-panel__lock-overlay p {
+  color: #475569;
+  font-size: 0.96rem;
+  max-width: 48ch;
+  margin: 0 auto 1.5rem;
+}
+
+/* ════════════════════════════════════════
+   FREE DOWNLOAD BAND
+════════════════════════════════════════ */
+.dl-v4 {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  background: #0E131E;
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 2rem clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(243, 199, 124, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+.dl-v4 .s-label {
+  color: var(--mk-gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.dl-v4 h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  margin: 0.4rem 0 0.6rem;
+  color: #FFFFFF;
+}
+.dl-v4 p {
+  color: var(--mk-text-light-sub);
+  font-size: 0.96rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media(max-width: 720px) {
+  .dl-v4 { grid-template-columns: 1fr; }
+}
+
+/* ════════════════════════════════════════
+   ZONE C · GATE + UNLOCKED DELIVERY (HIGH CONTRAST)
+════════════════════════════════════════ */
+.gate-v4 {
+  background: radial-gradient(circle at 50% 0%, #1A2232 0%, #0D111A 60%, #06080C 100%);
+  color: #FFFFFF;
+  padding: clamp(4.5rem, 8vw, 6.5rem) var(--page-pad);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.gate-v4-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+.gate-v4-head .s-label {
+  color: var(--mk-gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.gate-v4-head h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0.8rem 0 1rem;
+  line-height: 1.15;
+}
+.gate-v4-head h2 em {
+  font-style: normal;
+  color: var(--mk-gold);
+}
+.gate-v4-head p {
+  font-size: 1.1rem;
+  color: var(--mk-text-light-sub);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.gate-features-v4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 840px;
+  margin: 0 auto 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.gf-item-v4 {
+  padding: 1.3rem 1.1rem;
+  background: #131822;
+  text-align: center;
+}
+.gf-item-v4 b {
+  display: block;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+.gf-item-v4 small {
+  font-size: 0.82rem;
+  color: var(--mk-text-light-muted);
+  font-weight: 500;
+}
+
+.gate-pricing-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.gate-pricing-box b {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+.gate-pricing-box s {
+  color: #94A3B8;
+  font-size: 1.5rem;
+  margin-left: 0.8rem;
+}
+.gate-pricing-box .save-pill {
+  display: inline-block;
+  background: var(--mk-gold);
+  color: #0F172A;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  margin-left: 0.8rem;
+  vertical-align: middle;
+}
+
+.gate-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.gate-guarantee-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--mk-text-light-muted);
+  font-weight: 500;
+}
+
+.unlock-box--v4 {
+  max-width: 440px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+}
+.unlock-box--v4 label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--mk-gold);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+.unlock-box--v4 input {
+  background: #141924;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.8rem;
+}
+.unlock-box--v4 input::placeholder {
+  color: #94A3B8;
+}
+.unlock-box--v4 input:focus {
+  outline: none;
+  border-color: var(--mk-gold);
+  background: #19202E;
+}
+
+/* ════════════════════════════════════════
+   ZONE C · UNLOCKED 7 MASTER CHAPTERS
+════════════════════════════════════════ */
+.kit-unlocked-zone {
+  max-width: 920px;
+  margin: 3.5rem auto 0;
+}
+.kit-unlocked-zone h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.master-ch {
+  background: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid var(--mk-slate-border);
+}
+.master-ch__header {
+  background: #0E131E;
+  color: #FFFFFF;
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.master-ch__header:hover {
+  background: #151C2A;
+}
+.master-ch__left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.master-ch__num-pill {
+  background: var(--mk-gold);
+  color: #0F172A;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+  flex: none;
+}
+.master-ch__title h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  color: #FFFFFF;
+}
+.master-ch__title small {
+  font-size: 0.82rem;
+  color: var(--mk-text-light-sub);
+  display: block;
+  margin-top: 0.2rem;
+}
+.master-ch__arrow {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  color: var(--mk-gold);
+  flex: none;
+}
+.master-ch.is-open .master-ch__arrow {
+  transform: rotate(180deg);
+}
+
+.master-ch__body {
+  display: none;
+  padding: 2rem;
+  background: #FFFFFF;
+  color: var(--mk-text-dark);
+}
+.master-ch.is-open .master-ch__body {
+  display: block;
+}
+
+/* Master Chapter Sub-part */
+.ch-part-block {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #F1F5F9;
+}
+.ch-part-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.ch-part-head {
+  margin-bottom: 1.4rem;
+}
+.ch-part-head .part-tag {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #B45309;
+  background: #FEF3C7;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+.ch-part-head h4 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.4rem;
+}
+.ch-part-head p {
+  font-size: 0.96rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Dual visual row inside master chapter: Diagram + Real Photo */
+.dual-visual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 1.4rem 0;
+}
+.dv-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+  background: #F8FAFC;
+}
+.dv-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+.dv-card-caption {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1E293B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F1F5F9;
+}
+.dv-card-caption.is-photo {
+  color: #0F172A;
+  background: #FEF3C7;
+}
+
+@media(max-width: 680px) {
+  .dual-visual-row { grid-template-columns: 1fr; }
+}
+
+/* Full width single visual */
+.single-visual-wrap {
+  margin: 1.4rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--mk-slate-border);
+}
+.single-visual-wrap img {
+  width: 100%;
+  display: block;
+}
+.single-visual-caption {
+  padding: 0.6rem 1rem;
+  background: #F1F5F9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* Unlocked content bullet list */
+.uch-list {
+  margin: 1.2rem 0;
+}
+.uch-row {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #F1F5F9;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+}
+.uch-row:last-child {
+  border-bottom: none;
+}
+.uch-row b {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0F172A;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.uch-row p {
+  font-size: 0.9rem;
+  color: #334155;
+  margin: 0;
+  line-height: 1.55;
+  grid-column: 1 / -1;
+}
+.uch-row .tag-pill {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag-pill--red {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+.tag-pill--green {
+  background: #DCFCE7;
+  color: #166534;
+}
+.tag-pill--gold {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+/* Unlocked table styling */
+.uch-table-wrap {
+  overflow-x: auto;
+  margin: 1.4rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--mk-slate-border);
+}
+.uch-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.uch-table th {
+  background: #0E131E;
+  color: #FFFFFF;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  text-align: left;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+}
+.uch-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #F1F5F9;
+  color: #334155;
+}
+.uch-table tr:last-child td {
+  border-bottom: none;
+}
+.uch-table tr:nth-child(even) td {
+  background: #F8FAFC;
+}
+.uch-table td strong {
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.uch-notes-box {
+  background: #FEF3C7;
+  border-left: 4px solid #D97706;
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1.2rem;
+  margin-top: 1.4rem;
+}
+.uch-notes-box p {
+  font-size: 0.88rem;
+  color: #78350F;
+  margin: 0.3rem 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
   </style>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon-apple.png">
 </head>
+<body class="kit-page">
 
-<body>
-  <div class="deck-viewport">
+  <div class="kit-progress" id="kit-progress"></div>
 
-    <main class="deck-stage" id="deckStage">
-
-      <!-- ═══ QUIZ — 3 quick questions (first slide) ═══ -->
-      <section class="slide active" data-slide="quiz">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">The Old House Playbook · 1-minute quiz</span>
-          <h2 class="slide-title reveal">Three questions.<br><em>One plan.</em></h2>
-          <p class="slide-sub reveal">Answer honestly — it takes about a minute, and the Kit
-            will feel like it was written for your house.</p>
-
-          <div class="quiz-q is-current" data-q="1">
-            <span class="q-label">Question 1 of 3</span>
-            <div class="q-title">What's your renovation budget?</div>
-            <div class="quiz-opts">
-              <button class="quiz-opt" type="button" data-key="small">Under $25k<small>Patchwork &amp; repairs</small></button>
-              <button class="quiz-opt" type="button" data-key="mid">$25k – $75k<small>Kitchen + bath, floors</small></button>
-              <button class="quiz-opt" type="button" data-key="big">$75k+<small>Whole-house renovation</small></button>
-            </div>
-          </div>
-
-          <div class="quiz-q" data-q="2">
-            <span class="q-label">Question 2 of 3</span>
-            <div class="q-title">How old is the house?</div>
-            <div class="quiz-opts">
-              <button class="quiz-opt" type="button" data-key="young">Under 50 years<small>Modern construction</small></button>
-              <button class="quiz-opt" type="button" data-key="mid">50 – 100 years<small>Mid-century</small></button>
-              <button class="quiz-opt" type="button" data-key="old">100+ years<small>A true century home</small></button>
-            </div>
-          </div>
-
-          <div class="quiz-q" data-q="3">
-            <span class="q-label">Question 3 of 3</span>
-            <div class="q-title">What's the scope?</div>
-            <div class="quiz-opts">
-              <button class="quiz-opt" type="button" data-key="room">One room<small>Start small, learn the house</small></button>
-              <button class="quiz-opt" type="button" data-key="kbbath">Kitchen &amp; bath<small>The daily-money rooms</small></button>
-              <button class="quiz-opt" type="button" data-key="whole">Whole house<small>Everything, in order</small></button>
-            </div>
-          </div>
-
-          <span class="quiz-step">Questions answered: <b>0</b> / 3</span>
-          <button class="quiz-skip" type="button">Skip the quiz →</button>
-
-          <div class="quiz-result">
-            <p class="qr-text"></p>
-            <div class="qr-actions">
-              <button class="btn-slide btn-slide--primary" type="button" id="quiz-continue">Continue to the free preview →</button>
-              <a class="btn-slide btn-slide--ghost" href="index.html#pricing">Get the Kit — $19.90</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══ PREVIEW 1 · What the Kit solves ═══ -->
-      <section class="slide" data-slide="preview-solves" style="background-image:url('img-06.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">Free preview · The problem</span>
-          <h2 class="slide-title reveal">What This Kit <em>Solves</em></h2>
-          <ul class="slide-list reveal">
-            <li><span class="sl-t">"Where do I start?"</span> — A 30-minute audit that tells you exactly what kind of house you're dealing with.</li>
-            <li><span class="sl-t">"What does it cost?"</span> — A line-itemed 2025-26 worksheet, with the 20% surprise reserve.</li>
-            <li><span class="sl-t">"What order does the work go in?"</span> — A 90-day sequence so you never redo last month's work.</li>
-            <li><span class="sl-t">"Will I wreck the character?"</span> — Restore vs. replace rules for plaster, windows, doors, floors.</li>
-            <li><span class="sl-t">"Can I trust the contractor?"</span> — Ten interview questions that filter out generalists.</li>
-          </ul>
-          <p class="slide-note reveal">Every chapter answers one fear with a printable deliverable.</p>
-        </div>
-      </section>
-
-      <!-- ═══ PREVIEW 2 · The 7 deliverables ═══ -->
-      <section class="slide" data-slide="preview-deliverables" style="background-image:url('img-04.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">Free preview · What you receive</span>
-          <h2 class="slide-title reveal">The Seven <em>Deliverables</em></h2>
-          <div class="slide-cols reveal">
-            <div>
-              <h3>Planning</h3>
-              <ul class="slide-list">
-                <li><span class="sl-t">1. The 3 questions</span> — water, systems, character before you spend a dollar.</li>
-                <li><span class="sl-t">2. The 30-minute audit</span> — 12 timed checks with dollar flags.</li>
-                <li><span class="sl-t">3. Budget &amp; reserve math</span> — the 10-line worksheet plus the 20% rule.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Execution</h3>
-              <ul class="slide-list">
-                <li><span class="sl-t">4. The 90-day sequence</span> — water → systems → structure → walls → floors.</li>
-                <li><span class="sl-t">5. Style guide</span> — keep the bones, style the skin.</li>
-                <li><span class="sl-t">6. Salvage &amp; room priority</span> — where money goes first.</li>
-                <li><span class="sl-t">7. Contractor playbook</span> — 10 questions, 13 pitfalls, change-order clauses.</li>
-              </ul>
-            </div>
-          </div>
-          <p class="slide-note reveal">Slides 8-20 unlock with the password from your purchase email.</p>
-        </div>
-      </section>
-
-      <!-- ═══ PREVIEW 3 · Sample audit rows (roof) ═══ -->
-      <section class="slide" data-slide="preview-audit" style="background-image:url('roof-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">Free preview · Real content, 3 of 12 rows</span>
-          <h2 class="slide-title reveal">Sample — The <em>30-Minute Audit</em></h2>
-          <p class="slide-sub reveal">The paid Kit's Chapter 2 has all 12 checks with dollar flags. Three real rows from it:</p>
-          <div class="slide-table-wrap reveal">
-            <table class="slide-table">
-              <thead><tr><th>Check</th><th>What to look for</th><th>Flag</th></tr></thead>
-              <tbody>
-                <tr><td>Roof &amp; exterior (5 min)</td><td>Permit date 20+ years with 2+ layers</td><td>$8k-18k</td></tr>
-                <tr><td>Electrical panel (3 min)</td><td>Knob-and-tube or pre-1980 panel</td><td>$8k-20k</td></tr>
-                <tr><td>Windows (3 min)</td><td>Restore vs $800-1,200 replacement each</td><td>Restore</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="slide-note reveal">The full chapter is 12 checks, timed, with the "who do I call" notes.</p>
-        </div>
-      </section>
-
-      <!-- ═══ PREVIEW 4 · Sample budget rows (calculator) ═══ -->
-      <section class="slide" data-slide="preview-budget" style="background-image:url('budget-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">Free preview · Real content, 4 of 10 rows</span>
-          <h2 class="slide-title reveal">Sample — The <em>Budget Worksheet</em></h2>
-          <p class="slide-sub reveal">An 1,800 sq ft century home, professional labor, mid-cost region. Four rows from the full table:</p>
-          <div class="slide-table-wrap reveal">
-            <table class="slide-table">
-              <thead><tr><th>Line item</th><th>Low</th><th>High</th><th>Why it matters</th></tr></thead>
-              <tbody>
-                <tr><td>Electrical rewire</td><td>$8,000</td><td>$20,000</td><td>Knob-and-tube before walls close</td></tr>
-                <tr><td>Plaster repair</td><td>$4,000</td><td>$12,000</td><td>vs $12k-20k drywall gut</td></tr>
-                <tr><td>Window restoration</td><td>$3,000</td><td>$9,000</td><td>15 windows, restored</td></tr>
-                <tr><td>Surprise reserve</td><td>10%</td><td>20%</td><td>The non-negotiable column</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="slide-note reveal">The full worksheet adds six more line items and the region multiplier (0.8-1.3x).</p>
-        </div>
-      </section>
-
-      <!-- ═══ PREVIEW 5 · Evidence + CTA ═══ -->
-      <section class="slide" data-slide="preview-evidence" style="background-image:url('survey-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">The evidence · Free preview</span>
-          <h2 class="slide-title reveal">Built on real projects, <em>not theory</em></h2>
-          <ul class="slide-list reveal">
-            <li><span class="sl-t">3 case studies</span> — tracked before &amp; after, real invoices.</li>
-            <li><span class="sl-t">14 companies &amp; preservation experts</span> — every price range checked against real bids.</li>
-            <li><span class="sl-t">100+ owner survey</span> — 93% said this Kit saves money and keeps them ahead of the contractor.</li>
-          </ul>
-          <div class="cover-actions reveal">
-            <a class="btn-slide btn-slide--primary" href="index.html#pricing">Get the Kit — $19.90</a>
-            <button class="btn-slide btn-slide--ghost" type="button" id="preview-to-gate">Unlock the full Kit →</button>
-          </div>
-          <p class="slide-note reveal">Field data · 3 case studies · 14 companies &amp; experts · 100+ owner survey — 93% say it saves money.</p>
-        </div>
-      </section>
-
-      <!-- ═══ UNLOCK GATE — preview done, unlock to continue ═══ -->
-      <section class="slide" data-slide="gate" style="background-image:url('img-13.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content">
-          <span class="slide-kicker reveal">Members only</span>
-          <h2 class="slide-title reveal">Unlock the <em>Full Kit</em></h2>
-          <p class="slide-sub reveal">The free preview is over. All 13 paid chapters — the complete
-            audit, budget math, 90-day sequence, style guide, salvage plan and contractor playbook —
-            are behind one password.</p>
-          <div class="gate-inner reveal">
-            <p>Enter the password from your purchase email.</p>
-            <form id="gate-form" novalidate>
-              <label for="gate-password" style="position:absolute;left:-9999px;">Member password</label>
-              <input type="password" id="gate-password" placeholder="Password" autocomplete="off" required />
-              <div class="gate-actions">
-                <button class="btn-slide btn-slide--primary" type="submit">Unlock all 13 chapters</button>
-                <a class="btn-slide btn-slide--ghost" href="index.html#pricing">Get the Kit — $19.90</a>
-              </div>
-            </form>
-            <p class="lock-msg" id="gate-msg" aria-live="polite"></p>
-            <p class="gate-note">One-time payment · lifetime access · real 2025-26 US market data</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ════════════════════════════════════════════════════
-           PAID CHAPTERS 8-20 — hidden until unlocked
-           (.slide-paid; bodies render from kit.json)
-           ════════════════════════════════════════════════════ -->
-      <section class="slide slide-paid" data-slide="start" style="background-image:url('img-13.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 1 · Do this first</span><h2 class="slide-title">Where to Start: The Three Questions</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="audit-1" style="background-image:url('roof-02.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 2 · The 30-Minute Old-House Audit</span><h2 class="slide-title">Part I — Exterior &amp; Systems</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="audit-2" style="background-image:url('img-03.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 2 · The 30-Minute Old-House Audit</span><h2 class="slide-title">Part II — Windows, Hazards &amp; Paperwork</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="budget-1" style="background-image:url('budget-02.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 3 · Budget &amp; Reserve Math</span><h2 class="slide-title">The Worksheet — 1,800 sq ft Century Home</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="budget-2" style="background-image:url('budget-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 3 · Budget &amp; Reserve Math</span><h2 class="slide-title">The Five Budget Rules</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="seq-1" style="background-image:url('yard-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 4 · The 90-Day Sequence</span><h2 class="slide-title">Days 1-30 — Secure, Inspect, Stop the Water</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="seq-2" style="background-image:url('img-11.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 4 · The 90-Day Sequence</span><h2 class="slide-title">Days 30-90 — Walls, Paint, Floors, Trim</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="style-1" style="background-image:url('salvage-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 5 · The Style Guide</span><h2 class="slide-title">Keep the Bones</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="style-2" style="background-image:url('bath-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 5 · The Style Guide</span><h2 class="slide-title">Style the Skin</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="furnish-1" style="background-image:url('salvage-02.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 6 · Furnish, Salvage &amp; Room Priority</span><h2 class="slide-title">Six Hunting Grounds</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="furnish-2" style="background-image:url('img-09.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Chapter 6 · Furnish, Salvage &amp; Room Priority</span><h2 class="slide-title">Room Priority — Where Money Goes First</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="contractor-1" style="background-image:url('contractor-01.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Bonus · Contractor Playbook</span><h2 class="slide-title">Ten Interview Questions (1-5)</h2><div class="slide-body" data-body></div></div>
-      </section>
-      <section class="slide slide-paid" data-slide="contractor-2" style="background-image:url('contractor-02.jpg');background-size:cover;background-position:center;">
-        <div class="slide-content"><span class="slide-kicker">Bonus · Contractor Playbook</span><h2 class="slide-title">Questions 6-10 &amp; the 13 Pitfalls</h2><div class="slide-body" data-body></div></div>
-      </section>
-
-    </main>
-
-    <!-- ============================================
-         DECK CHROME (fixed, outside stage)
-         ============================================ -->
-    <header class="deck-topbar" role="banner">
-      <a class="brand" href="index.html">The Old House Playbook</a>
-      <div class="controls">
-        <button type="button" id="tocToggle" aria-expanded="false">Contents</button>
-        <button type="button" id="fullscreenBtn">Fullscreen</button>
-        <button type="button" id="printBtn">Print</button>
-        <a class="buy" href="index.html#pricing">Buy · $19.90</a>
-        <span class="counter" id="counter">1 / 7</span>
+  <!-- ═══ TOP UTILITY BAR ═══ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span class="topbar__note">Real 2025–26 US market data · 3 tracked cases · 14 firms &amp; experts · 100+ owner survey</span>
+      <div class="topbar__links">
+        <a href="../free/audit-checklist.html">Free 30-Minute Audit</a>
+        <a href="../tools/budget-calculator.html">Calculator</a>
+        <a href="../unlock.html">Member</a>
       </div>
-    </header>
-
-    <div class="deck-bottombar">
-      <button type="button" class="deck-navbtn" id="prevBtn" aria-label="Previous slide">←</button>
-      <div class="deck-progress"><div class="deck-progress-fill" id="progressFill"></div></div>
-      <button type="button" class="deck-navbtn" id="nextBtn" aria-label="Next slide">→</button>
     </div>
-
-    <aside class="deck-toc" id="tocPanel" aria-label="Slide contents">
-      <h3>Contents</h3>
-      <ol id="tocList"></ol>
-    </aside>
-
   </div>
 
-  <!-- External only: site config + unlock API (single source of truth) -->
-  <script src="config.js"></script>
-  <script src="unlock.js"></script>
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header__inner">
+      <a class="brand" href="../index.html" aria-label="The Old House Playbook — home">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg></span>
+        <span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html#tools">Free Tools</a>
+        <a href="../index.html#gallery">Before &amp; After</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="kit.html" class="is-active">The Kit</a>
+        <a href="../unlock.html">Member</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg></button>
+      <button class="nav-close" aria-label="Close navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></button>
+    </div>
+  </header>
 
+  <main>
+
+    <!-- ════════════════════════════════════════
+         ZONE A1 · CINEMATIC HERO (HIGH CONTRAST)
+    ════════════════════════════════════════ -->
+    <section class="kit-hero-v3">
+      <div class="container">
+        <div class="kh3-grid">
+          <div class="kh3-copy">
+            <span class="kh3-eyebrow">Strategic Consulting Framework</span>
+            <h1>Stop guessing.<br><em>Start with the bones.</em></h1>
+            <p class="kh3-sub">Seven printable deliverables and the McKinsey consulting sequence that turn "where do I start?" into a dated, budgeted plan — with real 2025–26 US numbers, not contractor guesses.</p>
+            
+            <div class="kh3-stats">
+              <div class="kh3-stat"><b>7</b><small>Checklists</small></div>
+              <div class="kh3-stat"><b>13</b><small>Core Deliverables</small></div>
+              <div class="kh3-stat"><b>90</b><small>Day Master Plan</small></div>
+            </div>
+
+            <div class="kh3-cta">
+              <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+              <a class="btn btn--line-light btn--lg" href="#diagnose">Start Diagnosis ↓</a>
+            </div>
+            <p class="kh3-note">Instant Email Delivery · Lifetime Member Access · 60-Day Money-Back Guarantee</p>
+          </div>
+
+          <div class="kh3-visual">
+            <div class="kh3-visual-wrap">
+              <img src="../assets/img/product-finished-living-room.webp" alt="Finished century home living room restored with original woodwork" width="880" height="660" loading="eager">
+              <div class="kh3-caption-bar">
+                <span>📸 Real 1912 Craftsman Living Room Restored</span>
+                <span class="badge-live">Zero Rework</span>
+              </div>
+            </div>
+            <div class="kh3-float kh3-float--tl"><b>−$28,400</b>Saved vs. gut estimate</div>
+            <div class="kh3-float kh3-float--br"><b>100%</b>Original bones kept</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ZONE A2 · 3 PROBLEM CARDS (FLIP INTERACTIVE)
+    ════════════════════════════════════════ -->
+    <section class="section section-light" id="diagnose">
+      <div class="container">
+        <div class="s-head-high">
+          <span class="s-label">Interactive Diagnosis</span>
+          <h2>Does your century home <em>have this problem?</em></h2>
+          <p>Tap each real inspection photo to reveal the exact diagnostic answer and financial impact. If you're unsure about even one, you need the Playbook.</p>
+        </div>
+
+        <div class="flip-row">
+          <!-- Card 1: Roof -->
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="flip-card__front-img">
+                  <img src="../assets/img/card-roof-age.jpg" alt="Aging century home roof with moss and missing shingles" loading="lazy">
+                  <span class="photo-tag">📸 Exterior Inspection</span>
+                </div>
+                <div class="flip-card__front-body">
+                  <div>
+                    <h3>1. How old is your roof?</h3>
+                    <p>Curling shingles, moss accumulation, or multiple asphalt layers.</p>
+                  </div>
+                  <span class="flip-action-hint">Tap to flip &amp; inspect →</span>
+                </div>
+              </div>
+              <div class="flip-card__back">
+                <div class="flip-card__back-top">
+                  <h4>Roof age &gt; 20 years?</h4>
+                  <p>A roof with <b>20+ years</b> and <b>2+ layers</b> means an inevitable <b>$8,000–$18,000 replacement</b>. Most buyers forget to pull municipal permit history.</p>
+                  <p>In <b>Chapter 2</b>, this is Flagged Check #1 before making any purchase offer.</p>
+                </div>
+                <div class="flip-card__back-meta">
+                  <span>Audit Check #1</span>
+                  <span>Chapter 2 ↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Wiring -->
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="flip-card__front-img">
+                  <img src="../assets/img/card-wiring-era.jpg" alt="Vintage knob-and-tube wiring in an old attic" loading="lazy">
+                  <span class="photo-tag">📸 Concealed Attic Check</span>
+                </div>
+                <div class="flip-card__front-body">
+                  <div>
+                    <h3>2. What era is your wiring?</h3>
+                    <p>Porcelain knobs, fabric-sheathed copper, ungrounded outlets.</p>
+                  </div>
+                  <span class="flip-action-hint">Tap to flip &amp; inspect →</span>
+                </div>
+              </div>
+              <div class="flip-card__back">
+                <div class="flip-card__back-top">
+                  <h4>Knob-and-Tube or Fuse Panel?</h4>
+                  <p>A full rewire on a typical 1,800 sq ft century home costs <b>$8,000–$20,000</b>. Major insurers will deny coverage until certified removed.</p>
+                  <p>Never blow insulation over active K&amp;T lines. <b>Chapter 3</b> provides the rewire pricing sheet.</p>
+                </div>
+                <div class="flip-card__back-meta">
+                  <span>Budget Line #1</span>
+                  <span>Chapter 3 ↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Water -->
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="flip-card__front-img">
+                  <img src="../assets/img/card-water-path.jpg" alt="Water damage and efflorescence on a basement wall" loading="lazy">
+                  <span class="photo-tag">📸 Foundation Basements</span>
+                </div>
+                <div class="flip-card__front-body">
+                  <div>
+                    <h3>3. Where does water go?</h3>
+                    <p>Basement stone efflorescence, slope draining toward foundation.</p>
+                  </div>
+                  <span class="flip-action-hint">Tap to flip &amp; inspect →</span>
+                </div>
+              </div>
+              <div class="flip-card__back">
+                <div class="flip-card__back-top">
+                  <h4>Water is the #1 Enemy</h4>
+                  <p>Water destroys every finish inside. Grading, gutters, and downspouts must be cured <b>before touching a single interior wall</b>.</p>
+                  <p>The Kit's <b>90-Day Master Sequence</b> puts this at Days 1–10. Zero exceptions.</p>
+                </div>
+                <div class="flip-card__back-meta">
+                  <span>Sequence Rule #1</span>
+                  <span>Chapter 4 ↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="flip-hint-center">💡 Tap any card to flip between symptom and professional diagnostic answer</p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ZONE A3 · MCKINSEY 3 MISTAKES COMIC
+    ════════════════════════════════════════ -->
+    <section class="section section-white" id="mistakes">
+      <div class="container">
+        <div class="s-head-high">
+          <span class="s-label">Empirical Research · 100+ Owners</span>
+          <h2>Three mistakes that cost <em>$18,000–$40,000 each.</em></h2>
+          <p>Every experienced century home owner gives the exact same advice. We illustrated the three fatal mistakes so you never repeat them.</p>
+        </div>
+
+        <div class="comic-box">
+          <img src="../assets/img/comic-3-mistakes.jpg" alt="3-panel comic: Pretty before bones, Ripping out the soul, Follow the sequence — zero rework" loading="lazy">
+          <div class="comic-box-bar">
+            <b>1. "Pretty before bones" &nbsp;|&nbsp; 2. "Ripping out the soul" &nbsp;|&nbsp; 3. "Follow the sequence — zero rework"</b>
+            <span>McKinsey Framework · The Century Home Playbook</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         NEW · REAL RENOVATION PHOTO GALLERY (实图案例库)
+    ════════════════════════════════════════ -->
+    <section class="section section-light" id="field-gallery">
+      <div class="container">
+        <div class="s-head-high">
+          <span class="s-label">Real Century Home Evidence</span>
+          <h2>Authentic field inspections <em>and restored proof.</em></h2>
+          <p>This kit isn't theory. It is grounded in real job-site inspections, historic trade preservation, and actual owner outcomes.</p>
+        </div>
+
+        <div class="real-gallery-grid">
+          <!-- Item 1: Plaster -->
+          <div class="rg-card">
+            <div class="rg-card-img">
+              <img src="../assets/img/product-finished-kitchen.webp" alt="Original wood lath and plaster preservation" loading="lazy">
+              <span class="rg-badge">📸 Chapter 5 Proof</span>
+            </div>
+            <div class="rg-card-body">
+              <h4>Historic Plaster &amp; Lath</h4>
+              <p>Contractors will quote $15k to rip out plaster and hang drywall. Restoring original lime plaster with plaster washers costs $2–$6/sq ft and maintains sound insulation.</p>
+              <div class="rg-card-foot">
+                <span>Save: $8,000–$12,000</span>
+                <span>Restore vs Replace</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Electrical Hazard -->
+          <div class="rg-card">
+            <div class="rg-card-img">
+              <img src="../assets/img/product-electrical-work.webp" alt="Knob and tube wiring insurance risk" loading="lazy">
+              <span class="rg-badge">📸 Chapter 2 Proof</span>
+            </div>
+            <div class="rg-card-body">
+              <h4>Concealed K&amp;T Wiring</h4>
+              <p>Old knob-and-tube hidden in floor joists. The 30-minute audit checklist shows you how to detect it without opening walls and how to negotiate price concessions.</p>
+              <div class="rg-card-foot">
+                <span>Negotiate: $8k–$20k</span>
+                <span>30-Min Audit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Hardwood Lottery -->
+          <div class="rg-card">
+            <div class="rg-card-img">
+              <img src="../assets/img/product-kitchen-detail.webp" alt="Old growth hardwood refinished with hardwax oil" loading="lazy">
+              <span class="rg-badge">📸 Chapter 4 Proof</span>
+            </div>
+            <div class="rg-card-body">
+              <h4>Old-Growth Heart Pine</h4>
+              <p>Never lay vinyl plank over historic floors. Old-growth timber can be sanded 5–8 times. Sanding and hardwax oil costs $2.50/sq ft vs $9/sq ft for replacement.</p>
+              <div class="rg-card-foot">
+                <span>Value: 100+ Years</span>
+                <span>Day 50–70 Phase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Original Woodwork -->
+          <div class="rg-card">
+            <div class="rg-card-img">
+              <img src="../assets/img/product-woodwork-stairs.webp" alt="Hand-carved staircase woodwork detail" loading="lazy">
+              <span class="rg-badge">📸 Chapter 6 Proof</span>
+            </div>
+            <div class="rg-card-body">
+              <h4>Architectural Millwork</h4>
+              <p>Original mortise locks, solid fir baseboards, and hand-carved newel posts cannot be bought at big-box retailers. Salvage and restore them first.</p>
+              <div class="rg-card-foot">
+                <span>Irreplaceable</span>
+                <span>Salvage Guide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ZONE B · 7 CHAPTER CATALOG CARDS (清晰对应序号)
+    ════════════════════════════════════════ -->
+    <section class="section section-white" id="chapters">
+      <div class="container">
+        <div class="s-head-high">
+          <span class="s-label">Product Directory · 7 Comprehensive Chapters</span>
+          <h2>Click any chapter to <em>inspect its contents.</em></h2>
+          <p>Every chapter features dedicated McKinsey analytical frameworks, itemized pricing sheets, and job-site photography. Click to preview.</p>
+        </div>
+
+        <div class="catalog-grid-v4">
+
+          <!-- CHAPTER 1 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch1">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch1-three-questions.jpg" alt="McKinsey Decision Tree: Before You Touch a Wall" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 1</span>
+              <span class="cat-card-v4__type">Decision Tree</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 1 · Foundations</span>
+              <h3>Where to Start: The Three Strategic Questions</h3>
+              <p>Water, concealed systems, and architectural soul. The decision tree that dictates your entire scope before touching a wall.</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 1 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 2 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch2">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch2-audit-checklist.jpg" alt="12-Item Century Home Inspection Checklist" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 2</span>
+              <span class="cat-card-v4__type">12-Point Checklist</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 2 · Due Diligence</span>
+              <h3>The 30-Minute Old-House Walkthrough Audit</h3>
+              <p>Part I (Shell &amp; Systems) + Part II (Windows &amp; Hazardous Materials). Twelve room-by-room checks with exact dollar flags.</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 2 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 3 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch3">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch3-budget-worksheet.jpg" alt="Budget breakdown stacked horizontal bar chart" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 3</span>
+              <span class="cat-card-v4__type">Cost Estimator</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 3 · Capital Allocation</span>
+              <h3>Budget &amp; Reserve Math (1,800 sq ft Benchmark)</h3>
+              <p>Part I (Real 2025–26 Cost Worksheet) + Part II (The 5 Golden Budget Rules). Includes the mandatory 20% surprise reserve.</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 3 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 4 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch4">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch4-90day-timeline.jpg" alt="90-Day Master Renovation Gantt Timeline" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 4</span>
+              <span class="cat-card-v4__type">Gantt Master Plan</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 4 · Execution Order</span>
+              <h3>The 90-Day Sequence: Zero Rework</h3>
+              <p>Part I (Days 1–30 Stop the Water) + Part II (Days 30–90 Finishes &amp; Fixtures). The precise order that prevents tearing out fresh work.</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 4 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 5 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch5">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch5-restore-vs-replace.jpg" alt="Restore vs Replace Comparison Matrix" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 5</span>
+              <span class="cat-card-v4__type">Design Protocol</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 5 · Architecture</span>
+              <h3>The Style Guide: Restore vs. Replace</h3>
+              <p>Part I (Keep the Bones: Plaster, Millwork, Windows) + Part II (Style the Skin: The 70/25/5 Palette &amp; Footprint Kitchen Refresh).</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 5 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 6 -->
+          <div class="cat-card-v4" data-open-panel="panel-ch6">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/story-bathroom-diy-work.webp" alt="Authentic architectural salvage and original trim" loading="lazy">
+              <span class="cat-card-v4__badge">Chapter 6</span>
+              <span class="cat-card-v4__type">Sourcing Directory</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Chapter 6 · Procurement</span>
+              <h3>Furnish, Salvage &amp; Room Priority</h3>
+              <p>Part I (Six Architectural Salvage Hunting Grounds) + Part II (Room Priority: Water/Heat → Primary Bath → Living Rooms).</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Chapter 6 →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAPTER 7 (BONUS) -->
+          <div class="cat-card-v4" data-open-panel="panel-ch7">
+            <div class="cat-card-v4__img">
+              <img src="../assets/img/ch7-contractor-interview.jpg" alt="Contractor 10-Question Scorecard" loading="lazy">
+              <span class="cat-card-v4__badge">Bonus Chapter</span>
+              <span class="cat-card-v4__type">Screening Kit</span>
+            </div>
+            <div class="cat-card-v4__body">
+              <span class="cat-card-v4__kicker">Bonus Chapter · Contracting</span>
+              <h3>The Contractor Playbook: 10 Questions &amp; 13 Pitfalls</h3>
+              <p>Part I (Ten Interview Questions with Ideal Answers) + Part II (Change Order Protection &amp; The 13 Fatal Renovation Pitfalls).</p>
+              <div class="cat-card-v4__foot">
+                <span>Preview Bonus Chapter →</span>
+                <span class="preview-pill">Free Preview</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ZONE B · 7 CHAPTER DETAIL MODALS
+    ════════════════════════════════════════ -->
+
+    <!-- PANEL CH1 -->
+    <div class="ch-panel" id="panel-ch1"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch1-three-questions.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 1 · Foundations</span>
+          <h2>Where to Start: The Three Strategic Questions</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Core Decision Framework</span><span>Full Chapter In Kit</span></div>
+        <div class="modal-item-row">
+          <div><b>Q1 — What's the water story?</b><p>Leaks, gutters, downspouts, grade sloping toward foundation. Water is the only enemy that can undo every other repair.</p></div>
+          <span class="tag-cost">Priority #1</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Q2 — What's the systems story?</b><p>Age and condition of wiring, plumbing, and heating. Old concealed systems are life-safety and insurability issues.</p></div>
+          <span class="tag-cost">Before Walls Close</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Q3 — What's the character story?</b><p>Identify irreplaceable bones: plaster walls, old-growth wood windows, millwork, pocket doors, solid hardwood floors.</p></div>
+          <span class="tag-safe">Restore Always</span>
+        </div>
+
+        <div class="ch-panel__photo-preview">
+          <img src="../assets/img/product-roof-work.webp" alt="Restored entryway proof" loading="lazy">
+          <div class="ch-panel__photo-caption">📸 Field Proof: Restoring the entryway character anchor before touching adjacent rooms</div>
+        </div>
+
+        <div class="ch-panel__locked">
+          <div class="modal-item-row">
+            <div><b>The 20% Contingency Reserve Rule</b><p>How to isolate an untouchable old-house tax so surprises never stop progress…</p></div>
+            <span class="tag-cost">Locked</span>
+          </div>
+          <div class="modal-item-row">
+            <div><b>The One-Room Calibration Test</b><p>Why completing one small room end-to-end calibrates your contractor speed and real sqft cost…</p></div>
+            <span class="tag-safe">Locked</span>
+          </div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Chapter 1 Complete Playbook</h3>
+          <p>Get the full Kit to unlock the complete decision tree, 20% reserve formula, and the One-Room test.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH2 -->
+    <div class="ch-panel" id="panel-ch2"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch2-audit-checklist.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 2 · Due Diligence</span>
+          <h2>The 30-Minute Old-House Audit: 12 Dollar-Flagged Checks</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — Shell &amp; Concealed Systems</span><span>Checks 1–6</span></div>
+        <div class="modal-item-row">
+          <div><b>Roof &amp; Drainage (5 min)</b><p>Permit date over 20 years with 2+ shingle layers = $8k–$18k replacement. Check grading slope away from walls.</p></div>
+          <span class="tag-cost">$8,000–$18,000</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Basement &amp; Stone Foundation (5 min)</b><p>Hairline settlement is fine. Stair-step cracks in masonry or bowing rubble walls mandate a structural engineer ($400–$800).</p></div>
+          <span class="tag-cost">Engineer First</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Electrical Panel &amp; Wiring (3 min)</b><p>Search for porcelain knobs and cloth wiring in attic/basement. Rewiring 1,800 sq ft runs $8k–$20k.</p></div>
+          <span class="tag-cost">$8,000–$20,000</span>
+        </div>
+
+        <div class="ch-panel__photo-preview">
+          <img src="../assets/img/story-courtyard-wall.webp" alt="Foundation stone inspection" loading="lazy">
+          <div class="ch-panel__photo-caption">📸 Inspection Proof: Rubble foundation mortar inspection for structural integrity</div>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — Windows, Hazards &amp; Permits</span><span>Checks 7–12</span></div>
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Historic Windows (3 min)</b><p>Restoring wood sash ($200–$600) vs replacement vinyl ($800–$1,200 each)…</p></div><span class="tag-safe">Save $10k+</span></div>
+          <div class="modal-item-row"><div><b>Lead Paint &amp; Asbestos Testing (2 min)</b><p>Pre-1978 hazard encapsulation protocols and lab tests…</p></div><span class="tag-cost">Test First</span></div>
+          <div class="modal-item-row"><div><b>Permit History &amp; Unpermitted Flips</b><p>The two municipal phone calls that protect you at closing…</p></div><span class="tag-cost">Call Code</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock All 12 Checks + Negotiation Levers</h3>
+          <p>Every major finding is a price-reduction lever at closing. Unlock the complete 12-item checklist.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH3 -->
+    <div class="ch-panel" id="panel-ch3"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch3-budget-worksheet.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 3 · Capital Allocation</span>
+          <h2>Budget &amp; Reserve Math: 1,800 sq ft Benchmark</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — 2025–2026 Cost Worksheet</span><span>Sample Rows</span></div>
+        <div class="modal-item-row">
+          <div><b>Electrical Rewire (Whole House)</b><p>Knob-and-tube removal, 200A service upgrade, AFCI/GFCI breakers before drywall.</p></div>
+          <span class="tag-cost">$8,000–$20,000</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Plumbing Repipe (Copper/PEX)</b><p>Replacing galvanized steel pipes and checking sewer lateral via camera inspection.</p></div>
+          <span class="tag-cost">$4,000–$12,000</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Plaster Repair vs. Drywall Gut</b><p>Stabilizing original lime plaster with washers vs complete demolition and drywall hanging.</p></div>
+          <span class="tag-safe">Save $8,000</span>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — The 5 Golden Budget Rules</span><span>Protecting Your Capital</span></div>
+        <div class="modal-item-row">
+          <div><b>Rule 1: Build the 20% Reserve Off the Top</b><p>Take 20% into a separate high-yield account. It is not extra money; it is the non-negotiable old-house tax.</p></div>
+          <span class="tag-cost">Mandatory</span>
+        </div>
+
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Rule 2: Get Three Itemized Bids</b><p>Line items beat lump sums so you can cut scope without renegotiating…</p></div><span class="tag-safe">Rule #2</span></div>
+          <div class="modal-item-row"><div><b>Rule 3: Maximum 10–15% Down Payment</b><p>Progress payments strictly tied to verified milestone inspections…</p></div><span class="tag-safe">Rule #3</span></div>
+          <div class="modal-item-row"><div><b>Rule 4 &amp; 5: Systems vs Finish Trades</b><p>What to DIY vs what to hire licensed contractors for…</p></div><span class="tag-safe">Rule #4-5</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Complete Budget Sheet &amp; Regional Multiplier</h3>
+          <p>Get the full printable spreadsheet with low/mid/high ranges and local multipliers (0.8x–1.3x).</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH4 -->
+    <div class="ch-panel" id="panel-ch4"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch4-90day-timeline.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 4 · Execution Order</span>
+          <h2>The 90-Day Sequence: Stop Rework Before It Starts</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — Days 1–30: Shell, Water &amp; Systems</span><span>Bones First</span></div>
+        <div class="modal-item-row">
+          <div><b>Days 1–10: Secure, Lock &amp; Photographic Evidence</b><p>Change locks, shut off mains, photograph every square inch. These baseline photos win contractor and insurance disputes.</p></div>
+          <span class="tag-safe">Day 1–10</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Days 10–20: Stop Exterior Water Entry</b><p>Roof flashing, gutters, perimeter grading away from stone foundation. Water ruins all subsequent work.</p></div>
+          <span class="tag-cost">Day 10–20</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Days 15–30: Rough Systems (Electrical &amp; Plumbing)</b><p>Rough-in behind walls before plaster repair starts. Never paint or plaster before rough trades pass inspection.</p></div>
+          <span class="tag-cost">Day 15–30</span>
+        </div>
+
+        <div class="ch-panel__photo-preview">
+          <img src="../assets/img/kit-ch4-rewire-photo.webp" alt="Open wall rewiring demo" loading="lazy">
+          <div class="ch-panel__photo-caption">📸 Field Proof: Rough wiring and plumbing inspection before closing plaster keys</div>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — Days 30–90: Walls, Paint, Floors, Trim</span><span>Finishes</span></div>
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Days 30–50: Plaster Repair &amp; Drywall</b><p>The messiest phase; execute before floors or trim receive finish…</p></div><span class="tag-cost">Day 30–50</span></div>
+          <div class="modal-item-row"><div><b>Days 40–60: Stain-Blocking Primer &amp; Paint</b><p>Seal old plaster stains before floor sanding dust appears…</p></div><span class="tag-cost">Day 40–60</span></div>
+          <div class="modal-item-row"><div><b>Days 50–70: Floor Sanding &amp; Hardwax Oil</b><p>Why floor refinishing must happen AFTER ceiling painting…</p></div><span class="tag-cost">Day 50–70</span></div>
+          <div class="modal-item-row"><div><b>Days 70–90: Historic Hardware &amp; Punch List</b><p>Mortise locks, period switch plates, and milestone sign-off…</p></div><span class="tag-safe">Day 70–90</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Full Day-by-Day Gantt Calendar</h3>
+          <p>The #1 cost overrun in century homes is rework. Follow the sequence and save thousands.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH5 -->
+    <div class="ch-panel" id="panel-ch5"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch5-restore-vs-replace.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 5 · Architecture &amp; Style</span>
+          <h2>The Style Guide: Restore the Bones, Style the Skin</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — Keep the Bones (Never Replace)</span><span>Preservation Matrix</span></div>
+        <div class="modal-item-row">
+          <div><b>Original Lime Plaster Walls</b><p>Superior sound insulation, natural humidity regulation. Repair costs $2–$6/sq ft vs $12–$20/sq ft to demo and drywall.</p></div>
+          <span class="tag-safe">Restore ✓</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Old-Growth Wood Windows</b><p>Built with dense, rot-resistant virgin timber. Restored with bronze weatherstripping, they outlast vinyl by 80 years.</p></div>
+          <span class="tag-safe">Restore ✓</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Cast-Iron Radiators &amp; Tubs</b><p>Exceptional thermal mass and heat retention. Repainting costs $150 vs $3,000+ for lightweight modern replacements.</p></div>
+          <span class="tag-safe">Restore ✓</span>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — Style the Skin (The 70/25/5 Palette)</span><span>Interiors</span></div>
+        <div class="modal-item-row">
+          <div><b>The 70 / 25 / 5 Color Rule</b><p>70% warm historic neutral (cream/linen/wood), 25% rich era accent (olive/terracotta/navy), 5% unlacquered brass hardware.</p></div>
+          <span class="tag-safe">Composed</span>
+        </div>
+
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Footprint-First Kitchen Refresh</b><p>Keep original layout, replace cabinet fronts and soapstone counters: 40–60% cheaper than gutting…</p></div><span class="tag-safe">Save $25k</span></div>
+          <div class="modal-item-row"><div><b>Period Lighting Upgrades ($60–$200)</b><p>How authentic milk-glass pendants and brass sconces elevate rooms overnight…</p></div><span class="tag-safe">Lighting</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Complete Style Guide &amp; Color Formulas</h3>
+          <p>Don't turn your historic home into a soulless gray flip. Get the full design protocol.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH6 -->
+    <div class="ch-panel" id="panel-ch6"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/kit-ch6-salvage.webp" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Chapter 6 · Procurement</span>
+          <h2>Furnish, Salvage &amp; Room Priority: Six Hunting Grounds</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — Six Architectural Salvage Channels</span><span>Sourcing Directory</span></div>
+        <div class="modal-item-row">
+          <div><b>1. Architectural Salvage Yards</b><p>Solid antique doors, clawfoot tubs, cast-iron radiators, and pocket door hardware at 30–60% of modern reproduction prices.</p></div>
+          <span class="tag-safe">30–60% Off</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>2. Period Hardware &amp; Millwork Suppliers</b><p>House of Antique Hardware, Van Dyke's, and local custom millwork shops that replicate 19th-century knife profiles.</p></div>
+          <span class="tag-safe">Authentic</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>3. Lime Plaster &amp; Sash Glazing Specialists</b><p>Authentic lime putty, Sarco Type M putty, and Big Wally's Plaster Magic for repairing without demolition.</p></div>
+          <span class="tag-safe">Specialty</span>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — Room-by-Room Priority Ladder</span><span>Where Capital Goes</span></div>
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Priority Tier 1: Water, Power &amp; Heat</b><p>The non-negotiables that guarantee safety, warmth, and insurance…</p></div><span class="tag-cost">Must-Have</span></div>
+          <div class="modal-item-row"><div><b>Priority Tier 2: Primary Bath &amp; Kitchen Footprint</b><p>Ending daily functional friction without full demo costs…</p></div><span class="tag-safe">Livability</span></div>
+          <div class="modal-item-row"><div><b>Priority Tier 3: Living Spaces &amp; Entry Character</b><p>First impressions, restored woodwork, floor refinishing…</p></div><span class="tag-safe">Resale Anchor</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Full Supplier List &amp; Purchasing Playbook</h3>
+          <p>Period items disappear quickly. Learn what to buy before demolition even begins.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- PANEL CH7 (BONUS) -->
+    <div class="ch-panel" id="panel-ch7"><div class="ch-panel__card">
+      <div class="ch-panel__hero">
+        <img src="../assets/img/ch7-contractor-interview.jpg" alt="" loading="lazy">
+        <button class="ch-panel__close" aria-label="Close modal">✕</button>
+        <div class="ch-panel__hero-overlay">
+          <span>Bonus Chapter · Contracting</span>
+          <h2>The Contractor Playbook: 10 Interview Questions &amp; 13 Pitfalls</h2>
+        </div>
+      </div>
+      <div class="ch-panel__body">
+        <div class="modal-part-label"><span>Part I — 10 Screening Questions</span><span>Questions 1–5</span></div>
+        <div class="modal-item-row">
+          <div><b>Q1: "How many pre-1950 homes have you worked on recently?"</b><p>Ideal response: provides specific addresses and references. Century homes require specialized historic knowledge, not generalist subs.</p></div>
+          <span class="tag-cost">Must Ask</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Q2: "What is your approach to cracked plaster walls?"</b><p>Red flag response: "We just hang drywall over it." Ideal response: plaster washers, lime skim coat, or reattaching keys.</p></div>
+          <span class="tag-cost">Screening Test</span>
+        </div>
+        <div class="modal-item-row">
+          <div><b>Q3: "Who pulls municipal permits and coordinates historic code?"</b><p>Contractor must pull all permits and itemize inspection milestones directly inside the signed contract.</p></div>
+          <span class="tag-safe">Non-Negotiable</span>
+        </div>
+
+        <div class="ch-panel__photo-preview">
+          <img src="../assets/img/product-contractor-signing.webp" alt="Contractor interview on site" loading="lazy">
+          <div class="ch-panel__photo-caption">📸 Field Proof: On-site contractor walkthrough using the 10-question evaluation scorecard</div>
+        </div>
+
+        <div class="modal-part-label"><span>Part II — Questions 6–10 &amp; The 13 Fatal Pitfalls</span><span>Contract Armor</span></div>
+        <div class="ch-panel__locked">
+          <div class="modal-item-row"><div><b>Q6: "What is your written change-order procedure?"</b><p>Written, signed unit pricing before unbudgeted work commences…</p></div><span class="tag-cost">Critical</span></div>
+          <div class="modal-item-row"><div><b>Q8: "What is the milestone progress payment schedule?"</b><p>Never pay more than 10–15% down; retain 10% until final punch list sign-off…</p></div><span class="tag-safe">Protects Cash</span></div>
+          <div class="modal-item-row"><div><b>The 13 Fatal Old-House Renovation Pitfalls</b><p>1) Skipping contingency reserve, 2) Gutting vs restoring, 3) Painting before priming, 4) Vinyl windows…</p></div><span class="tag-cost">Checklist</span></div>
+        </div>
+
+        <div class="ch-panel__lock-overlay">
+          <h3>🔒 Unlock Full 10-Question Scorecard &amp; Change Order Form</h3>
+          <p>This chapter alone has saved homeowners thousands in disputed change-order fees.</p>
+          <a class="btn btn--light btn--lg" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit</a>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- ════════════════════════════════════════
+         FREE DOWNLOAD BAND
+    ════════════════════════════════════════ -->
+    <section class="section section-light" id="download">
+      <div class="container">
+        <div class="dl-v4">
+          <div>
+            <span class="s-label">Free Download · No Signup Required</span>
+            <h3>Take the 30-minute audit sample with you.</h3>
+            <p>Download three real checks from Chapter 2 in printable PDF format — walk your prospective century home this weekend.</p>
+          </div>
+          <a class="btn btn--light btn--lg" href="../files/the-old-house-playbook-audit-sample.pdf" download>↓ Download Audit Sample PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ZONE C · PRICING GATE & UNLOCKED EXPERIENCE
+    ════════════════════════════════════════ -->
+    <section class="gate-v4" id="gate">
+      <div class="container">
+        
+        <div class="gate-v4-head" id="gate-promo">
+          <span class="s-label">Instant Full Access</span>
+          <h2>Unlock all seven chapters. <em>Zero guesswork.</em></h2>
+          <p>Gain lifetime access to all 7 checklists, the complete 2025–2026 cost spreadsheet, the 90-day master Gantt calendar, and contractor screening tools.</p>
+        </div>
+
+        <div class="gate-features-v4" id="gate-features">
+          <div class="gf-item-v4"><b>7 Checklists</b><small>Printable &amp; Actionable</small></div>
+          <div class="gf-item-v4"><b>90-Day Plan</b><small>Dated Master Sequence</small></div>
+          <div class="gf-item-v4"><b>Budget Sheet</b><small>Real 2025–26 US Data</small></div>
+          <div class="gf-item-v4"><b>Style Protocol</b><small>Restore vs Replace Matrix</small></div>
+          <div class="gf-item-v4"><b>Contractor Kit</b><small>10-Question Scorecard</small></div>
+          <div class="gf-item-v4"><b>Salvage Guide</b><small>6 Sourcing Channels</small></div>
+        </div>
+
+        <div class="gate-pricing-box" id="gate-price">
+          <b>$19.90</b><s>$49</s> <span class="save-pill">Save 60% Today</span>
+        </div>
+
+        <div class="gate-cta-buttons" id="gate-cta">
+          <a class="btn btn--light btn--lg" style="min-width:280px;" href="https://ko-fi.com/s/86751002e2" data-buy target="_blank" rel="noopener">Get the full Kit — $19.90</a>
+          <a class="btn btn--line-light btn--lg" href="../free/audit-checklist.html">Try Free Audit First</a>
+        </div>
+        
+        <p class="gate-guarantee-note" id="gate-guarantee">One payment · Lifetime member access · 60-day money-back guarantee · Instant delivery to your email</p>
+
+        <div class="unlock-box--v4" id="gate-form">
+          <label for="gate-password">Already purchased? Enter your member password:</label>
+          <input type="password" id="gate-password" placeholder="Enter password from purchase email" autocomplete="off" required>
+          <button class="btn btn--light" type="button" id="gate-submit" style="width:100%;">Unlock All Chapters Now</button>
+          <p class="unlock-msg" id="gate-msg" aria-live="polite" style="color:var(--mk-gold);font-weight:700;margin-top:0.8rem;"></p>
+        </div>
+
+        <!-- ═══ UNLOCKED PRODUCT DELIVERY (7 MASTER CHAPTER MODULES) ═══ -->
+        <div class="kit-unlocked-zone" id="kit-unlocked" hidden>
+          <h2>The Century Home Renovation Kit — All 7 Chapters</h2>
+          <div id="unlocked-chapters-container"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg></span><span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span></span>
+        <p>Plain-English renovation guidance for owners of century homes — real numbers, printable checklists, zero fluff.</p>
+        <span class="pill pill--light">Real 2025–26 market data</span>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="../index.html#gallery">Before &amp; After</a></li><li><a href="kit.html">The Kit</a></li><li><a href="../blog/index.html">The Blog</a></li><li><a href="../index.html#buy">Pricing</a></li></ul></div>
+      <div><h4>Free Tools</h4><ul><li><a href="../free/audit-checklist.html">30-Minute Audit</a></li><li><a href="../tools/budget-calculator.html">Budget Calculator</a></li><li><a href="../blog/mistakes.html">13 Renovation Mistakes</a></li><li><a href="../compare/contractor-vs-diy.html">Contractor vs. DIY</a></li></ul></div>
+      <div><h4>Members</h4><ul><li><a href="kit.html">The Kit · Preview</a></li><li><a href="../unlock.html">Member login</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> · The Old House Playbook</span><span><a href="../sitemap.xml">Sitemap</a><span class="sep">·</span><a href="../blog/index.html">Blog</a><span class="sep">·</span><a href="../unlock.html">Member</a></span></div>
+  </footer>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/unlock.js"></script>
+  <script src="../assets/js/site.js"></script>
   <script>
-    /* ============================================
-       SLIDE PRESENTATION CONTROLLER — pool-based.
-       Paid slides (.slide-paid) join the pool only
-       after a successful unlock.
-       ============================================ */
-    (function () {
-      'use strict';
+(function(){
+  "use strict";
+  var KIT_URL = "content/kit.json";
+  var cfg = window.SITE_CONFIG || {};
 
-      var stage = document.getElementById('deckStage');
-      var all = Array.prototype.slice.call(stage.querySelectorAll('.slide'));
-      var slides = all.filter(function (s) { return !s.classList.contains('slide-paid'); });
-      var counter = document.getElementById('counter');
-      var progressFill = document.getElementById('progressFill');
-      var tocPanel = document.getElementById('tocPanel');
-      var tocList = document.getElementById('tocList');
-      var tocToggle = document.getElementById('tocToggle');
-      var fullscreenBtn = document.getElementById('fullscreenBtn');
-      var printBtn = document.getElementById('printBtn');
-      var prevBtn = document.getElementById('prevBtn');
-      var nextBtn = document.getElementById('nextBtn');
-      var current = 0;
+  /* ── Progress bar ── */
+  var prog = document.getElementById("kit-progress");
+  if(prog) {
+    window.addEventListener("scroll", function(){
+      var d = document.documentElement, m = d.scrollHeight - d.clientHeight;
+      prog.style.width = (m > 0 ? (window.scrollY / m) * 100 : 0) + "%";
+    }, { passive: true });
+  }
 
-      /* ── Stage scaling: whole 1920×1080 canvas ── */
-      function scaleStage() {
-        var factor = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
-        var x = (window.innerWidth - 1920 * factor) / 2;
-        var y = (window.innerHeight - 1080 * factor) / 2;
-        stage.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(' + factor + ')';
+  /* ── Chapter Modal Open/Close ── */
+  document.querySelectorAll("[data-open-panel]").forEach(function(card){
+    card.addEventListener("click", function(){
+      var panelId = card.getAttribute("data-open-panel");
+      var panel = document.getElementById(panelId);
+      if(panel) {
+        panel.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  document.querySelectorAll(".ch-panel__close").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      var panel = btn.closest(".ch-panel");
+      if(panel) {
+        panel.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  document.querySelectorAll(".ch-panel").forEach(function(panel){
+    panel.addEventListener("click", function(e){
+      if(e.target === panel) {
+        panel.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  /* ── Helper utilities ── */
+  function esc(s){
+    return String(s || "").replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function sha256Hex(str){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(str)).then(function(buf){
+      return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+    });
+  }
+
+  /* ── Render Slide Content Helper ── */
+  function renderSlideBody(s, partLabel){
+    var h = '<div class="ch-part-block">';
+    if(partLabel) {
+      h += '<div class="ch-part-head"><span class="part-tag">' + esc(partLabel) + '</span><h4>' + esc(s.title) + '</h4>';
+      if(s.sub) h += '<p>' + esc(s.sub) + '</p>';
+      h += '</div>';
+    }
+
+    /* Table if present */
+    if(s.table) {
+      h += '<div class="uch-table-wrap"><table class="uch-table"><thead><tr>';
+      s.table.headers.forEach(function(x){ h += '<th>' + esc(x) + '</th>'; });
+      h += '</tr></thead><tbody>';
+      s.table.rows.forEach(function(row){
+        h += '<tr>';
+        row.forEach(function(c, i){
+          h += (i === 0 ? '<td><strong>' : '<td>') + esc(c) + (i === 0 ? '</strong>' : '') + '</td>';
+        });
+        h += '</tr>';
+      });
+      h += '</tbody></table></div>';
+    }
+
+    /* Bullets if present */
+    if(s.bullets && s.bullets.length) {
+      h += '<div class="uch-list">';
+      s.bullets.forEach(function(b){
+        h += '<div class="uch-row"><div>';
+        if(b.t) h += '<b>' + esc(b.t) + '</b>';
+        if(b.d) h += '<p>' + esc(b.d) + '</p>';
+        h += '</div>';
+        if(b.flag) {
+          var tagCls = b.flag.indexOf('$') !== -1 || b.flag.indexOf('Engineer') !== -1 ? 'tag-pill--red' : (b.flag.indexOf('Restore') !== -1 || b.flag.indexOf('Water') !== -1 ? 'tag-pill--green' : 'tag-pill--gold');
+          h += '<span class="tag-pill ' + tagCls + '">' + esc(b.flag) + '</span>';
+        }
+        h += '</div>';
+      });
+      h += '</div>';
+    }
+
+    /* Notes if present */
+    if(s.notes && s.notes.length) {
+      h += '<div class="uch-notes-box">';
+      s.notes.forEach(function(n){ h += '<p>💡 ' + esc(n) + '</p>'; });
+      h += '</div>';
+    }
+
+    h += '</div>';
+    return h;
+  }
+
+  /* ════════════════════════════════════════
+     MASTER CHAPTER RENDERER (7 CLEAR CHAPTERS)
+  ════════════════════════════════════════ */
+  function buildMasterChapters(slides){
+    var slideMap = {};
+    slides.forEach(function(s){ slideMap[s.id] = s; });
+
+    var chapters = [
+      {
+        num: "Chapter 1",
+        title: "Where to Start: The Three Strategic Questions",
+        sub: "Water, Systems, and Soul — The Decision Tree Before Touching Walls",
+        diagram: "ch1-three-questions.jpg",
+        diagramTitle: "McKinsey Decision Tree Infographic",
+        photo: "product-roof-work.webp",
+        photoTitle: "📸 Real Field Proof: Restored Entryway Character Anchor",
+        parts: [
+          { slide: slideMap["start"], label: "Core Strategic Framework" }
+        ]
+      },
+      {
+        num: "Chapter 2",
+        title: "The 30-Minute Old-House Walkthrough Audit",
+        sub: "12 Room-by-Room Checks with Cost Flags & Closing Levers",
+        diagram: "ch2-audit-checklist.jpg",
+        diagramTitle: "12-Point Inspection Checklist Infographic",
+        photo: "story-courtyard-wall.webp",
+        photoTitle: "📸 Real Field Proof: Stone Foundation Structural Check",
+        photo2: "century-home-knob-and-tube-wiring-attic.webp",
+        photo2Title: "📸 Real Field Proof: Concealed Knob-and-Tube Inspection",
+        parts: [
+          { slide: slideMap["audit-1"], label: "Part I — Shell, Foundation & Concealed Systems" },
+          { slide: slideMap["audit-2"], label: "Part II — Windows, Hazardous Materials & Permits" }
+        ]
+      },
+      {
+        num: "Chapter 3",
+        title: "Budget & Reserve Math (1,800 sq ft Benchmark)",
+        sub: "Real 2025–2026 Cost Estimator & The 5 Golden Budget Rules",
+        diagram: "ch3-budget-worksheet.jpg",
+        diagramTitle: "Budget Allocation Horizontal Bar Chart",
+        photo: "house-renovation-cost-estimator-planning.webp",
+        photoTitle: "📸 Real Field Proof: Itemized Milestone Budget Planning",
+        parts: [
+          { slide: slideMap["budget-1"], label: "Part I — Real 2025–2026 Cost Worksheet" },
+          { slide: slideMap["budget-2"], label: "Part II — The Five Golden Budget Rules" }
+        ]
+      },
+      {
+        num: "Chapter 4",
+        title: "The 90-Day Master Sequence: Zero Rework",
+        sub: "From Water Tightness to Final Finishes in Strict Engineering Order",
+        diagram: "ch4-90day-timeline.jpg",
+        diagramTitle: "90-Day Master Gantt Timeline Infographic",
+        photo: "product-finished-living-room.webp",
+        photoTitle: "📸 Real Field Proof: Open-Wall Rough Systems Phase",
+        photo2: "product-kitchen-detail.webp",
+        photo2Title: "📸 Real Field Proof: Old-Growth Hardwood Hardwax Sanding",
+        parts: [
+          { slide: slideMap["seq-1"], label: "Part I — Days 1–30: Secure, Inspect & Stop the Water" },
+          { slide: slideMap["seq-2"], label: "Part II — Days 30–90: Walls, Paint, Floors & Trim" }
+        ]
+      },
+      {
+        num: "Chapter 5",
+        title: "The Style Guide: Restore Bones, Style Skin",
+        sub: "Preservation Rules for Plaster, Millwork, Windows & Color Palettes",
+        diagram: "ch5-restore-vs-replace.jpg",
+        diagramTitle: "Restore vs. Replace Comparison Matrix",
+        photo: "product-finished-kitchen.webp",
+        photoTitle: "📸 Real Field Proof: Historic Plaster Washer Stabilization",
+        photo2: "product-kitchen-detail.webp",
+        photo2Title: "📸 Real Field Proof: Footprint-First Kitchen Refresh",
+        parts: [
+          { slide: slideMap["style-1"], label: "Part I — Keep the Bones (Never Replace)" },
+          { slide: slideMap["style-2"], label: "Part II — Style the Skin (The 70/25/5 Palette)" }
+        ]
+      },
+      {
+        num: "Chapter 6",
+        title: "Furnish, Salvage & Room Priority",
+        sub: "Six Architectural Salvage Channels & Where Money Goes First",
+        diagram: "story-bathroom-diy-work.webp",
+        diagramTitle: "📸 Real Field Proof: Restored Antique Architectural Trim",
+        photo: "renovated-century-home-living-room.webp",
+        photoTitle: "📸 Real Field Proof: Priority Tier 3 Restored Living Room",
+        parts: [
+          { slide: slideMap["furnish-1"], label: "Part I — Six Architectural Salvage Channels" },
+          { slide: slideMap["furnish-2"], label: "Part II — Room-by-Room Priority Ladder" }
+        ]
+      },
+      {
+        num: "Bonus Chapter",
+        title: "The Contractor Playbook: 10 Questions & 13 Pitfalls",
+        sub: "Screening General Contractors & Ironclad Change-Order Protection",
+        diagram: "ch7-contractor-interview.jpg",
+        diagramTitle: "Contractor 10-Question Scorecard Infographic",
+        photo: "product-contractor-signing.webp",
+        photoTitle: "📸 Real Field Proof: Job-Site Contractor Interview",
+        photo2: "contractor-licensed-work-century-home.webp",
+        photo2Title: "📸 Real Field Proof: Licensed Trade Verification on Site",
+        parts: [
+          { slide: slideMap["contractor-1"], label: "Part I — Ten Interview Questions (1–5)" },
+          { slide: slideMap["contractor-2"], label: "Part II — Questions 6–10 & The 13 Fatal Pitfalls" }
+        ]
+      }
+    ];
+
+    var html = '';
+    chapters.forEach(function(ch, idx){
+      html += '<div class="master-ch' + (idx === 0 ? ' is-open' : '') + '" id="mch-' + idx + '">';
+      html += '<div class="master-ch__header" onclick="this.parentElement.classList.toggle(\'is-open\')">';
+      html += '<div class="master-ch__left">';
+      html += '<span class="master-ch__num-pill">' + esc(ch.num) + '</span>';
+      html += '<div class="master-ch__title"><h3>' + esc(ch.title) + '</h3><small>' + esc(ch.sub) + '</small></div>';
+      html += '</div>';
+      html += '<svg class="master-ch__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      html += '</div>';
+
+      html += '<div class="master-ch__body">';
+      
+      /* Visual proof row: Diagram + Real Photo */
+      if(ch.diagram && ch.photo) {
+        html += '<div class="dual-visual-row">';
+        html += '<div class="dv-card"><img src="../assets/img/' + ch.diagram + '" alt="' + esc(ch.diagramTitle) + '" loading="lazy"><div class="dv-card-caption"><span>' + esc(ch.diagramTitle) + '</span></div></div>';
+        html += '<div class="dv-card"><img src="../assets/img/' + ch.photo + '" alt="' + esc(ch.photoTitle) + '" loading="lazy"><div class="dv-card-caption is-photo"><span>' + esc(ch.photoTitle) + '</span></div></div>';
+        html += '</div>';
       }
 
-      /* ── Slide switching: .active/.visible only ── */
-      function showSlide(index) {
-        current = Math.max(0, Math.min(index, slides.length - 1));
-        slides.forEach(function (s, i) {
-          s.classList.toggle('active', i === current);
-          s.classList.toggle('visible', i === current);
-        });
-        counter.textContent = (current + 1) + ' / ' + slides.length;
-        progressFill.style.width = (((current + 1) / slides.length) * 100).toFixed(2) + '%';
-        try { history.replaceState(null, '', '#' + (current + 1)); } catch (e) {}
-        Array.prototype.forEach.call(tocList.querySelectorAll('button'), function (b, i) {
-          b.classList.toggle('is-current', i === current);
-        });
+      /* Second photo row if available */
+      if(ch.photo2) {
+        html += '<div class="single-visual-wrap"><img src="../assets/img/' + ch.photo2 + '" alt="' + esc(ch.photo2Title) + '" loading="lazy"><div class="single-visual-caption">' + esc(ch.photo2Title) + '</div></div>';
       }
 
-      function next() { showSlide(current + 1); }
-      function prev() { showSlide(current - 1); }
-
-      /* ── Input ── */
-      document.addEventListener('keydown', function (e) {
-        var tag = (e.target && e.target.tagName) || '';
-        if (tag === 'INPUT' || tag === 'TEXTAREA') return;
-        switch (e.key) {
-          case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
-          case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
-          case 'Home': e.preventDefault(); showSlide(0); break;
-          case 'End': e.preventDefault(); showSlide(slides.length - 1); break;
+      /* Render parts */
+      ch.parts.forEach(function(p){
+        if(p.slide) {
+          html += renderSlideBody(p.slide, p.label);
         }
       });
 
-      var wheelLock = false;
-      window.addEventListener('wheel', function (e) {
-        if (wheelLock) return;
-        if (e.deltaY > 40) { next(); wheelLock = true; }
-        else if (e.deltaY < -40) { prev(); wheelLock = true; }
-        setTimeout(function () { wheelLock = false; }, 450);
-      }, { passive: true });
+      html += '</div></div>';
+    });
 
-      var touchX = null;
-      stage.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
-      stage.addEventListener('touchend', function (e) {
-        if (touchX === null) return;
-        var dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 60) { if (dx < 0) next(); else prev(); }
-        touchX = null;
-      }, { passive: true });
+    return html;
+  }
 
-      document.querySelector('.deck-viewport').addEventListener('click', function (e) {
-        var t = e.target;
-        if (t.closest('a, button, input, .deck-toc, .deck-topbar, .deck-bottombar, .quiz-opt, .quiz-skip')) return;
-        var r = stage.getBoundingClientRect();
-        if (e.clientX < r.left || e.clientX > r.right) return;
-        var x = e.clientX - r.left;
-        if (x < r.width * 0.2) prev();
-        else if (x > r.width * 0.8) next();
+  /* ── Gate and Unlock Implementation ── */
+  var gatePromo = document.getElementById("gate-promo");
+  var gateFeatures = document.getElementById("gate-features");
+  var gatePrice = document.getElementById("gate-price");
+  var gateCta = document.getElementById("gate-cta");
+  var gateGuarantee = document.getElementById("gate-guarantee");
+  var gateForm = document.getElementById("gate-form");
+  var gateMsg = document.getElementById("gate-msg");
+  var unlockedZone = document.getElementById("kit-unlocked");
+  var container = document.getElementById("unlocked-chapters-container");
+
+  function renderAll(data){
+    if(container && data.lockedSlides) {
+      container.innerHTML = buildMasterChapters(data.lockedSlides);
+    }
+    unlockedZone.hidden = false;
+
+    /* Hide purchase promo UI in gate section */
+    if(gatePromo) gatePromo.style.display = "none";
+    if(gateFeatures) gateFeatures.style.display = "none";
+    if(gatePrice) gatePrice.style.display = "none";
+    if(gateCta) gateCta.style.display = "none";
+    if(gateGuarantee) gateGuarantee.style.display = "none";
+    if(gateForm) gateForm.style.display = "none";
+
+    /* Remove blur and lock overlays from preview modal panels */
+    document.querySelectorAll(".ch-panel__locked").forEach(function(el){
+      el.classList.remove("ch-panel__locked");
+    });
+    document.querySelectorAll(".ch-panel__lock-overlay").forEach(function(el){
+      el.remove();
+    });
+  }
+
+  function loadAndRender(){
+    fetch(KIT_URL)
+      .then(function(r){
+        if(!r.ok) throw new Error("Fetch error: " + r.status);
+        return r.json();
+      })
+      .then(renderAll)
+      .catch(function(err){
+        if(container) {
+          container.innerHTML = '<p class="form-status is-error" style="color:#F87171;text-align:center;">Failed to load kit content. Please refresh or check your internet connection.</p>';
+        }
       });
+  }
 
-      /* ── Chrome ── */
-      if (prevBtn) prevBtn.addEventListener('click', prev);
-      if (nextBtn) nextBtn.addEventListener('click', next);
-      if (tocToggle && tocPanel) {
-        tocToggle.addEventListener('click', function () {
-          var open = tocPanel.classList.toggle('is-open');
-          tocToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-        document.addEventListener('click', function (e) {
-          if (tocPanel.classList.contains('is-open') && !e.target.closest('.deck-toc') && !e.target.closest('#tocToggle')) {
-            tocPanel.classList.remove('is-open');
+  if(gateForm && gateMsg) {
+    var unlockBtn = document.getElementById("gate-submit");
+    var passwordInput = document.getElementById("gate-password");
+
+    var tryUnlock = function(){
+      var val = (passwordInput.value || "").trim();
+      if(!val) {
+        gateMsg.textContent = "Please enter the password from your purchase email.";
+        return;
+      }
+      if(unlockBtn) {
+        unlockBtn.disabled = true;
+        unlockBtn.textContent = "Verifying…";
+      }
+      sha256Hex(val).then(function(hex){
+        if(hex === cfg.unlockHash) {
+          window.Unlock.setUnlocked();
+          gateMsg.textContent = "Password verified! Loading your Playbook…";
+          loadAndRender();
+        } else {
+          gateMsg.textContent = "Password incorrect. Please check your purchase confirmation email.";
+          if(unlockBtn) {
+            unlockBtn.disabled = false;
+            unlockBtn.textContent = "Unlock All Chapters Now";
           }
-        });
-      }
-      if (fullscreenBtn && document.documentElement.requestFullscreen) {
-        fullscreenBtn.addEventListener('click', function () {
-          if (document.fullscreenElement) document.exitFullscreen();
-          else document.documentElement.requestFullscreen();
-        });
-      }
-      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
-
-      /* ── TOC from the current pool ── */
-      function buildTOC() {
-        tocList.innerHTML = '';
-        slides.forEach(function (s, i) {
-          var kicker = (s.querySelector('.slide-kicker') || {}).textContent || '';
-          var titleEl = s.querySelector('.slide-title');
-          var title = (titleEl && (titleEl.innerText || titleEl.textContent) || '').replace(/\s+/g, ' ').trim() || ('Slide ' + (i + 1));
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.textContent = (i + 1) + '. ' + (kicker ? kicker + ' — ' : '') + title;
-          btn.addEventListener('click', function () {
-            showSlide(i);
-            tocPanel.classList.remove('is-open');
-          });
-          tocList.appendChild(btn);
-        });
-        Array.prototype.forEach.call(tocList.querySelectorAll('button'), function (b, i) {
-          b.classList.toggle('is-current', i === current);
-        });
-      }
-
-      /* ── Unlock: reveal paid slides, rebuild pool, jump to first paid ── */
-      function revealPaid() {
-        slides = all;
-        buildTOC();
-        showSlide(7); // first paid chapter
-      }
-
-      /* ── Init ── */
-      scaleStage();
-      window.addEventListener('resize', scaleStage);
-      buildTOC();
-      var hash = parseInt((location.hash || '').replace('#', ''), 10);
-      showSlide(!isNaN(hash) && hash >= 1 && hash <= slides.length ? hash - 1 : 0);
-
-      window.Deck = {
-        next: next, prev: prev, showSlide: showSlide, revealPaid: revealPaid,
-        get current() { return current; }, get total() { return slides.length; }
-      };
-    })();
-
-    /* ============================================
-       QUIZ — three quick questions
-       ============================================ */
-    (function () {
-      'use strict';
-      var qs = Array.prototype.slice.call(document.querySelectorAll('.quiz-q'));
-      var step = document.querySelector('.quiz-step b');
-      var result = document.querySelector('.quiz-result');
-      var resultText = result.querySelector('.qr-text');
-      var skip = document.querySelector('.quiz-skip');
-      var answers = {};
-      var qIndex = 0;
-
-      function showQ(i) {
-        qs.forEach(function (q, idx) { q.classList.toggle('is-current', idx === i); });
-      }
-
-      qs.forEach(function (q) {
-        q.querySelectorAll('.quiz-opt').forEach(function (opt) {
-          opt.addEventListener('click', function () {
-            q.querySelectorAll('.quiz-opt').forEach(function (b) { b.classList.remove('is-selected'); });
-            opt.classList.add('is-selected');
-            answers[q.dataset.q] = opt.dataset.key;
-            if (step) step.textContent = String(Object.keys(answers).length);
-            if (qIndex < qs.length - 1) {
-              qIndex += 1;
-              showQ(qIndex);
-            } else {
-              finish();
-            }
-          });
-        });
-      });
-
-      function finish() {
-        var a = answers;
-        var lines = [];
-        var age = a['2'] || 'mid';
-        var budget = a['1'] || 'mid';
-        var scope = a['3'] || 'whole';
-        if (age === 'old' || age === 'mid') {
-          lines.push('Old-house specialists will quote you first — exactly what the contractor playbook prepares you for.');
-        } else {
-          lines.push('Even younger houses hide old surprises — the audit catches them before you sign.');
         }
-        if (budget === 'small') {
-          lines.push('With a tighter budget, the audit and salvage chapters get you the most house for the least money.');
-        } else if (budget === 'big') {
-          lines.push('At this scale the 90-day sequence and budget worksheet protect your down payment.');
-        } else {
-          lines.push('The budget worksheet plus the 20% reserve rule is built for exactly this range.');
-        }
-        if (scope === 'room') {
-          lines.push('Starting with one room? The Kit\'s one-room test keeps you disciplined.');
-        } else if (scope === 'whole') {
-          lines.push('Whole-house work rewards strict order — the 90-day sequence is your road map.');
-        } else {
-          lines.push('Kitchen and bath first is the highest-payoff move in an old house.');
-        }
-        resultText.textContent = 'Based on your answers — ' + lines.join(' ');
-        result.classList.add('is-show');
-      }
-
-      if (skip) skip.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
-      var cont = document.getElementById('quiz-continue');
-      if (cont) cont.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
-      showQ(0);
-    })();
-
-    /* ============================================
-       UNLOCK + RENDERER — paid bodies from kit.json
-       ============================================ */
-    (function () {
-      'use strict';
-      var KIT_URL = 'kit.json';
-      var cfg = window.SITE_CONFIG || {};
-
-      function esc(s) {
-        return String(s).replace(/[&<>"']/g, function (c) {
-          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-        });
-      }
-
-      function sha256Hex(str) {
-        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function (buf) {
-          return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
-        });
-      }
-
-      function bodyHTML(slide) {
-        var h = '';
-        if (slide.sub) h += '<p class="slide-sub">' + esc(slide.sub) + '</p>';
-        if (slide.table) {
-          h += '<div class="slide-table-wrap"><table class="slide-table"><thead><tr>';
-          slide.table.headers.forEach(function (x) { h += '<th>' + esc(x) + '</th>'; });
-          h += '</tr></thead><tbody>';
-          slide.table.rows.forEach(function (row) {
-            h += '<tr>';
-            row.forEach(function (c, i) { h += (i === 0 ? '<td><strong>' : '<td>') + esc(c) + (i === 0 ? '</strong>' : '') + '</td>'; });
-            h += '</tr>';
-          });
-          h += '</tbody></table></div>';
-        }
-        if (slide.bullets) {
-          h += '<ul class="slide-list">';
-          slide.bullets.forEach(function (b) {
-            h += '<li>';
-            if (b.t) h += '<span class="sl-t">' + esc(b.t) + '</span> ';
-            if (b.d) h += esc(b.d);
-            if (b.flag) h += '<span class="sl-flag">' + esc(b.flag) + '</span>';
-            h += '</li>';
-          });
-          h += '</ul>';
-        }
-        if (slide.notes) {
-          slide.notes.forEach(function (n) { h += '<p class="slide-note">' + esc(n) + '</p>'; });
-        }
-        return h;
-      }
-
-      function render(data, withContent) {
-        var filled = 0;
-        data.lockedSlides.forEach(function (slide) {
-          var sec = document.querySelector('.slide[data-slide="' + slide.id + '"]');
-          if (!sec) return;
-          var kicker = sec.querySelector('.slide-kicker');
-          var title = sec.querySelector('.slide-title');
-          var body = sec.querySelector('.slide-body');
-          if (kicker) kicker.textContent = slide.kicker;
-          if (title) title.textContent = slide.title;
-          if (body) {
-            body.innerHTML = withContent ? bodyHTML(slide) : '';
-            if (withContent) filled++;
-          }
-          sec.setAttribute('data-unlocked', withContent ? '1' : '0');
-        });
-        return filled;
-      }
-
-      function loadAndRender(withContent) {
-        return fetch(KIT_URL).then(function (r) {
-          if (!r.ok) throw new Error('fetch ' + r.status);
-          return r.json();
-        }).then(function (data) {
-          render(data, withContent);
-        }).catch(function () { /* keep paid slides empty */ });
-      }
-
-      var form = document.getElementById('gate-form');
-      var msg = document.getElementById('gate-msg');
-      if (form && msg) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var val = (form.querySelector('input[type="password"]').value || '').trim();
-          if (!val) {
-            msg.className = 'lock-msg is-error';
-            msg.textContent = 'Please enter the password from your purchase email.';
-            return;
-          }
-          var btn = form.querySelector('button');
-          if (btn) { btn.disabled = true; btn.textContent = 'Checking…'; }
-          sha256Hex(val).then(function (hex) {
-            if (hex === cfg.unlockHash) {
-              window.Unlock.setUnlocked();
-              msg.className = 'lock-msg';
-              msg.textContent = 'Unlocked! Loading your Kit…';
-              loadAndRender(true).then(function () {
-                if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
-                if (window.Deck) window.Deck.revealPaid();
-              });
-            } else {
-              msg.className = 'lock-msg is-error';
-              msg.textContent = "That password doesn't match. Check your purchase email (and spam folder).";
-              if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
-            }
-          }).catch(function () {
-            msg.className = 'lock-msg is-error';
-            msg.textContent = 'Something went wrong. Try again in a moment.';
-            if (btn) { btn.disabled = false; btn.textContent = 'Unlock all 13 chapters'; }
-          });
-        });
-      }
-
-      var gateBtn = document.getElementById('preview-to-gate');
-      if (gateBtn) gateBtn.addEventListener('click', function () { if (window.Deck) window.Deck.next(); });
-
-      document.addEventListener('DOMContentLoaded', function () {
-        if (window.Unlock && window.Unlock.isUnlocked()) {
-          loadAndRender(true).then(function () { if (window.Deck) window.Deck.revealPaid(); });
-        } else {
-          loadAndRender(false);
+      }).catch(function(){
+        gateMsg.textContent = "Verification failed. Please try again.";
+        if(unlockBtn) {
+          unlockBtn.disabled = false;
+          unlockBtn.textContent = "Unlock All Chapters Now";
         }
       });
-    })();
+    };
+
+    if(unlockBtn) unlockBtn.addEventListener("click", tryUnlock);
+    passwordInput.addEventListener("keydown", function(e){
+      if(e.key === "Enter") {
+        e.preventDefault();
+        tryUnlock();
+      }
+    });
+  }
+
+  if(window.Unlock && window.Unlock.isUnlocked()) {
+    loadAndRender();
+  }
+})();
   </script>
 </body>
 </html>

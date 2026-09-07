@@ -1,0 +1,16 @@
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local dev servers / caches
+__pycache__/
+*.pyc
+node_modules/
+
+# Sensitive local config — if you fork this repo, keep your own values.
+# (Required before a public launch: regenerate unlockHash, point config at
+# your checkout, and only then commit assets/js/config.js.)
+
+# Logs
+*.log
