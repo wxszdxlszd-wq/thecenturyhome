@@ -8,10 +8,25 @@
 
 2) 上传打包内容
    - 上传 zip 里的【所有文件】（不是 zip 本身，解压后全选）
-   - 方法 A（网页拖拽）：
-     打开刚建的仓库页 → Add file → Upload files →
-     把解压后的 index.html、assets、.github 等全部拖进去 → Commit changes
-   - 方法 B（git 命令行，已装 Git 时更快）：
+   - 注意：GitHub 网页上传一次最多 100 个文件，这个包共 130+
+     个文件，需要【分 2 批】上传（网页会自动放进同一个仓库，
+     不会覆盖）：
+
+   ▸ 第 1 批（先把核心代码传上去）：
+     index.html  unlock.html  robots.txt  sitemap.xml  README.md
+     .gitignore  .github 目录(整个)  assets/js 目录(整个)
+     assets/css 目录(整个)  blog  compare  free  tools  member  kofi  files
+     → 只拖这 20 来个“目录/文件”，一次能传完
+
+   ▸ 第 2 批（图片多，单独一批）：
+     assets/img 目录里的 96 张图，分 2 次传（一次 ≤100 个）：
+       先传 assets/img 下任意一半文件，
+       再传剩下的一半（同一目录，网页自动合并）
+   - 提示：网页上传时可直接把“整个文件夹”拖进去，GitHub 会
+     保留目录结构；如果一次拖太多提示超过 100，就按上面分批。
+   - 每批拖完后点 Commit changes（会生成一次提交，正常现象）
+
+   - 方法 B（git 命令行，已装 Git 时更快，不受 100 个限制）：
      cd thecenturyhome
      git init
      git add .
