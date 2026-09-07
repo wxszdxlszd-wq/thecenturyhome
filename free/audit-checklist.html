@@ -1,280 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free: The 30-Minute Old-House Audit Checklist — The Old House Playbook</title>
-  <meta name="description" content="A printable 30-minute walkthrough that tells you exactly what kind of old house you're dealing with and what to fix first. Free forever.">
-  <meta property="og:title" content="The 30-Minute Old-House Audit">
-  <meta property="og:description" content="Print it. Walk the house. Know where to start.">
+  <meta name="description" content="A printable 30-minute walkthrough that tells you exactly what kind of old house you're dealing with and what to fix first — with 2025–26 dollar flags. Free forever.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://thecenturyhome.com/free/audit-checklist.html">
   <style>
     @media print {
-      .frame, .site-footer, #webgpu-overlay, .no-print { display: none !important; }
-      .page-hero { padding: 1rem var(--pad) 2rem; }
-      .page-hero::before { background: #fff; }
-      .page-hero h1, .page-hero .section-label { color: #000 !important; }
-      .page-hero p { color: #444 !important; }
-      .audit-card { border-color: #888; background: #fff !important; break-inside: avoid; }
-      .audit-card-title { color: #000 !important; }
+      .topbar, .site-header, .site-footer, .no-print { display: none !important; }
+      .checklist-hero { padding: 1rem var(--page-pad) 2rem; }
+      .checklist-hero h1, .checklist-hero .s-label { color: #000 !important; }
+      .checklist-hero p { color: #444 !important; }
+      .audit-card { border-color: #999; box-shadow: none; break-inside: avoid; }
+      .check-row { break-inside: avoid; }
       .check-row .cr-body strong { color: #000 !important; }
       .check-row .cr-body span { color: #444 !important; }
+      .check-flag { border-color: #999 !important; color: #555 !important; }
     }
   </style>
-  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/img/favicon-apple.png">
 </head>
 <body>
 
-  <header class="frame">
-    <a class="frame__brand" href="../index.html" data-transition>
-      <span class="frame__mark"></span>
-      <span>The Old House Playbook</span>
-    </a>
-    <nav class="frame__nav">
-      <a href="../index.html" data-transition>Home</a>
-      <a href="../blog/mistakes.html" data-transition>Mistakes</a>
-      <a href="../tools/budget-calculator.html" data-transition>Calculator</a>
-      <a href="../free/audit-checklist.html" data-transition>Free Audit</a>
-      <a href="../unlock.html" data-transition>Member</a>
-      <a class="frame__cta" href="../index.html#pricing" data-buy>$9.90 Access</a>
-    </nav>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+  <!-- ═══ TOP UTILITY BAR ═══ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span class="topbar__note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/></svg>
+        Field data · 3 tracked cases · 14 firms &amp; experts · 100+ owner survey
+      </span>
+      <div class="topbar__links">
+        <a href="../free/audit-checklist.html">Free 30-Minute Audit</a>
+        <a href="../tools/budget-calculator.html">Calculator</a>
+        <a href="../unlock.html">Member Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header__inner">
+      <a class="brand" href="../index.html" aria-label="The Old House Playbook — home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html#archive">Before &amp; After</a>
+        <a href="../index.html#kit">The Kit</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../free/audit-checklist.html" class="is-active">Free Audit</a>
+        <a href="../tools/budget-calculator.html">Calculator</a>
+        <a href="../unlock.html">Member</a>
+        <a class="nav-cta" href="../member/kit.html">The Kit</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-close" aria-label="Close navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </header>
 
   <main>
-    <div class="page-hero">
-      <div class="section-label">Free · Opening Chapter of the Playbook</div>
-      <h1>The 30-Minute<br>Old-House<br><em>Audit</em></h1>
+    <section class="checklist-hero">
+      <span class="s-label s-label--center">Free · Opening Chapter of the Playbook</span>
+      <h1>The 30-Minute<br>Old-House <em>Audit</em></h1>
       <p>Print this page, grab a flashlight and a notepad, and walk every room in order. In half an hour you'll know exactly what kind of house you're dealing with — and what to fix first.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;" class="no-print">
-        <button class="btn btn--gold" type="button" onclick="window.print()">Print Checklist</button>
-        <a class="btn btn--ghost" href="../index.html#pricing" data-buy>Get Full Playbook — $9.90</a>
+      <div class="cta-row no-print">
+        <button class="btn btn--terra" type="button" onclick="window.print()">Print Checklist</button>
+        <a class="btn btn--ghost" href="../member/kit.html">Preview the Kit — free</a>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1.8rem;">
-        <span style="font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid #e57373;color:#ef9a9a;border-radius:2px;padding:.2rem .55rem;">● Fix now</span>
-        <span style="font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);border-radius:2px;padding:.2rem .55rem;">● Plan within year</span>
-        <span style="font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid #81c784;color:#a5d6a7;border-radius:2px;padding:.2rem .55rem;">● Watch &amp; maintain</span>
+      <div class="flag-key">
+        <span class="fk-now">● Fix now</span>
+        <span class="fk-plan">● Plan within year</span>
+        <span class="fk-watch">● Watch &amp; maintain</span>
       </div>
-    </div>
+    </section>
 
-    <section style="padding:clamp(3rem,6vw,5rem) var(--pad);">
-      <div style="max-width:760px;margin:0 auto;">
+    <section class="checklist-body">
 
-        <!-- 1. Exterior & Roof -->
-        <div class="audit-card">
-          <div class="audit-card-title">
-            1 · Exterior &amp; Roof
-            <span class="audit-time">5 min</span>
-          </div>
-          <p class="audit-desc">Walk the perimeter before you go inside — the envelope is where old houses fail first.</p>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Roof age &amp; layers</strong>
-              <span>Ask for the permit date. 20+ years with 2+ layers = tear-off replacement coming. <span class="check-flag">$8k–$18k</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Gutters &amp; downspouts</strong>
-              <span>Clogged or missing = foundation moisture damage. Extend downspouts 6+ feet from the house.</span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Grading &amp; drainage</strong>
-              <span>Does rain drain away from the house? Fill any low spots against the foundation. <span class="check-flag" style="border-color:#e57373;color:#ef9a9a;">Fix now</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Windows from outside</strong>
-              <span>Rot, missing glazing putty, broken sashes — each one is a restore-or-replace decision. <span class="check-flag">$200–$600</span></span>
-            </div>
-          </label>
-        </div>
-
-        <!-- 2. Basement & Foundation -->
-        <div class="audit-card">
-          <div class="audit-card-title">
-            2 · Basement &amp; Foundation
-            <span class="audit-time">5 min</span>
-          </div>
-          <p class="audit-desc">Your first question about any old house: what does the water story look like?</p>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Foundation cracks</strong>
-              <span>Hairline = normal. Stair-step cracks, bowing walls, or sticking doors = structural engineer. <span class="check-flag">$400–$800</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Dampness &amp; efflorescence</strong>
-              <span>Wet walls, white powder deposits, or musty smell = active moisture entry to solve before any interior work. <span class="check-flag" style="border-color:#e57373;color:#ef9a9a;">Fix now</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Sump pump &amp; drains</strong>
-              <span>Test the pump, check the sewer clean-out, and schedule a camera inspection of the main line. <span class="check-flag">$300–$500</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Sagging floors above</strong>
-              <span>Roll a marble across each room. Deep sags indicate cut joists or failed beams. <span class="check-flag">$3k–$15k</span></span>
-            </div>
-          </label>
-        </div>
-
-        <!-- 3. Electrical & Plumbing -->
-        <div class="audit-card">
-          <div class="audit-card-title">
-            3 · Electrical &amp; Plumbing
-            <span class="audit-time">6 min</span>
-          </div>
-          <p class="audit-desc">Safety, insurability, and your budget floor — check these before you fall in love with the house.</p>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Panel age &amp; brand</strong>
-              <span>Federal Pacific Stab-Lok or Zinsco brand = immediate replacement. Any panel pre-1980 = budget for upgrade. <span class="check-flag" style="border-color:#e57373;color:#ef9a9a;">Fix now</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Knob-and-tube wiring</strong>
-              <span>Porcelain knobs in attic or basement = K&amp;T. Budget a full rewire — non-negotiable. <span class="check-flag">$9.5k–$20k</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Plumbing material</strong>
-              <span>Galvanized steel supply = 40–70 year life, often fully rusted inside. Copper or PEX = fine. <span class="check-flag">$4k–$12k</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Water heater &amp; HVAC age</strong>
-              <span>Water heater 10+ years, furnace 15+ years — both are negotiation leverage points. <span class="check-flag">$900–$12k</span></span>
-            </div>
-          </label>
-        </div>
-
-        <!-- 4. Walls, Floors & Character -->
-        <div class="audit-card">
-          <div class="audit-card-title">
-            4 · Walls, Floors &amp; Character
-            <span class="audit-time">8 min</span>
-          </div>
-          <p class="audit-desc">Room by room, top to bottom. This is where you make the restore-vs-replace decisions.</p>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Plaster condition</strong>
-              <span>Tap test — hollow sound = failed keys. Bowing or soft = reattach with plaster washers. Cracked but stable = skim coat. <span class="check-flag">$2–$12/sqft</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Hardwood floors</strong>
-              <span>Original old-growth floors are irreplaceable. Refinishable unless water-damaged or cut for additions. <span class="check-flag">$3.5k–$6k</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Windows from inside</strong>
-              <span>Operate every sash. Broken cords, missing glazing, rotted sills — all fixable. Restoration beats replacement. <span class="check-flag">Restore</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Doors, trim &amp; hardware</strong>
-              <span>Original solid-core doors, built-ins, and period hardware cannot be reproduced at any reasonable cost. Never demo.</span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Lead paint &amp; asbestos</strong>
-              <span>Pre-1978 = likely lead paint. Test before sanding. Asbestos floor tile: encapsulate, don't disturb. <span class="check-flag">$50–$400 test</span></span>
-            </div>
-          </label>
-        </div>
-
-        <!-- 5. Attic, Permits & Phone Call -->
-        <div class="audit-card">
-          <div class="audit-card-title">
-            5 · Attic, Permits &amp; the Phone Call
-            <span class="audit-time">6 min</span>
-          </div>
-          <p class="audit-desc">Finish upstairs, then make one phone call that saves you from inherited permit problems.</p>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Attic insulation depth</strong>
-              <span>Original houses often have 2–4 inches. Adding to R-38 pays back in under 7 years. <span class="check-flag">$1.5–$3.5/sqft</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Roof deck from inside</strong>
-              <span>Dark stains, daylight through decking, or wet insulation = active leak. Fix before anything else. <span class="check-flag" style="border-color:#e57373;color:#ef9a9a;">Fix now</span></span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Call the building department</strong>
-              <span>Pull the permit history on the address. Open permits, un-permitted additions, historic-district rules — know them before you sign.</span>
-            </div>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <div class="cr-body">
-              <strong>Kitchen &amp; bath update permits</strong>
-              <span>Were they permitted? Un-permitted work becomes your problem at resale — and your liability during the renovation. <span class="check-flag">Call first</span></span>
-            </div>
-          </label>
-        </div>
-
-        <!-- CTA -->
-        <div style="background:var(--ink-card);border:1px solid var(--rule-gold);border-radius:var(--r-lg);padding:3rem 2.5rem;text-align:center;margin-top:3rem;" class="no-print">
-          <div class="section-label" style="justify-content:center;">You Know What You're Dealing With</div>
-          <div style="font-family:var(--f-display);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--white);margin:1rem 0 1.2rem;">Ready for the plan?</div>
-          <p style="color:var(--text-1);max-width:34rem;margin:0 auto 2rem;font-weight:300;">The full Playbook turns this audit into a budget, a 90-day sequence, a style guide, and a contractor screening kit. Instant Ko-fi delivery — lifetime access.</p>
-          <a class="btn btn--gold" href="../index.html#pricing" data-buy>Get the Playbook — $9.90</a>
-          <p style="margin-top:1rem;font-size:.78rem;color:var(--text-2);">Instant delivery via <a href="https://ko-fi.com/s/86751002e2" rel="noopener" target="_blank" style="color:var(--gold);">Ko-fi</a> · Password unlock · No subscription</p>
-        </div>
-
+      <!-- 1. Exterior & Roof -->
+      <div class="audit-card">
+        <div class="audit-card-title">1 · Exterior &amp; Roof <span class="audit-time">5 min</span></div>
+        <p class="audit-desc">Walk the perimeter before you go inside — the envelope is where old houses fail first.</p>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Roof age &amp; layers</strong><span>Ask for the permit date. 20+ years with 2+ layers = tear-off replacement coming. <span class="check-flag">$8k–$18k</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Gutters &amp; downspouts</strong><span>Clogged or missing = foundation moisture damage. Extend downspouts 6+ feet from the house.</span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Grading &amp; drainage</strong><span>Does rain drain away from the house? Fill any low spots against the foundation. <span class="check-flag fk-now">Fix now</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Windows from outside</strong><span>Rot, missing glazing putty, broken sashes — each one is a restore-or-replace decision. <span class="check-flag">$200–$600</span></span></div></label>
       </div>
+
+      <!-- 2. Basement & Foundation -->
+      <div class="audit-card">
+        <div class="audit-card-title">2 · Basement &amp; Foundation <span class="audit-time">5 min</span></div>
+        <p class="audit-desc">Your first question about any old house: what does the water story look like?</p>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Foundation cracks</strong><span>Hairline = normal. Stair-step cracks, bowing walls, or sticking doors = structural engineer. <span class="check-flag">$400–$800</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Dampness &amp; efflorescence</strong><span>Wet walls, white powder deposits, or musty smell = active moisture entry to solve before any interior work. <span class="check-flag fk-now">Fix now</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Sump pump &amp; drains</strong><span>Test the pump, check the sewer clean-out, and schedule a camera inspection of the main line. <span class="check-flag">$300–$500</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Sagging floors above</strong><span>Roll a marble across each room. Deep sags indicate cut joists or failed beams. <span class="check-flag">$3k–$15k</span></span></div></label>
+      </div>
+
+      <!-- 3. Electrical & Plumbing -->
+      <div class="audit-card">
+        <div class="audit-card-title">3 · Electrical &amp; Plumbing <span class="audit-time">6 min</span></div>
+        <p class="audit-desc">Safety, insurability, and your budget floor — check these before you fall in love with the house.</p>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Panel age &amp; brand</strong><span>Federal Pacific Stab-Lok or Zinsco brand = immediate replacement. Any panel pre-1980 = budget for upgrade. <span class="check-flag fk-now">Fix now</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Knob-and-tube wiring</strong><span>Porcelain knobs in attic or basement = K&amp;T. Budget a full rewire — non-negotiable. <span class="check-flag">$9.5k–$20k</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Plumbing material</strong><span>Galvanized steel supply = 40–70 year life, often fully rusted inside. Copper or PEX = fine. <span class="check-flag">$4k–$12k</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Water heater &amp; HVAC age</strong><span>Water heater 10+ years, furnace 15+ years — both are negotiation leverage points. <span class="check-flag">$900–$12k</span></span></div></label>
+      </div>
+
+      <!-- 4. Walls, Floors & Character -->
+      <div class="audit-card">
+        <div class="audit-card-title">4 · Walls, Floors &amp; Character <span class="audit-time">8 min</span></div>
+        <p class="audit-desc">Room by room, top to bottom. This is where you make the restore-vs-replace decisions.</p>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Plaster condition</strong><span>Tap test — hollow sound = failed keys. Bowing or soft = reattach with plaster washers. Cracked but stable = skim coat. <span class="check-flag">$2–$12/sqft</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Hardwood floors</strong><span>Original old-growth floors are irreplaceable. Refinishable unless water-damaged or cut for additions. <span class="check-flag">$3.5k–$6k</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Windows from inside</strong><span>Operate every sash. Broken cords, missing glazing, rotted sills — all fixable. Restoration beats replacement. <span class="check-flag">Restore</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Doors, trim &amp; hardware</strong><span>Original solid-core doors, built-ins, and period hardware cannot be reproduced at any reasonable cost. Never demo.</span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Lead paint &amp; asbestos</strong><span>Pre-1978 = likely lead paint. Test before sanding. Asbestos floor tile: encapsulate, don't disturb. <span class="check-flag">$50–$400 test</span></span></div></label>
+      </div>
+
+      <!-- 5. Attic, Permits & the Phone Call -->
+      <div class="audit-card">
+        <div class="audit-card-title">5 · Attic, Permits &amp; the Phone Call <span class="audit-time">6 min</span></div>
+        <p class="audit-desc">Finish upstairs, then make one phone call that saves you from inherited permit problems.</p>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Attic insulation depth</strong><span>Original houses often have 2–4 inches. Adding to R-38 pays back in under 7 years. <span class="check-flag">$1.5–$3.5/sqft</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Roof deck from inside</strong><span>Dark stains, daylight through decking, or wet insulation = active leak. Fix before anything else. <span class="check-flag fk-now">Fix now</span></span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Call the building department</strong><span>Pull the permit history on the address. Open permits, un-permitted additions, historic-district rules — know them before you sign.</span></div></label>
+        <label class="check-row"><input type="checkbox"><div class="cr-body"><strong>Kitchen &amp; bath update permits</strong><span>Were they permitted? Un-permitted work becomes your problem at resale — and your liability during the renovation. <span class="check-flag">Call first</span></span></div></label>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-band no-print" style="border-radius:var(--r-card);">
+        <div class="cta-band__inner" style="padding:clamp(2rem,4vw,3rem) 1.6rem;">
+          <span class="pill pill--light">You know what you're dealing with</span>
+          <h2>Ready for the <em>plan?</em></h2>
+          <p>The full Kit turns this audit into a budget, a 90-day sequence, a style guide, and a contractor screening kit. Instant delivery — lifetime access.</p>
+          <div class="cta-row">
+            <a class="btn btn--terra btn--lg" href="../member/kit.html">Preview the Kit</a>
+            <a class="btn btn--line-light btn--lg" href="../member/kit.html">Preview the deck free</a>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
+  <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">© 2026 · The Old House Playbook</div>
-      <ul class="footer-links">
-        <li><a href="../tools/budget-calculator.html">Calculator</a></li>
-        <li><a href="../free/audit-checklist.html">Free Audit</a></li>
-        <li><a href="../blog/mistakes.html">Case Studies</a></li>
-        <li><a href="../unlock.html">Member Area</a></li>
-      </ul>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span>
+        </span>
+        <p>Plain-English renovation guidance for owners of century homes — real numbers, printable checklists, zero fluff.</p>
+        <span class="pill pill--light">Real 2025–26 market data</span>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html#archive">Before &amp; After</a></li>
+          <li><a href="../index.html#kit">The Kit</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="../blog/index.html">The Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <ul>
+          <li><a href="../free/audit-checklist.html">30-Minute Audit</a></li>
+          <li><a href="../tools/budget-calculator.html">Budget Calculator</a></li>
+          <li><a href="../blog/mistakes.html">13 Renovation Mistakes</a></li>
+          <li><a href="../compare/contractor-vs-diy.html">Contractor vs. DIY</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Members</h4>
+        <ul>
+          <li><a href="../member/kit.html">Preview Deck</a></li>
+          <li><a href="../unlock.html">Unlock Your Kit</a></li>
+          <li><a href="../unlock.html">Password Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> · The Old House Playbook</span>
+      <span>
+        <a href="../sitemap.xml">Sitemap</a><span class="sep">·</span>
+        <a href="../blog/index.html">Blog</a><span class="sep">·</span>
+        <a href="../unlock.html">Member Portal</a>
+      </span>
     </div>
   </footer>
 

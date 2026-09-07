@@ -1,64 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Old-House Renovation Budget Calculator — The Old House Playbook</title>
-  <meta name="description" content="Estimate your century-home renovation budget in 30 seconds: era, size, scope, region, and old-house reserves for plaster, wiring, foundation, and windows.">
+  <meta name="description" content="Estimate your century-home renovation budget in 30 seconds: era, size, scope, region, and old-house reserves for plaster, wiring, foundation, and windows. 2025–26 US market figures.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/img/favicon-apple.png">
+  <link rel="canonical" href="https://thecenturyhome.com/tools/budget-calculator.html">
 </head>
 <body>
+
+  <!-- ═══ TOP UTILITY BAR ═══ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span class="topbar__note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/></svg>
+        Field data · 3 tracked cases · 14 firms &amp; experts · 100+ owner survey
+      </span>
+      <div class="topbar__links">
+        <a href="../free/audit-checklist.html">Free 30-Minute Audit</a>
+        <a href="../tools/budget-calculator.html">Calculator</a>
+        <a href="../unlock.html">Member Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
   <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="../index.html">
-        <span class="brand-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#d8b26e;">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
+    <div class="header__inner">
+      <a class="brand" href="../index.html" aria-label="The Old House Playbook — home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg>
         </span>
-        <span><span class="brand-name">The Old House Playbook</span><span class="brand-tag">Renovate your century home without wrecking it</span></span>
+        <span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="main-nav">☰</button>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="../index.html#kit">The Kit</a></li>
-          <li><a href="../blog/mistakes.html">Blog</a></li>
-          <li><a href="budget-calculator.html">Budget Calculator</a></li>
-          <li><a href="../compare/contractor-vs-diy.html">Contractor vs DIY</a></li>
-          <li><a class="nav-cta" href="../index.html#pricing" data-buy>Get the Kit</a></li>
-        </ul>
+        <a href="../index.html#archive">Before &amp; After</a>
+        <a href="../index.html#kit">The Kit</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../free/audit-checklist.html">Free Audit</a>
+        <a href="../tools/budget-calculator.html" class="is-active">Calculator</a>
+        <a href="../unlock.html">Member</a>
+        <a class="nav-cta" href="../member/kit.html">The Kit</a>
       </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-close" aria-label="Close navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
   <main>
-    <section style="padding:4rem 0 2rem;">
+    <section style="padding:clamp(3.5rem,7vw,5.5rem) 0 0;">
       <div class="container">
-        <span class="eyebrow">Free tool</span>
-        <h1>Century Home Renovation Budget Calculator</h1>
-        <p style="max-width:44rem;color:#6f6351;">A 30-second planning estimate built for pre-1950 construction — including the old-house reserves (plaster, wiring, foundation, windows) that generic calculators forget. Figures reflect typical US market ranges (2025-2026).</p>
+        <span class="s-label">Free tool · No signup</span>
+        <h1 class="s-title" style="margin-top:1.2rem;">Old-House Renovation<br><em>Budget Calculator</em></h1>
+        <p class="s-desc">A 30-second planning estimate built for pre-1950 construction — including the old-house reserves (plaster, wiring, foundation, windows) that generic calculators forget. Figures reflect typical US market ranges, 2025–2026.</p>
+      </div>
+    </section>
 
-        <div class="calc-grid" style="margin-top:2rem;">
-          <form id="calc-form" class="calc-form" novalidate>
-            <div class="field" id="f-era">
+    <section style="padding:3.5rem var(--page-pad) 6rem;">
+      <div class="container">
+        <div class="calc-layout">
+          <form class="calc-form" id="calc-form" novalidate>
+            <div class="field">
               <label for="era">Building era</label>
               <select id="era">
                 <option value="">Choose…</option>
                 <option value="pre1900">Pre-1900</option>
-                <option value="1900s">1900-1919</option>
+                <option value="1900s">1900–1919</option>
                 <option value="1920s" selected>1920s</option>
                 <option value="1930s">1930s</option>
                 <option value="1940s">1940s</option>
                 <option value="1950s">1950s</option>
               </select>
             </div>
-            <div class="field" id="f-scope">
+            <div class="field">
               <label for="scope">Renovation scope</label>
               <select id="scope">
                 <option value="">Choose…</option>
@@ -67,12 +90,12 @@
                 <option value="restore">Focused repair / restoration</option>
               </select>
             </div>
-            <div class="field" id="f-sqft">
+            <div class="field">
               <label for="sqft">Square footage</label>
               <input type="number" id="sqft" inputmode="numeric" placeholder="e.g. 1800" min="1" max="20000">
               <span class="hint">Heated living area only.</span>
             </div>
-            <div class="field" id="f-band">
+            <div class="field">
               <label for="band">Cost region</label>
               <select id="band">
                 <option value="low">Lower-cost region</option>
@@ -81,10 +104,10 @@
               </select>
             </div>
             <div class="field">
-              <label for="diy"><input type="checkbox" id="diy" style="width:auto;margin-right:0.5rem;">I'll do much of the labor myself (DIY)</label>
+              <label for="diy"><input type="checkbox" id="diy" style="width:auto;margin-right:0.5rem;"> I'll do much of the labor myself (DIY)</label>
               <span class="hint">Assumes ~60% of professional labor cost.</span>
             </div>
-            <button class="btn btn--primary btn--lg" type="submit" style="width:100%;">Calculate my range</button>
+            <button class="btn btn--terra btn--lg" type="submit" style="width:100%;">Calculate my range</button>
           </form>
 
           <div class="calc-results" id="calc-results" hidden>
@@ -94,8 +117,8 @@
             <ul class="breakdown" id="calc-breakdown"></ul>
             <div id="calc-notes" style="margin-top:0.8rem;"></div>
             <div class="calc-cta">
-              <p style="font-size:0.95rem;margin:0 0 0.6rem;"><strong>Want the line-item budget with 14 real cost rows?</strong> It's in the Kit — along with the 90-day sequence and 13 pitfalls.</p>
-              <a class="btn btn--dark" href="../index.html#pricing" data-buy>Get the full Kit — $9.90</a>
+              <p><strong>Want the line-item budget with 14 real cost rows?</strong> It's in the Kit — along with the 90-day sequence and all 13 pitfalls.</p>
+              <a class="btn btn--terra" href="../member/kit.html">Preview the Kit — free</a>
             </div>
           </div>
         </div>
@@ -103,19 +126,104 @@
     </section>
   </main>
 
+  <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div><h4>The Old House Playbook</h4><p style="font-size:0.9rem;">Plain-English renovation guidance for owners of century homes.</p></div>
-        <div><h4>Explore</h4><ul><li><a href="../index.html#kit">The Kit</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../unlock.html">Member login</a></li></ul></div>
-        <div><h4>Free guides</h4><ul><li><a href="../blog/mistakes.html">13 renovation mistakes</a></li><li><a href="../blog/pre-purchase.html">Buying an old house: 9 checks</a></li><li><a href="../compare/contractor-vs-diy.html">Contractor vs. DIY</a></li></ul></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M9 22v-6h6v6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand__name">The Old House Playbook<span>Century Home Renovation Kit</span></span>
+        </span>
+        <p>Plain-English renovation guidance for owners of century homes — real numbers, printable checklists, zero fluff.</p>
+        <span class="pill pill--light">Real 2025–26 market data</span>
       </div>
-      <div class="footer-bottom">© <span data-year>2026</span> The Old House Playbook. Calculator figures are planning estimates, not quotes.</div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html#archive">Before &amp; After</a></li>
+          <li><a href="../index.html#kit">The Kit</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="../blog/index.html">The Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <ul>
+          <li><a href="../free/audit-checklist.html">30-Minute Audit</a></li>
+          <li><a href="../tools/budget-calculator.html">Budget Calculator</a></li>
+          <li><a href="../blog/mistakes.html">13 Renovation Mistakes</a></li>
+          <li><a href="../compare/contractor-vs-diy.html">Contractor vs. DIY</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Members</h4>
+        <ul>
+          <li><a href="../member/kit.html">Preview Deck</a></li>
+          <li><a href="../unlock.html">Unlock Your Kit</a></li>
+          <li><a href="../unlock.html">Password Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> · The Old House Playbook</span>
+      <span>
+        <a href="../sitemap.xml">Sitemap</a><span class="sep">·</span>
+        <a href="../blog/index.html">Blog</a><span class="sep">·</span>
+        <a href="../unlock.html">Member Portal</a>
+      </span>
     </div>
   </footer>
 
   <script src="../assets/js/config.js"></script>
   <script src="../assets/js/calculator.js"></script>
   <script src="../assets/js/site.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var form = document.getElementById("calc-form");
+      if (!form || !window.Calculator) return;
+
+      function readInput() {
+        return {
+          era: document.getElementById("era").value,
+          sqft: Number(document.getElementById("sqft").value),
+          scope: document.getElementById("scope").value,
+          band: document.getElementById("band").value,
+          diy: document.getElementById("diy").checked
+        };
+      }
+
+      function render() {
+        var res = window.Calculator.calculate(readInput());
+        var panel = document.getElementById("calc-results");
+        var total = document.getElementById("calc-total");
+        var range = document.getElementById("calc-range");
+        var lines = document.getElementById("calc-breakdown");
+        var notes = document.getElementById("calc-notes");
+        if (!panel) return;
+        panel.hidden = false;
+        if (!res.ok) {
+          total.textContent = "—";
+          range.textContent = res.errors.join(" · ");
+          lines.innerHTML = "";
+          notes.innerHTML = "";
+          return;
+        }
+        total.textContent = window.Calculator.money(res.totalLow) + " – " + window.Calculator.money(res.totalHigh);
+        range.textContent = "Includes the five old-house reserves (plaster, wiring, foundation, windows, surprise).";
+        lines.innerHTML = res.breakdown.map(function (b) {
+          return '<li>' + b.label + '<b>' + window.Calculator.money(b.low) + " – " + window.Calculator.money(b.high) + '</b></li>';
+        }).join("");
+        notes.innerHTML = res.notes.map(function (n) { return "<div>" + n + "</div>"; }).join("");
+      }
+
+      form.addEventListener("submit", function (e) { e.preventDefault(); render(); });
+      form.addEventListener("change", render);
+      form.addEventListener("input", render);
+      render();
+    })();
+  </script>
 </body>
 </html>

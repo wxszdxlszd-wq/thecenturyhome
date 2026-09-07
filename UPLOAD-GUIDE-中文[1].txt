@@ -1,0 +1,44 @@
+一键上线 GitHub（3 步）
+
+1) 新建仓库
+   - 打开 https://github.com/new
+   - Repository name: 例如 century-home-playbook（或你想用的名字）
+   - 选 Private 或 Public 均可（Private 更稳妥，图片/密码散列不公开）
+   - 不要勾选 "Add a README"（会冲突），直接 Create repository
+
+2) 上传打包内容
+   - 上传 zip 里的【所有文件】（不是 zip 本身，解压后全选）
+   - 方法 A（网页拖拽）：
+     打开刚建的仓库页 → Add file → Upload files →
+     把解压后的 index.html、assets、.github 等全部拖进去 → Commit changes
+   - 方法 B（git 命令行，已装 Git 时更快）：
+     cd thecenturyhome
+     git init
+     git add .
+     git commit -m "The Old House Playbook v6"
+     git branch -M main
+     git remote add origin https://github.com/<你的用户名>/<仓库名>.git
+     git push -u origin main
+
+3) 开启 GitHub Pages（自动部署）
+   - 仓库 → Settings → Pages
+   - Source: 选 GitHub Actions（不要选 Deploy from a branch）
+   - 稍等 1–2 分钟，Actions 标签页里 deploy 变绿后
+     访问 https://<你的用户名>.github.io/<仓库名>/ 即可看到站点
+
+域名说明
+   - 站点里 canonical/sitemap 目前写的是 https://thecenturyhome.com/
+   - 若先用 github.io 预览：可暂不处理（不影响访问）；
+     若想 SEO 干净，等绑定正式域名后，把每个 html 里的
+     <link rel="canonical" href="https://thecenturyhome.com/..."> 和
+     sitemap.xml 里的域名替换成正式地址即可。
+   - 绑定自定义域名：仓库 Settings → Pages → Custom domain 填 thecenturyhome.com
+     并按提示在 DNS 加 CNAME。
+
+上线前必做（一次性）
+   - assets/js/config.js：把 demo 密码 Ch2-Reno-2026! 换掉，重新生成 hash：
+     echo -n "你的新密码" | shasum -a 256 （Mac/Linux）
+     或 PowerShell SHA256 计算，然后更新 unlockHash
+   - 同时更新 Ko-fi 产品交付邮件里的明文密码（两者必须一致）
+   - formEndpoint：想收集邮箱就填 Formspree 地址，不填则显示默认提示
+   - photos-credits.txt：CC 照片按许可建议在页脚留一行署名链接
