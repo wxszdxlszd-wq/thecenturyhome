@@ -17,7 +17,13 @@ window.SITE_CONFIG = {
   //    bash/macOS:  echo -n "YOUR_PASSWORD" | shasum -a 256
   unlockHash: "e51f55411784ad57f189d015a12ed7ab7e986499b2696df53b81f2926a979ece",
 
-  // 3) Optional: free-checklist email capture endpoint (Formspree or
+  // 3) Ko-fi API key — verifies a buyer's Ko-fi email on the product page
+  //    (client-side GET to ko-fi.com/api/verify?api_token=...&email=...).
+  //    Ko-fi documents this key for client-side verification; it cannot be
+  //    used to charge or read supporter lists beyond yes/no per email.
+  koFiApiKey: "15081d98-b414-47a6-a56d-47d01f9fb14b",
+
+  // 4) Optional: free-checklist email capture endpoint (Formspree or
   //    similar). Leave empty to show the "not open yet" fallback state.
   formEndpoint: "",
 
