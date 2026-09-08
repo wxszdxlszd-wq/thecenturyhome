@@ -1,57 +1,102 @@
-Ko-fi 商品页配置（复制粘贴用）
-================================
+Ko-fi 新商品上架操作单（2026-09 版，与产品页 kit.html 配套）
+================================================================
 
-【封面图片】
-  文件：kofi/kofi-cover.png（1600×900，已在打包内）
-  上传位置：Ko-fi 商品编辑页 → 上传封面图
+⚠️ 背景：店铺里现在只有一个旧商品
+    （"Century home Renovation Playbook" · $9.90 —— 早期旧版遗留，
+     内容/价格都和现在的 Kit 页对不上）。
+    网站所有购买按钮目前指向的正是这个旧商品链接，所以要先建新商品。
+
+--------------------------------------------------------
+第 1 步 · 准备素材（已替你做好）
+--------------------------------------------------------
+【封面图】已生成好（深色 + 金色，与 kit 页同风格）：
+    文件：thecenturyhome/kofi/kofi-cover.png（1600×900）
+    上架新商品时上传到「商品封面图」
 
 【商品标题】
-  The Century Home Renovation Kit — 7 Checklists + 90-Day Plan
+    The Century Home Renovation Kit — 7 Checklists + 90-Day Plan
 
-【商品一句话介绍】
-  Renovate the house. Keep the soul. Seven printable checklists, the
-  30-minute audit, and real 2025–26 budgets for owners of century homes.
+【价格】$19.90（划线价 $49，显示 "Save 60%" 与网站一致）
 
-【详细描述 —— 复制以下全部】
+【一句话介绍】
+    Renovate the house. Keep the soul. Seven printable checklists,
+    the 30-minute audit, and real 2025–26 budgets for century homes.
 
-  What you get (instant delivery):
-  • The Three Questions — water, systems, character
-  • The 30-Minute Old-House Audit — 12 timed checks with dollar flags
-  • Budget & Reserve Worksheet — 10 line items + the 20% surprise reserve
-  • The 90-Day Sequence — water → systems → structure → walls → floors
-  • Restore-First Style Guide — plaster, floors, windows, 70/25/5 palette
-  • Furnish, Salvage & Room Priority — 6 hunting grounds, 30–60% of new
-  • Contractor Playbook — 10 interview questions, 13 pitfalls, payment clauses
-  + Bonus: 2025–26 US market data, dated and region-flagged
+【详细描述 —— 整段复制】
+    Transform a dated century home without wrecking what makes it valuable.
+    The Century Home Renovation Kit is the plain-English operating manual
+    for owners of 1900s–1960s houses — real 2025–26 US market numbers,
+    no contractor guesswork, no fluff.
 
-  Built from 3 tracked renovation cases, 14 companies & preservation
-  experts consulted, and a 100+ owner survey — 93% said it saves money.
+    What you get (instant delivery):
+    • The Three Questions — water, systems, character: the decision
+      framework before you touch a wall
+    • The 30-Minute Old-House Audit — timed room-by-room checks with
+      real dollar flags for every finding
+    • Budget & Reserve Worksheet — line items plus the 20% surprise
+      reserve that keeps old-house budgets honest
+    • The 90-Day Renovation Sequence — dated master calendar:
+      water → systems → structure → walls → floors
+    • Restore-First Style Guide — plaster, floors, windows and the
+      70/25/5 palette that sells a century home
+    • Furnish, Salvage & Room Priority — where to buy period pieces at
+      30–60% of new, and which rooms to do first
+    • Contractor Playbook — 10 interview questions, 13 red-flag
+      behaviors, and the payment clauses that protect you
+    + Bonus: 2025–26 US regional market data, dated & flagged
 
-  One payment · Lifetime access · 60-day money-back.
-  Free preview & sample PDF: https://thecenturyhome.com/member/kit.html
+    Built from 3 tracked renovation cases, 14 renovation companies &
+    preservation experts consulted, and a 100+ owner survey — 93% said
+    a structured kit like this saves money and helps them hold their
+    own with contractors.
 
-【价格】
-  $19.90（可设划线价 $49，显示折扣）
+    One payment · Lifetime access · 60-day money-back guarantee.
+    Free preview & sample PDF: https://thecenturyhome.com/member/kit.html
 
-【交付邮件 / 下载说明 —— 买家付款后自动发送，复制以下全部】
+--------------------------------------------------------
+第 2 步 · 在 Ko-fi 后台建新商品
+--------------------------------------------------------
+1. 登录 ko-fi.com → 左上角你的头像 → Shop
+2. 右上角 "+ New item"（类型选 Digital product，和旧商品保持一致，
+   这样买家付款后仍会自动收到下面的交付邮件）
+3. 把上面的 标题 / 价格 / 描述 填进去，上传封面图 kofi-cover.png
+4. 交付邮件文案用旧商品里那套即可（密码不变，见下方）
+5. 保存并上架（Published）
+6. 把新商品的链接（形如 ko-fi.com/s/xxxx）发给我
+   → 我把网站 assets/js/config.js 里 3 处链接换成新链接并推送上线，
+     全站购买按钮立即指向新商品
 
-  Thank you for your purchase!
+【交付邮件 / 下载说明 —— 买家付款后自动发送】
+    Thank you for your purchase!
 
-  Your member password is:
+    Your member password is:
 
-      Ch2-Reno-2026!
+        Ch2-Reno-2026!
 
-  How to unlock:
-  1. Go to https://thecenturyhome.com/unlock.html
-  2. Enter the password above
-  3. Read the full Kit online, or download the sample PDF
-     (the printable Kit pages are in your member area)
+    How to unlock:
+    1. Go to https://thecenturyhome.com/unlock.html
+    2. Enter the password above
+    3. Read the full Kit online, or download the sample PDF
+       (the printable Kit pages are in your member area)
 
-  Keep this email — the password is your lifetime access key.
-  Questions? Reply to this email any time.
+    Keep this email — the password is your lifetime access key.
+    Questions? Reply to this email any time.
 
-  — The Old House Playbook
+    — The Old House Playbook
 
-【注意事项】
-  · 密码明文与网站 assets/js/config.js 里的 unlockHash 已配对（无需再改网站）
-  · 如以后想换密码：先改 Ko-fi 邮件里的密码，再让我同步改网站的 hash
+--------------------------------------------------------
+第 3 步 · 旧商品怎么处理
+--------------------------------------------------------
+· 先不要急着删：等新商品上线、我改完网站链接、并且你亲眼
+  验证新链接能正常付款之后，再回后台把旧商品下架（Archive）
+  或删除 —— 避免中间空窗期买家点不到付款。
+· 旧商品的「交付邮件」是旧文案，删掉后不影响已购老买家，
+  他们手里的密码继续有效（密码没换）。
+
+--------------------------------------------------------
+其他备注
+--------------------------------------------------------
+· 店铺对外显示名目前是 "Alex Xiao" —— 如果这不是你想要的
+  对外名称，可以在 Ko-fi 资料设置里改。
+· 密码明文与网站 assets/js/config.js 里的 unlockHash 已配对，
+  换密码时同步改两边即可。
