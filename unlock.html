@@ -11,6 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    .uf-row { display: flex; gap: 0.6rem; margin: 0.35rem 0 0; align-items: stretch; }
+    .uf-row input { flex: 1 1 auto; min-width: 0; }
+    .uf-row .btn { flex: 0 0 auto; margin: 0; white-space: nowrap; }
+    .uf-or { text-align: center; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; margin: 0.9rem 0; }
+    #unlock-email-msg { margin: 0.55rem 0 0.2rem; }
+    @media (max-width: 400px) { .uf-row { flex-direction: column; } .uf-row .btn { width: 100%; } }
+  </style>
 </head>
 <body>
 
@@ -58,8 +66,15 @@
     <div class="unlock-shell">
       <span class="s-label s-label--center">Member Area</span>
       <h1>Unlock your <em>Kit</em></h1>
-      <p class="sub">Enter the password from your purchase email. Check your spam folder if you don't see it.</p>
+      <p class="sub">Bought the Kit on Ko-fi? Verify your checkout email — or enter the password from your purchase email. Check your spam folder if you don't see it.</p>
       <form id="unlock-form" class="unlock-box" novalidate>
+        <label for="unlock-email" style="position:absolute;left:-9999px;">Ko-fi checkout email</label>
+        <div class="uf-row">
+          <input type="email" id="unlock-email" placeholder="Your Ko-fi checkout email" autocomplete="email" inputmode="email">
+          <button class="btn btn--terra" type="button" id="unlock-verify">Verify</button>
+        </div>
+        <p id="unlock-email-msg" class="unlock-msg" aria-live="polite" hidden></p>
+        <div class="uf-or" aria-hidden="true">or use your member password</div>
         <label for="unlock-password" style="position:absolute;left:-9999px;">Member password</label>
         <input type="password" id="unlock-password" placeholder="Password" autocomplete="off" required>
         <button class="btn btn--terra is-block" type="submit">Unlock my kit</button>
@@ -123,5 +138,58 @@
   <script src="assets/js/config.js"></script>
   <script src="assets/js/unlock.js"></script>
   <script src="assets/js/site.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var cfg = window.SITE_CONFIG || {};
+    var emailInput = document.getElementById("unlock-email");
+    var verifyBtn = document.getElementById("unlock-verify");
+    var msgEl = document.getElementById("unlock-email-msg");
+    if (!emailInput || !verifyBtn || !msgEl) return;
+
+    function say(text, bad) {
+      msgEl.textContent = text;
+      msgEl.hidden = false;
+      msgEl.className = "unlock-msg" + (bad ? " is-error" : " is-success");
+    }
+    function run() {
+      var email = (emailInput.value || "").trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        say("Enter the email you used at Ko-fi checkout.", true);
+        emailInput.focus();
+        return;
+      }
+      verifyBtn.disabled = true;
+      verifyBtn.textContent = "Checking…";
+      fetch("https://ko-fi.com/api/verify?api_token=" + encodeURIComponent(cfg.koFiApiKey || "") +
+            "&email=" + encodeURIComponent(email), { method: "GET", cache: "no-store" })
+        .then(function (r) { return r.text().then(function (t) { return { ok: r.ok, status: r.status, body: t }; }); })
+        .then(function (res) {
+          if (res.ok && /success/i.test(res.body || "")) {
+            window.Unlock.setUnlocked();
+            say("Verified! Opening your Kit…");
+            setTimeout(function () { window.location.href = "member/kit.html"; }, 700);
+          } else {
+            say("No Ko-fi payment found for that email. Double-check it — or use the password from your purchase email.", true);
+          }
+        })
+        .catch(function () {
+          say("Couldn't reach Ko-fi from here. Use the member password instead.", true);
+        })
+        .finally(function () {
+          verifyBtn.disabled = false;
+          verifyBtn.textContent = "Verify";
+        });
+    }
+    verifyBtn.addEventListener("click", run);
+    emailInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); run(); }
+    });
+    try {
+      var qEmail = new URLSearchParams(window.location.search).get("email");
+      if (qEmail) emailInput.value = qEmail.trim().toLowerCase().slice(0, 120);
+    } catch (e) {}
+  })();
+  </script>
 </body>
 </html>
