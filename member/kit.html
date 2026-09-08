@@ -1043,6 +1043,57 @@
   background: #19202E;
 }
 
+/* Ko-fi email-verify row inside the gate */
+.unlock-box--v4 .uf-inline {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+.unlock-box--v4 .uf-inline input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0;
+}
+.unlock-box--v4 .uf-inline .btn {
+  flex: 0 0 auto;
+  margin: 0;
+  white-space: nowrap;
+  padding: 0.9rem 1.4rem;
+}
+.unlock-box--v4 .uf-or {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.15rem 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.unlock-box--v4 .uf-or::before,
+.unlock-box--v4 .uf-or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.13);
+}
+.unlock-box--v4 .uf-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--mk-text-light-muted);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 460px) {
+  .unlock-box--v4 .uf-inline {
+    flex-direction: column;
+  }
+  .unlock-box--v4 .uf-inline .btn {
+    width: 100%;
+  }
+}
+
 /* ════════════════════════════════════════
    ZONE C · UNLOCKED 7 MASTER CHAPTERS
 ════════════════════════════════════════ */
@@ -2119,10 +2170,21 @@
         <p class="gate-guarantee-note" id="gate-guarantee">One payment · Lifetime member access · 60-day money-back guarantee · Instant delivery to your email</p>
 
         <div class="unlock-box--v4" id="gate-form">
-          <label for="gate-password">Already purchased? Enter your member password:</label>
-          <input type="password" id="gate-password" placeholder="Enter password from purchase email" autocomplete="off" required>
-          <button class="btn btn--light" type="button" id="gate-submit" style="width:100%;">Unlock All Chapters Now</button>
-          <p class="unlock-msg" id="gate-msg" aria-live="polite" style="color:var(--mk-gold);font-weight:700;margin-top:0.8rem;"></p>
+          <div class="uf-block">
+            <label for="gate-email">Paid on Ko-fi? Unlock with your <b style="font-weight:800;">checkout email</b></label>
+            <div class="uf-inline">
+              <input type="email" id="gate-email" placeholder="Email used at checkout" autocomplete="email" inputmode="email">
+              <button class="btn btn--light" type="button" id="gate-verify" aria-label="Verify Ko-fi email and unlock">Verify</button>
+            </div>
+            <p class="uf-note">One tap — we confirm your purchase with Ko-fi automatically. No password needed.</p>
+          </div>
+          <div class="uf-or" aria-hidden="true"><span>or</span></div>
+          <div class="uf-block">
+            <label for="gate-password">Have the member password from your email?</label>
+            <input type="password" id="gate-password" placeholder="Enter password from purchase email" autocomplete="off" required>
+            <button class="btn btn--light" type="button" id="gate-submit" style="width:100%;">Unlock All Chapters Now</button>
+          </div>
+          <p class="unlock-msg" id="gate-msg" aria-live="polite" style="color:var(--mk-gold);font-weight:700;margin-top:0.9rem;"></p>
         </div>
 
         <!-- ═══ UNLOCKED PRODUCT DELIVERY (7 MASTER CHAPTER MODULES) ═══ -->
@@ -2421,6 +2483,8 @@
   var gateGuarantee = document.getElementById("gate-guarantee");
   var gateForm = document.getElementById("gate-form");
   var gateMsg = document.getElementById("gate-msg");
+  var gateEmail = document.getElementById("gate-email");
+  var gateVerifyBtn = document.getElementById("gate-verify");
   var unlockedZone = document.getElementById("kit-unlocked");
   var container = document.getElementById("unlocked-chapters-container");
 
@@ -2461,6 +2525,79 @@
       });
   }
 
+  function setGateMsg(text, kind) {
+    if(!gateMsg) return;
+    gateMsg.textContent = text;
+    if(kind === "ok") {
+      gateMsg.style.color = "#8BE3A8";
+    } else if(kind === "error") {
+      gateMsg.style.color = "#F87171";
+    } else {
+      gateMsg.style.color = "var(--mk-gold)";
+    }
+  }
+
+  /* ── Ko-fi buyer verification (email unlock) ── */
+  function verifyKoFiEmail(email) {
+    var apiKey = (cfg.koFiApiKey || "").trim();
+    var url = "https://ko-fi.com/api/verify?api_token=" + encodeURIComponent(apiKey) +
+              "&email=" + encodeURIComponent(email);
+    return fetch(url, { method: "GET", cache: "no-store" })
+      .then(function(resp) {
+        return resp.text().then(function(t) {
+          return { ok: resp.ok, status: resp.status, body: t };
+        });
+      })
+      .then(function(res) {
+        if(res.ok && /success/i.test(res.body || "")) {
+          window.Unlock.setUnlocked();
+          setGateMsg("Purchase verified! Loading your Playbook…", "ok");
+          loadAndRender();
+          return;
+        }
+        if(res.status === 404 || /failure|not found/i.test(res.body || "")) {
+          setGateMsg("No Ko-fi payment found for this email. Double-check it — or use the member password from your purchase email.", "error");
+          return;
+        }
+        setGateMsg("Ko-fi verification is unavailable right now. Use the member password from your purchase email.", "error");
+      })
+      .catch(function() {
+        setGateMsg("Couldn't reach Ko-fi from here. Use the member password from your purchase email instead.", "error");
+      });
+  }
+
+  if(gateEmail && gateVerifyBtn) {
+    var runEmailVerify = function() {
+      var email = (gateEmail.value || "").trim().toLowerCase();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        setGateMsg("Please enter the email you used at Ko-fi checkout.", "error");
+        gateEmail.focus();
+        return;
+      }
+      gateVerifyBtn.disabled = true;
+      gateVerifyBtn.textContent = "Checking…";
+      verifyKoFiEmail(email).then(function() {
+        gateVerifyBtn.disabled = false;
+        gateVerifyBtn.textContent = "Verify";
+      }).catch(function() {
+        gateVerifyBtn.disabled = false;
+        gateVerifyBtn.textContent = "Verify";
+      });
+    };
+    gateVerifyBtn.addEventListener("click", runEmailVerify);
+    gateEmail.addEventListener("keydown", function(e) {
+      if(e.key === "Enter") {
+        e.preventDefault();
+        runEmailVerify();
+      }
+    });
+    /* Prefill when Ko-fi's post-purchase redirect appends ?email= */
+    try {
+      var qEmail = new URLSearchParams(window.location.search).get("email");
+      if(qEmail) gateEmail.value = qEmail.trim().toLowerCase().slice(0, 120);
+    } catch(e) { /* no query support needed */ }
+  }
+
   if(gateForm && gateMsg) {
     var unlockBtn = document.getElementById("gate-submit");
     var passwordInput = document.getElementById("gate-password");
@@ -2468,7 +2605,7 @@
     var tryUnlock = function(){
       var val = (passwordInput.value || "").trim();
       if(!val) {
-        gateMsg.textContent = "Please enter the password from your purchase email.";
+        setGateMsg("Please enter the password from your purchase email.", "error");
         return;
       }
       if(unlockBtn) {
@@ -2478,17 +2615,17 @@
       sha256Hex(val).then(function(hex){
         if(hex === cfg.unlockHash) {
           window.Unlock.setUnlocked();
-          gateMsg.textContent = "Password verified! Loading your Playbook…";
+          setGateMsg("Password verified! Loading your Playbook…", "ok");
           loadAndRender();
         } else {
-          gateMsg.textContent = "Password incorrect. Please check your purchase confirmation email.";
+          setGateMsg("Password incorrect. Please check your purchase confirmation email.", "error");
           if(unlockBtn) {
             unlockBtn.disabled = false;
             unlockBtn.textContent = "Unlock All Chapters Now";
           }
         }
       }).catch(function(){
-        gateMsg.textContent = "Verification failed. Please try again.";
+        setGateMsg("Verification failed. Please try again.", "error");
         if(unlockBtn) {
           unlockBtn.disabled = false;
           unlockBtn.textContent = "Unlock All Chapters Now";
