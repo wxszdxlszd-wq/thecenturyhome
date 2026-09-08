@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /member/
 
-Sitemap: https://thecenturyhome.com/sitemap.xml
+Sitemap: https://www.thecenturyhome.com/sitemap.xml
