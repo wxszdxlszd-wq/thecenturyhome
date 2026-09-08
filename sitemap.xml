@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thecenturyhome.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.thecenturyhome.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <!-- Journal (SEO long-form) -->
-  <url><loc>https://thecenturyhome.com/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/mistakes.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/restore-vs-gut.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/pre-purchase.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/floor-lottery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/bathroom-remodel-cost.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/blog/knob-and-tube-insurance.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thecenturyhome.com/compare/contractor-vs-diy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/mistakes.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/restore-vs-gut.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/pre-purchase.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/floor-lottery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/bathroom-remodel-cost.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/blog/knob-and-tube-insurance.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thecenturyhome.com/compare/contractor-vs-diy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Free funnel -->
-  <url><loc>https://thecenturyhome.com/free/audit-checklist.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://thecenturyhome.com/tools/budget-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thecenturyhome.com/free/audit-checklist.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thecenturyhome.com/tools/budget-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Member area (noindex) -->
-  <url><loc>https://thecenturyhome.com/unlock.html</loc><changefreq>never</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thecenturyhome.com/unlock.html</loc><changefreq>never</changefreq><priority>0.3</priority></url>
 </urlset>
