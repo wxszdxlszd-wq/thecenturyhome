@@ -5,9 +5,9 @@
 
 window.SITE_CONFIG = {
   // 1) Your Ko-fi / checkout product URL
-  kofiUrl: "https://ko-fi.com/s/86751002e2",
-  checkoutUrl: "https://ko-fi.com/s/86751002e2",
-  gumroadUrl: "https://ko-fi.com/s/86751002e2",
+  kofiUrl: "https://ko-fi.com/s/bdb123369f",
+  checkoutUrl: "https://ko-fi.com/s/bdb123369f",
+  gumroadUrl: "https://ko-fi.com/s/bdb123369f",
 
   // 2) Unlock password SHA-256 hash.
   //    LIVE PASSWORD: "Ch2-Reno-2026!" (set 2026-09; update the Ko-fi
