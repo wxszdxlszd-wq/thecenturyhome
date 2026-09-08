@@ -55,21 +55,3 @@ Ko-fi 商品页配置（复制粘贴用）
 【注意事项】
   · 密码明文与网站 assets/js/config.js 里的 unlockHash 已配对（无需再改网站）
   · 如以后想换密码：先改 Ko-fi 邮件里的密码，再让我同步改网站的 hash
-
-【已接入：Ko-fi API 邮箱自动验证解锁（2026-09 上线）】
-  功能：买家在 Ko-fi 付款后，回到
-        https://thecenturyhome.com/member/kit.html
-        （或 /unlock.html），输入付款时用的邮箱，点 Verify，
-        页面会调用 Ko-fi 官方验证接口自动放行，无需再输密码。
-  · API key 已内置在网站 assets/js/config.js 的 koFiApiKey 字段
-    （Ko-fi 官方允许该 key 放在前端，它只能做「邮箱是否支持过我」的
-    是/否校验，不能收款、不能读买家列表）
-  · 验证成功 → 自动解锁；失败 → 提示改用购买邮件里的密码（兜底不变）
-  · 购买引导文案建议加一句：
-    "After checkout, return to thecenturyhome.com/member/kit.html
-     and enter the email you paid with — instant unlock, no password."
-  · 备注：若 Ko-fi 对该商品按「Shop 订单」而非「支持者」记账，
-    个别邮箱可能查不到 → 密码兜底仍然可用，不影响交付。
-    想确认的话：用你自己真实付款的邮箱在线上试一次即可。
-  · 更换 key：去 Ko-fi 后台重新生成后，改 config.js 的 koFiApiKey，
-    再执行一次上传即可。
