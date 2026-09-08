@@ -8,7 +8,10 @@
 
   var cfg = window.SITE_CONFIG || {};
   var buyUrl = cfg.gumroadUrl || cfg.checkoutUrl || cfg.kofiUrl || "";
-  var IS_PLACEHOLDER = !buyUrl || /ko-fi\.com\/s\//.test(buyUrl);
+  // Real checkout is configured (currently the Ko-fi shop link in config.js),
+  // so only a missing buyUrl counts as placeholder. ko-fi.com/s/... IS the
+  // live checkout page — do not block it.
+  var IS_PLACEHOLDER = !buyUrl;
 
 
   /* ---------- No-JS guard ---------- */
