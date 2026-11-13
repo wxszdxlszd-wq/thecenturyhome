@@ -1,9 +1,0 @@
-{
-  "name": "order-confirm-api",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Order confirmation form email notifier (Vercel Node function)",
-  "dependencies": {
-    "nodemailer": "^6.9.16"
-  }
-}
