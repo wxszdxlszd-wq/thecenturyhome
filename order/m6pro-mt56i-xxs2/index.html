@@ -620,9 +620,14 @@ $("#langbtn").addEventListener("click", function(){
 });
 
 /* ===================== submit ===================== */
+function refToken(){
+  var t = pageToken() || "OC";
+  var parts = String(t).split("-");
+  return parts.length > 1 ? parts[parts.length - 1] : t;   /* short, readable reference prefix */
+}
 function makeRef(){
   var d = new Date(), p = function(n){ return (n < 10 ? "0" : "") + n; };
-  return (pageToken() || "OC").toUpperCase() + "-" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes());
+  return (refToken() || "OC").toUpperCase() + "-" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes());
 }
 function buildSummaryText(){
   var st = readState(), lines = [];
