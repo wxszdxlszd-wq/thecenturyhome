@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1d4ed8">
+<title>Order Confirmation · YG-M6pro / YG-Mt56i</title>
+<style>
+:root{
+  --accent:#1d4ed8; --accent-dark:#173ea8; --bg:#f2f4f9; --card:#ffffff;
+  --text:#111827; --muted:#6b7280; --line:#e5e7eb; --ok:#16a34a; --err:#dc2626;
+  --radius:14px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text); font-size:16px; line-height:1.5;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Microsoft YaHei",sans-serif;
+  padding-bottom:calc(96px + env(safe-area-inset-bottom));
+}
+.wrap{max-width:600px;margin:0 auto;padding:0 14px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-row{display:flex;align-items:center;gap:10px;padding:10px 0 8px}
+.badge{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;letter-spacing:.5px;flex:0 0 auto}
+.top-title{font-size:14px;font-weight:600;line-height:1.25;flex:1;min-width:0}
+.top-title small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.langbtn{border:1px solid var(--line);background:#fff;color:var(--accent);font-size:12.5px;font-weight:600;border-radius:999px;padding:6px 11px;cursor:pointer;flex:0 0 auto}
+.progress{height:4px;background:#e8ebf3;border-radius:0 0 4px 4px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s ease}
+.stepchip{font-size:11.5px;color:var(--muted);padding:7px 0 0}
+main{padding-top:14px}
+.screen{display:none}
+.screen.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:var(--radius);color:#fff;padding:18px 16px;margin-bottom:14px}
+.hero h1{font-size:19px;margin:0 0 6px;line-height:1.3}
+.hero p{margin:0;font-size:13.5px;opacity:.94;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:15px 14px;margin-bottom:13px;box-shadow:0 1px 2px rgba(16,24,40,.05)}
+h2.sec{font-size:16.5px;margin:0 0 2px;display:flex;align-items:center;gap:8px}
+h2.sec .n{width:22px;height:22px;border-radius:7px;background:#e8edfb;color:var(--accent);font-size:12.5px;display:flex;align-items:center;justify-content:center;font-weight:700;flex:0 0 auto}
+.secsub{color:var(--muted);font-size:12.5px;margin:6px 0 12px}
+.q{padding:13px 0;border-top:1px solid #f0f2f7}
+.q:first-of-type{border-top:none;padding-top:2px}
+.q .qlabel{font-weight:600;font-size:15px;margin-bottom:2px}
+.q .qhint{color:var(--muted);font-size:12.5px;margin-bottom:9px}
+.q.err .qboxout{outline:1.5px solid var(--err);outline-offset:3px;border-radius:12px}
+.q .errmsg{display:none;color:var(--err);font-size:12.5px;margin-top:6px}
+.q.err .errmsg{display:block}
+.opts{display:flex;flex-direction:column;gap:9px}
+label.opt{display:flex;align-items:flex-start;gap:11px;border:1.5px solid var(--line);border-radius:12px;padding:12px 13px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s;position:relative}
+label.opt:active{background:#f8faff}
+label.opt input{position:absolute;opacity:0;pointer-events:none}
+.rdot{width:21px;height:21px;border-radius:50%;border:2px solid #cbd2e0;flex:0 0 auto;margin-top:1px;position:relative;transition:border-color .15s}
+.rdot:after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .15s}
+label.opt.sel{border-color:var(--accent);background:#f5f8ff}
+label.opt.sel .rdot{border-color:var(--accent)}
+label.opt.sel .rdot:after{transform:scale(1)}
+.otext{flex:1;min-width:0}
+.otext b{font-weight:600;font-size:14.5px;display:block}
+.otext span{font-size:12.5px;color:var(--muted)}
+.subinp{display:none;margin-top:10px;width:100%}
+.subinp.show{display:block}
+input[type=text],input[type=date],input[type=number],input[type=email],textarea{
+  width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;font-size:16px;
+  font-family:inherit;color:var(--text);background:#fff;outline:none;transition:border-color .15s;
+}
+input:focus,textarea:focus{border-color:var(--accent)}
+input::placeholder,textarea::placeholder{color:#a6adbb}
+textarea{min-height:86px;resize:vertical}
+.prod{display:flex;gap:12px;align-items:flex-start}
+.prod img{width:72px;height:auto;border-radius:10px;border:1px solid var(--line);flex:0 0 auto;background:#fff}
+.prod .pi{flex:1;min-width:0}
+.prod .sku{font-size:15px;font-weight:700}
+.prod .pname{font-size:13.5px;color:var(--accent);font-weight:600;margin-bottom:6px}
+.prod ul{margin:0;padding-left:17px;color:#374151;font-size:12.5px;line-height:1.55}
+.prod .acc{font-size:12px;color:var(--muted);margin-top:7px;border-top:1px dashed var(--line);padding-top:6px}
+.fld{margin-top:11px}
+.fld label{display:block;font-size:12.5px;font-weight:600;color:#374151;margin-bottom:5px}
+.fld label em{font-style:normal;color:var(--muted);font-weight:400}
+.revrow{display:flex;justify-content:space-between;gap:12px;padding:10px 2px;border-top:1px solid #f0f2f7;font-size:14px;cursor:pointer}
+.revrow:first-child{border-top:none}
+.revrow .rk{color:var(--muted);flex:0 0 44%;font-size:13px}
+.revrow .rv{font-weight:600;text-align:right;flex:1;word-break:break-word}
+.revrow .rv.empty{color:#b3b9c6;font-weight:400}
+.revsec{font-size:12.5px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.4px;margin:14px 0 2px}
+.revsec:first-child{margin-top:2px}
+nav.bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 0 calc(12px + env(safe-area-inset-bottom))}
+.nav-in{max-width:600px;margin:0 auto;padding:0 14px;display:flex;gap:10px}
+button.btn{flex:1;border:none;border-radius:12px;padding:15px 14px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .15s,opacity .15s}
+button.btn.primary{background:var(--accent);color:#fff;flex:1.7}
+button.btn.primary:active{background:var(--accent-dark)}
+button.btn.ghost{background:#fff;color:#374151;border:1.5px solid var(--line);flex:.8}
+button.btn:disabled{opacity:.6;cursor:default}
+.success{text-align:center;padding:26px 14px 8px}
+.okc{width:72px;height:72px;border-radius:50%;background:#e9f9ef;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.okc svg{width:38px;height:38px}
+.success h2{margin:0 0 8px;font-size:20px}
+.success p{color:var(--muted);font-size:14px;margin:0 auto 16px;max-width:420px}
+.refbox{display:inline-block;background:#fff;border:1.5px dashed #c9d2e6;border-radius:11px;padding:9px 13px;font-size:13.5px;margin-bottom:16px}
+.refbox b{letter-spacing:.5px}
+.copybtn{background:#fff;border:1.5px solid var(--line);color:var(--accent);font-weight:600;border-radius:11px;padding:12px 16px;font-size:14px;font-family:inherit;cursor:pointer}
+.note{font-size:12px;color:var(--muted);text-align:center;padding:4px 10px 12px;line-height:1.5}
+.hp{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+.spin{display:inline-block;width:15px;height:15px;border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px;margin-right:7px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.errbox{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:11px;padding:11px 12px;font-size:13px;margin-top:12px;display:none}
+.errbox.show{display:block}
+.errbox a{color:#991b1b;font-weight:600}
+@media (min-width:640px){ .hero h1{font-size:21px} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <div class="badge">YG</div>
+      <div class="top-title">
+        <span data-t="app_title">Order Confirmation</span>
+        <small data-t="app_sub">YG-M6pro &nbsp;·&nbsp; YG-Mt56i</small>
+      </div>
+      <button class="langbtn" id="langbtn" type="button">PT</button>
+    </div>
+    <div class="stepchip" id="stepchip"></div>
+  </div>
+  <div class="progress"><i id="pbar"></i></div>
+</header>
+
+<main class="wrap">
+  <section class="screen active" id="scr0">
+    <div class="hero">
+      <h1 data-t="hero_h1"></h1>
+      <p data-t="hero_p"></p>
+    </div>
+    <div class="card">
+      <h2 class="sec"><span class="n">i</span><span data-t="intro_what"></span></h2>
+      <div class="q"><div class="qhint" style="margin:8px 0 0" data-t="intro_what_body"></div></div>
+    </div>
+    <div class="card">
+      <h2 class="sec"><span class="n">?</span><span data-t="ident_title"></span></h2>
+      <div class="secsub" data-t="ident_sub"></div>
+      <div class="fld"><label for="client_name" data-t="fld_name"></label><input type="text" id="client_name" autocomplete="name"></div>
+      <div class="fld"><label for="client_company" data-t="fld_company"></label><input type="text" id="client_company" autocomplete="organization"></div>
+      <div class="fld"><label for="client_email" data-t="fld_email"></label><input type="email" id="client_email" autocomplete="email" inputmode="email"></div>
+    </div>
+    <div class="note" data-t="intro_note"></div>
+  </section>
+</main>
+
+<nav class="bottom" id="nav">
+  <div class="nav-in">
+    <button class="btn ghost" id="btnback" type="button"></button>
+    <button class="btn primary" id="btnnext" type="button"></button>
+  </div>
+</nav>
+
+<div class="wrap" id="scr_success" style="display:none">
+  <div class="success">
+    <div class="okc"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="#16a34a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h2 data-t="suc_h"></h2>
+    <p data-t="suc_p"></p>
+    <div class="refbox"><span data-t="ref_label"></span> <b id="refval">—</b></div><br>
+    <button class="copybtn" id="copybtn" type="button"></button>
+  </div>
+  <div class="note" data-t="suc_note"></div>
+</div>
+
+<input type="text" class="hp" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+<script>
+/* ===================== config ===================== */
+var TOKEN = "xxs2";
+var API   = "https://thecenturyhome.com/api/order-confirm";
+var SITE  = "https://thecenturyhome.com/order/m6pro-mt56i-xxs2/";
+/* ===================== i18n ===================== */
+var T = {
+  en: {
+    app_title:"Order Confirmation", app_sub:"YG-M6pro · YG-Mt56i",
+    hero_h1:"Order Requirement Confirmation Checklist",
+    hero_p:"Hi! Please review the selected products and options below, then tap Confirm & Submit. It takes about 2 minutes — no login, no typing of long tables.",
+    intro_what:"What this is for",
+    intro_what_body:"You were sent this link because we are preparing your order for YG-M6pro and YG-Mt56i. Most choices below are pre-set to our factory defaults — just change what you need and confirm at the end.",
+    ident_title:"Your details", ident_sub:"Optional — helps us match your confirmation to your account.",
+    fld_name:"Your name", fld_company:"Company", fld_email:"Email (we may reply to this address)",
+    intro_note:"Your selections are sent directly to our order desk when you submit.",
+    next:"Next", back:"Back", start:"Start", step:"Step {n} of {t}",
+    q_required:"Please choose an option", q_textreq:"Please fill in this field",
+    q_datehint:"Optional — leave blank if flexible", optional:"(optional)",
+    pcs:"pcs", qty_label:"Order Qty (pcs)", rem_label:"Remarks (optional)", rem_ph:"Anything we should know about this item?",
+    qty_err:"Please enter the order quantity for at least one product",
+    rev_title:"Review & Confirm", rev_sub:"Please check your selections. Tap any line to change it.",
+    notes_label:"Notes / special requests (optional)", notes_ph:"Anything else we should know about this order?",
+    submit:"Confirm & Submit", submitting:"Sending…",
+    rev_empty:"— not set —",
+    suc_h:"Submitted successfully!", suc_p:"Thank you — we have received your confirmation and our order desk will follow up shortly. A copy has been sent to our team.",
+    ref_label:"Reference:", suc_note:"You may close this page now.",
+    copy_btn:"Copy my selections", copied:"Copied ✓",
+    err_net:"We could not send your confirmation just now. Please tap Submit again — if it still fails, email us instead:",
+    err_retry:"Retry", email_us:"Email us",
+    sum_head:"Order Requirement Confirmation — selections",
+  },
+  pt: {
+    app_title:"Confirmação do Pedido", app_sub:"YG-M6pro · YG-Mt56i",
+    hero_h1:"Lista de Confirmação de Requisitos do Pedido",
+    hero_p:"Olá! Revise os produtos e opções abaixo e toque em Confirmar e Enviar. Leva cerca de 2 minutos — sem login e sem preencher tabelas longas.",
+    intro_what:"Para que serve",
+    intro_what_body:"Recebeu este link porque estamos a preparar o seu pedido de YG-M6pro e YG-Mt56i. A maioria das opções já está definida com os padrões de fábrica — altere apenas o que precisar e confirme no final.",
+    ident_title:"Os seus dados", ident_sub:"Opcional — ajuda-nos a associar a sua confirmação à sua conta.",
+    fld_name:"Seu nome", fld_company:"Empresa", fld_email:"E-mail (podemos responder para este endereço)",
+    intro_note:"As suas escolhas são enviadas diretamente ao nosso departamento de pedidos ao enviar.",
+    next:"Seguinte", back:"Voltar", start:"Começar", step:"Passo {n} de {t}",
+    q_required:"Por favor, escolha uma opção", q_textreq:"Por favor, preencha este campo",
+    q_datehint:"Opcional — deixe em branco se for flexível", optional:"(opcional)",
+    pcs:"unid.", qty_label:"Quantidade (unid.)", rem_label:"Observações (opcional)", rem_ph:"Algo que devamos saber sobre este item?",
+    qty_err:"Por favor, indique a quantidade de pelo menos um produto",
+    rev_title:"Revisão e Confirmação", rev_sub:"Confira as suas escolhas. Toque em qualquer linha para alterar.",
+    notes_label:"Notas / pedidos especiais (opcional)", notes_ph:"Mais alguma informação sobre este pedido?",
+    submit:"Confirmar e Enviar", submitting:"A enviar…",
+    rev_empty:"— não definido —",
+    suc_h:"Enviado com sucesso!", suc_p:"Obrigado — recebemos a sua confirmação e a nossa equipa de pedidos entrará em contacto em breve.",
+    ref_label:"Referência:", suc_note:"Já pode fechar esta página.",
+    copy_btn:"Copiar as minhas escolhas", copied:"Copiado ✓",
+    err_net:"Não foi possível enviar a sua confirmação agora. Toque em Enviar novamente — se continuar a falhar, escreva-nos para:",
+    err_retry:"Tentar novamente", email_us:"Enviar e-mail",
+    sum_head:"Lista de Confirmação — escolhas",
+  }
+};
+/* ===================== questionnaire model ===================== */
+var DEF = [
+  { step:1, kind:"products",
+    en:"Selected Products", pt:"Produtos Selecionados",
+    sub_en:"Please confirm the models and quantities.", sub_pt:"Confirme os modelos e as quantidades.",
+    products:[
+      { key:"m6pro", sku:"YG-M6pro", en:"Instant Camera Pro", pt:"Câmera Instantânea Pro", img:"data:image/png;base64,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", qty:"5000",
+        feats_en:["Optional printing after shooting","Screen for image preview","Bluetooth connection for mobile printing","Dye-sublimation technology","Multiple colors available"],
+        feats_pt:["Impressão opcional após a captura","Ecrã de pré-visualização","Ligação Bluetooth para impressão móvel","Tecnologia de sublimação de tinta","Várias cores disponíveis"],
+        acc_en:"Standard accessories: 10 sheets photo paper + USB charging cable",
+        acc_pt:"Acessórios padrão: 10 folhas de papel fotográfico + cabo USB de carregamento" },
+      { key:"mt56i", sku:"YG-Mt56i", en:"Magnetic Portable Photo Printer", pt:"Impressora Fotográfica Portátil Magnética", img:"data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAB4AGUDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD36iiigYUUUUAFFITgEntVc30IOMn8qALNFZN94gtLGF5HWR9oyVTGf1NVdK8X6drF7Fa26yB5VLLuxzgZPQ0E8y2OgooooKCiiigCtd/wfjRRd/wfjRQBZooooAKKKKAK984j0+4dmKqsbEsOwxWXbz6feW0cscw2kdd3XHWrWrMt1pd3aRunmTQvGpZgACRjmvPrTwtrlnbCCK80xU9DO5x+lGq2Jb1MvxFryvMYtXtDaxRzPDHcwtkMOCCfwxz0+lHgCW2bxzbpExciOQo/bbtNP1f4b3urlvP8QQKhZWCbuBgEH881teGvB8uieI7XUP7Qs50hiaMoud7fKQDmlZkSjdpo9KoqvHdK5CsNpPvmrFM1CiiigCtd/wAH40UXf8H40UAWaKKKACqequyafIVOCcDI9zVyqOr/APIOf6r/ADprcTOb49B+VH4D8qKK0ICorkkW7sDhlG4H0IqWorn/AI9pP900AafnPv6966NeVB9q5j+M/WunX7o+lZstC0UUUhla7/g/Gii7/g/GigCzRRRQAVR1f/kHP9V/nV6qOr/8g5/95f501uJnN0UUVoQFRXP/AB7Sf7pqWorn/j2k/wB00AX/AOM/WunX7o+lcx/GfrXTr90fSs2WhaKKKQytd/wfjRRd/wAH40UAWaKKKACqOr/8g5/95f51eqjq/wDyDn/3l/nTW4mc3RRRWhAVFc/8e0n+6alqK5/49pf900AXx98/WunX7o+lcwPvn6106/dH0rNloWiiikMrXf8AB+NFF3/B+NFAFmiiigAqjq//ACDn/wB5f51eqC7txdWskJONw4PoaEBylFJc219auVeF2H95IWYH8s1Vka4JGUlX/ti4/pWlyLFuorn/AI9Zf901Erzxr8yMfdkf/wCJqOe43RlZCFU9QqsSR6DIFO4Gv/Ga6hfuj6Vx2nfadRuAEidUJyzlSABXZAYGKzZSCiiikMrXf8H40UXf8H40UAWaKKKACiiigAooooAKKKKACiiigAooooArXf8AB+NFF3/B+NFAFmiiigAooooAKKKKACiiigAooooAKKKKAK13/B+NFFFAH//Z", qty:"",
+        feats_en:["Magnetic, pocket-size portable photo printer","Pairs with the M6pro for instant printing"],
+        feats_pt:["Impressora fotográfica portátil magnética, tamanho de bolso","Emparelha com a M6pro para impressão instantânea"],
+        acc_en:"Standard accessories: 10 sheets photo paper + USB charging cable",
+        acc_pt:"Acessórios padrão: 10 folhas de papel fotográfico + cabo USB de carregamento" }
+    ]},
+  { step:2, kind:"group",
+    en:"Logistics & Delivery", pt:"Logística e Entrega",
+    sub_en:"How should we ship this order?", sub_pt:"Como devemos enviar este pedido?",
+    questions:[
+      { id:"destination", type:"text", en:"Destination Country", pt:"País de Destino", required:true, def:"Mozambique", ph_en:"e.g. Mozambique", ph_pt:"ex.: Moçambique" },
+      { id:"incoterms", type:"radio", en:"Incoterms", pt:"Incoterms", required:true, def:"fob", opts:[
+        {v:"fob", en:"FOB", pt:"FOB"},
+        {v:"cif", en:"CIF", pt:"CIF"},
+        {v:"other", en:"DDP / Others", pt:"DDP / Outros", text:true, ph_en:"Please specify", ph_pt:"Por favor, especifique"}]},
+      { id:"shipping", type:"radio", en:"Shipping Method", pt:"Método de Envio", required:true, opts:[
+        {v:"sea", en:"Sea Freight", pt:"Transporte Marítimo"},
+        {v:"air", en:"Air Freight", pt:"Transporte Aéreo"},
+        {v:"land", en:"Land", pt:"Terrestre"},
+        {v:"tbd", en:"Not sure — please advise", pt:"Não tenho certeza — por favor, aconselhem"}]},
+      { id:"target_date", type:"date", en:"Expected Target Date", pt:"Data Alvo Prevista", hint:"q_datehint" }
+    ]},
+  { step:3, kind:"group",
+    en:"Product Specifications", pt:"Especificações do Produto",
+    sub_en:"These are already set to factory defaults.", sub_pt:"Já estão definidas com os padrões de fábrica.",
+    questions:[
+      { id:"color", type:"radio", en:"Color Preference", pt:"Preferência de Cor", required:true, def:"default", opts:[
+        {v:"default", en:"Factory Default Color", pt:"Cor Padrão de Fábrica"},
+        {v:"custom", en:"Custom Color (MOQ required)", pt:"Cor Personalizada (MOQ exigido)", text:true, ph_en:"Which color?", ph_pt:"Qual cor?"}]},
+      { id:"ui_language", type:"radio", en:"Language (Manual / UI)", pt:"Idioma (Manual / Interface)", required:true, def:"en", opts:[
+        {v:"en", en:"English (Default)", pt:"Inglês (Padrão)"},
+        {v:"pt", en:"Portuguese", pt:"Português"},
+        {v:"other", en:"Others", pt:"Outro", text:true, ph_en:"Please specify", ph_pt:"Especifique"}]},
+      { id:"cert", type:"radio", en:"Local Certification", pt:"Certificação Local", required:true, def:"ce", opts:[
+        {v:"ce", en:"CE / RoHS (Default)", pt:"CE / RoHS (Padrão)"},
+        {v:"local", en:"Specific local certificate", pt:"Certificado local específico", text:true, ph_en:"e.g. INNOQ / local standard", ph_pt:"ex.: INNOQ / norma local"}]}
+    ]},
+  { step:4, kind:"group",
+    en:"Packaging & Handling", pt:"Embalagem e Manuseio",
+    sub_en:"Ready-to-ship defaults are pre-selected.", sub_pt:"As opções padrão de expedição já estão selecionadas.",
+    questions:[
+      { id:"box", type:"radio", en:"Packaging (Color Box)", pt:"Embalagem (Caixa Colorida)", required:true, def:"neutral", opts:[
+        {v:"neutral", en:"Neutral English Box (No Logo)", pt:"Caixa Neutra em Inglês (Sem Logotipo)"},
+        {v:"oem", en:"Custom OEM Box (Design needed)", pt:"Caixa OEM Personalizada (Design necessário)"}]},
+      { id:"labels", type:"radio", en:"Product / Carton Labels", pt:"Etiquetas de Produto / Caixa", required:true, def:"basic", opts:[
+        {v:"basic", en:"Factory Basic Labels", pt:"Etiquetas Básicas de Fábrica"},
+        {v:"custom", en:"Custom SKU / Barcode Labels", pt:"Etiquetas SKU / Código de Barras Personalizadas"}]},
+      { id:"carton", type:"radio", en:"Outer Carton Packing", pt:"Embalagem do Cartão Exterior", required:true, def:"export", opts:[
+        {v:"export", en:"General Export Carton", pt:"Cartão de Exportação Geral"},
+        {v:"ecom", en:"E-commerce Drop-Test Packing", pt:"Embalagem E-commerce (Teste de Queda)"}]},
+      { id:"pallet", type:"radio", en:"Pallet & Height Limit", pt:"Palete e Limite de Altura", required:true, def:"bulk", opts:[
+        {v:"bulk", en:"Bulk Loading (No Pallets)", pt:"Carga a Granel (Sem Paletes)"},
+        {v:"pallets", en:"With Pallets", pt:"Com Paletes", text:"pallet_height", ph_en:"Max height (m)", ph_pt:"Altura máxima (m)"}]}
+    ]}
+];
+/* ===================== helpers ===================== */
+var lang = ((navigator.language || "en").toLowerCase().indexOf("pt") === 0) ? "pt" : "en";
+var TOTAL = DEF.length;          /* 4 questionnaire steps */
+var cur = 0;                     /* 0 = intro, 1..TOTAL = steps, TOTAL+1 = review */
+var REVIEW = TOTAL + 1;
+var LAST = REVIEW;               /* last navigable screen index */
+function $(s, r){ return (r||document).querySelector(s); }
+function $all(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function t(k){ return (T[lang][k] != null) ? T[lang][k] : (T.en[k] || k); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function el(tag, cls, html){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+function digits(s){ return String(s == null ? "" : s).replace(/[^0-9]/g, ""); }
+function mailAddr(){ return ["caspa","r@ygs","cs.com"].join(""); }
+
+/* ===================== build questionnaire DOM ===================== */
+var main = $("main");
+DEF.forEach(function(sec){
+  var card = el("section", "screen"); card.id = "scr" + sec.step;
+  var inner = ['<h2 class="sec"><span class="n">' + sec.step + '</span><span class="sect">' + esc(sec[lang]) + '</span></h2>',
+               '<div class="secsub">' + esc(sec["sub_" + lang]) + '</div>'];
+  if (sec.kind === "products"){
+    sec.products.forEach(function(p){
+      var feats = p["feats_" + lang].map(function(f){ return "<li>" + esc(f) + "</li>"; }).join("");
+      inner.push(
+        '<div class="q" data-qid="prod_' + p.key + '"><div class="qboxout">' +
+        '<div class="prod">' +
+          '<img src="' + p.img + '" alt="' + esc(p.sku) + '">' +
+          '<div class="pi"><div class="sku">' + esc(p.sku) + '</div><div class="pname">' + esc(p[lang]) + '</div><ul>' + feats + '</ul>' +
+          '<div class="acc">' + esc(p["acc_" + lang]) + '</div></div>' +
+        '</div>' +
+        '<div class="fld"><label>' + esc(t("qty_label")) + '</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="' + p.key + '_qty" value="' + esc(p.qty) + '" placeholder="0"></div>' +
+        '<div class="fld"><label>' + esc(t("rem_label")) + '</label><input type="text" id="' + p.key + '_remarks" placeholder="' + esc(t("rem_ph")) + '"></div>' +
+        '</div><div class="errmsg"></div></div>');
+    });
+  } else {
+    sec.questions.forEach(function(q){
+      inner.push('<div class="q" data-qid="' + q.id + '"><div class="qboxout">');
+      inner.push('<div class="qlabel">' + esc(q[lang]) + '</div>');
+      if (q.hint) inner.push('<div class="qhint">' + esc(t(q.hint)) + '</div>');
+      if (q.type === "text"){
+        inner.push('<input type="text" id="' + q.id + '" value="' + esc(q.def || "") + '" placeholder="' + esc(q["ph_" + lang] || "") + '">');
+      } else if (q.type === "date"){
+        inner.push('<input type="date" id="' + q.id + '">');
+      } else {
+        inner.push('<div class="opts">');
+        q.opts.forEach(function(o){
+          inner.push('<label class="opt" data-v="' + o.v + '"><input type="radio" name="' + q.id + '" value="' + o.v + '"' + (q.def === o.v ? " checked" : "") + '>' +
+            '<span class="rdot"></span><span class="otext"><b>' + esc(o[lang]) + '</b></span></label>');
+          if (o.text){
+            inner.push('<input type="text" class="subinp" id="' + ((o.text === true) ? (q.id + "_other") : o.text) + '" placeholder="' + esc(o["ph_" + lang] || "") + '">');
+          }
+        });
+        inner.push('</div>');
+      }
+      inner.push('</div><div class="errmsg"></div></div>');
+    });
+  }
+  card.innerHTML = inner.join("");
+  main.appendChild(card);
+});
+
+/* review screen */
+var rev = el("section", "screen"); rev.id = "scr" + REVIEW;
+rev.innerHTML = '<h2 class="sec"><span class="n">✓</span><span id="revh"></span></h2><div class="secsub" id="revsub"></div>' +
+                '<div class="card" id="revcard"></div>' +
+                '<div class="card"><div class="qlabel" style="margin-bottom:8px" id="noteslbl"></div><textarea id="notes" placeholder=""></textarea></div>' +
+                '<div class="errbox" id="errbox"></div><div class="note" id="revnote"></div>';
+main.appendChild(rev);
+
+/* ===================== radio behaviour ===================== */
+function syncOpt(label){
+  var name = label.querySelector("input").name;
+  $all('input[name="' + name + '"]').forEach(function(ri){
+    var l = ri.closest("label.opt");
+    l.classList.toggle("sel", ri.checked);
+    var sub = l.nextElementSibling;
+    if (ri.checked && sub && sub.classList && sub.classList.contains("subinp")) sub.classList.add("show");
+  });
+  /* hide other sub-inputs of this group that are not the selected option */
+  $all(".subinp", label.closest(".q")).forEach(function(inp){
+    var lbl = inp.previousElementSibling;
+    if (lbl && lbl.classList && lbl.classList.contains("opt")){
+      var on = lbl.querySelector("input").checked;
+      if (!on) inp.classList.remove("show");
+    }
+  });
+}
+document.addEventListener("change", function(e){
+  if (e.target.matches("label.opt input")){
+    syncOpt(e.target.closest("label.opt"));
+    var q = e.target.closest(".q"); if (q) q.classList.remove("err");
+  }
+});
+document.addEventListener("click", function(e){
+  var lb = e.target.closest("label.opt");
+  if (lb){ var ri = lb.querySelector("input"); if (!ri.checked){ ri.checked = true; syncOpt(lb); } }
+});
+
+/* ===================== validation & nav ===================== */
+function stepCard(n){ return $("#scr" + n); }
+function markErr(qid, msg){
+  var q = document.querySelector('.q[data-qid="' + qid + '"]');
+  if (!q) return;
+  q.classList.add("err");
+  var m = $(".errmsg", q);
+  if (m && msg) m.textContent = msg;
+  if (!window.__firstErr) window.__firstErr = q;
+}
+function validate(n){
+  window.__firstErr = null;
+  var sec = DEF[n - 1];
+  if (sec.kind === "products"){
+    var total = digits($("#m6pro_qty").value | 0) + digits($("#mt56i_qty").value | 0);
+    var q6 = Number(digits($("#m6pro_qty").value || "0")), q5 = Number(digits($("#mt56i_qty").value || "0"));
+    if (!(q6 > 0 || q5 > 0)){ markErr("prod_m6pro", t("qty_err")); markErr("prod_mt56i", ""); }
+  } else {
+    sec.questions.forEach(function(q){
+      if (q.type === "radio" && q.required){
+        var sel = document.querySelector('input[name="' + q.id + '"]:checked');
+        if (!sel){ markErr(q.id, t("q_required")); return; }
+        var o = null; q.opts.forEach(function(x){ if (x.v === sel.value) o = x; });
+        if (o && o.text){
+          var si = (o.text === true) ? $("#" + q.id + "_other") : $("#" + o.text);
+          if (si && si.classList.contains("show") && !si.value.trim()) markErr(q.id, t("q_textreq"));
+        }
+      }
+      if (q.type === "text" && q.required){ if (!$("#" + q.id).value.trim()) markErr(q.id, t("q_textreq")); }
+    });
+  }
+  if (window.__firstErr){
+    window.__firstErr.scrollIntoView({behavior:"smooth", block:"center"});
+    return false;
+  }
+  return true;
+}
+function show(n, skipScroll){
+  cur = n;
+  $all(".screen").forEach(function(s){ s.classList.remove("active"); });
+  var target = $("#scr" + n); if (target) target.classList.add("active");
+  $("#nav").style.display = (n > REVIEW) ? "none" : "";
+  $("#stepchip").textContent = (n >= 1 && n <= TOTAL) ? t("step").replace("{n}", n).replace("{t}", TOTAL) : (n === REVIEW ? t("rev_title") : "");
+  var pct = (n <= 0) ? 0 : (n >= REVIEW ? 100 : Math.round(n / TOTAL * 100));
+  $("#pbar").style.width = pct + "%";
+  $("#btnback").style.display = (n <= 0) ? "none" : "";
+  if (n === 0){ $("#btnnext").textContent = t("start"); }
+  else if (n === REVIEW){ $("#btnnext").textContent = t("submit"); $("#btnnext").dataset.action = "submit"; }
+  else { $("#btnnext").textContent = t("next"); $("#btnnext").dataset.action = "next"; }
+  if (!skipScroll) window.scrollTo({top:0, behavior:"smooth"});
+}
+function applyLang(){
+  document.documentElement.lang = lang;
+  $all("[data-t]").forEach(function(e){ e.textContent = t(e.getAttribute("data-t")); });
+  $("#langbtn").textContent = (lang === "en") ? "PT" : "EN";
+  /* rebuild questionnaire in the new language, preserving state */
+  rebuildScreens();
+  renderReview();
+  show(cur, true);
+}
+/* ===================== review ===================== */
+function optLabel(qid, v){
+  var sec = null, q = null;
+  DEF.forEach(function(s){ if (s.kind === "group") s.questions.forEach(function(x){ if (x.id === qid){ sec = s; q = x; } }); });
+  if (!q) return v;
+  var out = v; q.opts.forEach(function(o){ if (o.v === v) out = o[lang]; });
+  return out;
+}
+function readState(){
+  var st = {
+    qty: {m6pro: $("#m6pro_qty") ? $("#m6pro_qty").value : "", mt56i: $("#mt56i_qty") ? $("#mt56i_qty").value : ""},
+    rem: {m6pro: $("#m6pro_remarks") ? $("#m6pro_remarks").value : "", mt56i: $("#mt56i_remarks") ? $("#mt56i_remarks").value : ""},
+    radio: {}, text: {}, notes: $("#notes") ? $("#notes").value : "",
+    who: {name: $("#client_name").value.trim(), company: $("#client_company").value.trim(), email: $("#client_email").value.trim()},
+    date: $("#target_date") ? $("#target_date").value : ""
+  };
+  DEF.forEach(function(s){
+    if (s.kind !== "group") return;
+    s.questions.forEach(function(q){
+      if (q.type === "radio"){
+        var sel = document.querySelector('input[name="' + q.id + '"]:checked');
+        st.radio[q.id] = sel ? sel.value : "";
+        var si = $("#" + q.id + "_other");
+        if (si) st.text[q.id + "_other"] = si.value.trim();
+      } else if (q.type === "text"){ st.text[q.id] = $("#" + q.id).value.trim(); }
+      if (q.id === "pallet"){
+        var ph = $("#pallet_height"); if (ph) st.text.pallet_height = ph.value.trim();
+      }
+    });
+  });
+  return st;
+}
+function rebuildScreens(){
+  /* Re-render the questionnaire sections in the current language, keeping user input. */
+  var st = readState();
+  DEF.forEach(function(sec){
+    var card = $("#scr" + sec.step);
+    var inner = ['<h2 class="sec"><span class="n">' + sec.step + '</span><span class="sect">' + esc(sec[lang]) + '</span></h2>',
+                 '<div class="secsub">' + esc(sec["sub_" + lang]) + '</div>'];
+    if (sec.kind === "products"){
+      sec.products.forEach(function(p){
+        var feats = p["feats_" + lang].map(function(f){ return "<li>" + esc(f) + "</li>"; }).join("");
+        inner.push('<div class="q" data-qid="prod_' + p.key + '"><div class="qboxout">' +
+          '<div class="prod"><img src="' + p.img + '" alt="' + esc(p.sku) + '">' +
+          '<div class="pi"><div class="sku">' + esc(p.sku) + '</div><div class="pname">' + esc(p[lang]) + '</div><ul>' + feats + '</ul>' +
+          '<div class="acc">' + esc(p["acc_" + lang]) + '</div></div></div>' +
+          '<div class="fld"><label>' + esc(t("qty_label")) + '</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="' + p.key + '_qty" value="' + esc(st.qty[p.key] !== undefined ? st.qty[p.key] : p.qty) + '" placeholder="0"></div>' +
+          '<div class="fld"><label>' + esc(t("rem_label")) + '</label><input type="text" id="' + p.key + '_remarks" value="' + esc(st.rem[p.key] || "") + '" placeholder="' + esc(t("rem_ph")) + '"></div>' +
+          '</div><div class="errmsg"></div></div>');
+      });
+    } else {
+      sec.questions.forEach(function(q){
+        inner.push('<div class="q" data-qid="' + q.id + '"><div class="qboxout">');
+        inner.push('<div class="qlabel">' + esc(q[lang]) + '</div>');
+        if (q.hint) inner.push('<div class="qhint">' + esc(t(q.hint)) + '</div>');
+        if (q.type === "text"){
+          inner.push('<input type="text" id="' + q.id + '" value="' + esc(st.text[q.id] !== undefined ? st.text[q.id] : (q.def || "")) + '" placeholder="' + esc(q["ph_" + lang] || "") + '">');
+        } else if (q.type === "date"){
+          inner.push('<input type="date" id="' + q.id + '" value="' + esc(st.date || "") + '">');
+        } else {
+          inner.push('<div class="opts">');
+          var chosen = st.radio[q.id] !== undefined ? st.radio[q.id] : (q.def || "");
+          q.opts.forEach(function(o){
+            inner.push('<label class="opt' + (chosen === o.v ? " sel" : "") + '" data-v="' + o.v + '"><input type="radio" name="' + q.id + '" value="' + o.v + '"' + (chosen === o.v ? " checked" : "") + '>' +
+              '<span class="rdot"></span><span class="otext"><b>' + esc(o[lang]) + '</b></span></label>');
+            if (o.text){
+              var sid = (o.text === true) ? (q.id + "_other") : o.text;
+              var sval = st.text[q.id + "_other"] !== undefined ? st.text[q.id + "_other"] : "";
+              if (o.text !== true) sval = st.text[o.text] !== undefined ? st.text[o.text] : "";
+              inner.push('<input type="text" class="subinp' + (chosen === o.v ? " show" : "") + '" id="' + sid + '" value="' + esc(sval) + '" placeholder="' + esc(o["ph_" + lang] || "") + '">');
+            }
+          });
+          inner.push('</div>');
+        }
+        inner.push('</div><div class="errmsg"></div></div>');
+      });
+    }
+    card.innerHTML = inner.join("");
+  });
+}
+function fmtDate(v){
+  if (!v) return "";
+  try { var d = new Date(v + "T00:00:00"); return d.toLocaleDateString(lang === "pt" ? "pt-PT" : "en-GB", {day:"numeric", month:"short", year:"numeric"}); }
+  catch(e){ return v; }
+}
+function renderReview(){
+  $("#revh").textContent = t("rev_title");
+  $("#revsub").textContent = t("rev_sub");
+  $("#noteslbl").textContent = t("notes_label");
+  $("#notes").placeholder = t("notes_ph");
+  var st = readState();
+  var h = [];
+  function row(qid, label, value, empty){
+    h.push('<div class="revrow" data-goto="' + qid + '"><span class="rk">' + esc(label) + '</span><span class="rv' + ((!value) ? " empty" : "") + '">' + esc(value || t("rev_empty")) + '</span></div>');
+  }
+  h.push('<div class="revsec">' + esc(DEF[0][lang]) + '</div>');
+  DEF[0].products.forEach(function(p){
+    row("prod_" + p.key, p.sku + " — " + p[lang], digits(st.qty[p.key]) ? digits(st.qty[p.key]) + " " + t("pcs") : "", !st.qty[p.key]);
+    if (st.rem[p.key]) row("prod_" + p.key, p.sku + " · " + t("rem_label").replace(" (optional)","").replace(" (opcional)",""), st.rem[p.key], false);
+  });
+  DEF.slice(1).forEach(function(sec){
+    h.push('<div class="revsec">' + esc(sec[lang]) + '</div>');
+    sec.questions.forEach(function(q){
+      var val = "";
+      if (q.type === "radio"){
+        val = st.radio[q.id] ? optLabel(q.id, st.radio[q.id]) : "";
+        if (st.radio[q.id] === "other" || st.radio[q.id] === "custom" || st.radio[q.id] === "local" || st.radio[q.id] === "pallets"){
+          var extra = (q.id === "pallet") ? st.text.pallet_height : st.text[q.id + "_other"];
+          if (extra) val += " — " + extra;
+        }
+      } else if (q.type === "text"){ val = st.text[q.id] || ""; }
+      else if (q.type === "date"){ val = fmtDate(st.date); }
+      row(q.id, q[lang], val, !val);
+    });
+  });
+  if (st.who.name || st.who.company || st.who.email){
+    h.push('<div class="revsec">' + esc(t("ident_title")) + '</div>');
+    if (st.who.name) row("who", t("fld_name"), st.who.name, false);
+    if (st.who.company) row("who", t("fld_company"), st.who.company, false);
+    if (st.who.email) row("who", t("fld_email"), st.who.email, false);
+  }
+  $("#revcard").innerHTML = h.join("");
+  $("#revnote").textContent = t("intro_note");
+  var eb = $("#errbox");
+  if (eb.dataset.keep !== "1"){ eb.classList.remove("show"); }
+}
+document.addEventListener("click", function(e){
+  var r = e.target.closest(".revrow"); if (!r) return;
+  var qid = r.getAttribute("data-goto");
+  var n = 0;
+  if (qid === "who"){ n = 0; } else {
+    DEF.forEach(function(s){ if (s.kind === "products" && qid.indexOf("prod_") === 0) n = 1;
+      if (s.kind === "group") s.questions.forEach(function(q){ if (q.id === qid) n = s.step; }); });
+  }
+  if (n === 0){ show(0, true); window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"}); return; }
+  show(n);
+  var q = document.querySelector('.q[data-qid="' + qid + '"]');
+  if (q){ q.scrollIntoView({behavior:"smooth", block:"center"}); q.style.transition = "background .4s"; var old = q.style.background; q.style.background = "#fffbe8"; setTimeout(function(){ q.style.background = old; }, 1400); }
+});
+
+/* ===================== nav ===================== */
+$("#btnnext").addEventListener("click", function(){
+  if (this.dataset.action === "submit"){ submit(); return; }
+  if (cur === 0){ show(1); return; }
+  if (cur >= 1 && cur <= TOTAL){ if (!validate(cur)) return; show(cur + 1); }
+});
+$("#btnback").addEventListener("click", function(){ if (cur > 0) show(cur - 1); });
+$("#langbtn").addEventListener("click", function(){
+  if (cur >= 1 && cur <= TOTAL && !validate(cur)) { /* still allow, but keep errors visible */ }
+  lang = (lang === "en") ? "pt" : "en";
+  applyLang();
+});
+
+/* ===================== submit ===================== */
+function makeRef(){
+  var d = new Date(), p = function(n){ return (n < 10 ? "0" : "") + n; };
+  return (TOKEN || "OC").toUpperCase() + "-" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes());
+}
+function buildSummaryText(){
+  var st = readState(), lines = [];
+  lines.push(t("sum_head"));
+  lines.push("Ref: " + makeRef());
+  st.qty.m6pro = digits(st.qty.m6pro); st.qty.mt56i = digits(st.qty.mt56i);
+  DEF[0].products.forEach(function(p){
+    if (st.qty[p.key]) lines.push("• " + p.sku + " (" + p[lang] + "): " + st.qty[p.key] + " " + t("pcs"));
+    if (st.rem[p.key]) lines.push("  " + p.sku + " remarks: " + st.rem[p.key]);
+  });
+  DEF.slice(1).forEach(function(sec){
+    lines.push("— " + sec[lang]);
+    sec.questions.forEach(function(q){
+      var val = "";
+      if (q.type === "radio"){
+        val = st.radio[q.id] ? optLabel(q.id, st.radio[q.id]) : "";
+        var extra = (q.id === "pallet") ? st.text.pallet_height : st.text[q.id + "_other"];
+        if (extra && val) val += " — " + extra;
+      } else if (q.type === "text"){ val = st.text[q.id] || ""; }
+      else if (q.type === "date"){ val = fmtDate(st.date); }
+      if (val) lines.push("• " + q[lang] + ": " + val);
+    });
+  });
+  if (st.who.name || st.who.company || st.who.email){
+    lines.push("— " + t("ident_title"));
+    if (st.who.name) lines.push("• " + t("fld_name") + ": " + st.who.name);
+    if (st.who.company) lines.push("• " + t("fld_company") + ": " + st.who.company);
+    if (st.who.email) lines.push("• " + t("fld_email") + ": " + st.who.email);
+  }
+  var notes = $("#notes").value.trim();
+  if (notes) lines.push("— " + t("notes_label") + "\n" + notes);
+  return lines.join("\n");
+}
+var busy = false;
+function submit(){
+  if (busy) return;
+  /* final validation across all steps */
+  for (var i = 1; i <= TOTAL; i++){ if (!validate(i)){ show(i); return; } }
+  var st = readState();
+  var payload = {
+    token: TOKEN, ref: makeRef(), lang: lang, site: SITE,
+    submitted_at: new Date().toISOString(),
+    tz: (function(){ try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch(e){ return ""; } })(),
+    ua: navigator.userAgent,
+    website: $("#website").value,
+    answers: {
+      client_name: st.who.name, client_company: st.who.company, client_email: st.who.email,
+      m6pro_qty: digits(st.qty.m6pro), m6pro_remarks: st.rem.m6pro,
+      mt56i_qty: digits(st.qty.mt56i), mt56i_remarks: st.rem.mt56i,
+      destination: st.text.destination || "",
+      incoterms: st.radio.incoterms || "", incoterms_other: st.text.incoterms_other || "",
+      shipping: st.radio.shipping || "",
+      target_date: st.date || "",
+      color: st.radio.color || "", color_other: st.text.color_other || "",
+      ui_language: st.radio.ui_language || "", ui_language_other: st.text.ui_language_other || "",
+      cert: st.radio.cert || "", cert_other: st.text.cert_other || "",
+      box: st.radio.box || "", labels: st.radio.labels || "",
+      carton: st.radio.carton || "", pallet: st.radio.pallet || "", pallet_height: st.text.pallet_height || "",
+      notes: $("#notes").value.trim(),
+      summary_text: buildSummaryText()
+    }
+  };
+  busy = true;
+  var btn = $("#btnnext"), eb = $("#errbox");
+  eb.dataset.keep = "0"; eb.classList.remove("show");
+  var oldLabel = btn.textContent;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span>' + esc(t("submitting"));
+  fetch(API, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)})
+    .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
+    .then(function(j){
+      if (!j || !j.ok) throw new Error("send failed");
+      finish(payload);
+    })
+    .catch(function(){
+      busy = false; btn.disabled = false; btn.textContent = oldLabel;
+      var mail = mailAddr();
+      var subj = encodeURIComponent("[Order Confirmation] " + makeRef());
+      var body = encodeURIComponent(buildSummaryText());
+      eb.innerHTML = esc(t("err_net")) + ' <a href="mailto:' + mail + '?subject=' + subj + '&body=' + body + '">' + esc(mail) + '</a>';
+      eb.classList.add("show"); eb.dataset.keep = "1";
+      eb.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+}
+function finish(payload){
+  document.querySelector("main").style.display = "none";
+  $("#nav").style.display = "none";
+  var chip = $("#stepchip"); if (chip) chip.textContent = "";
+  $("#pbar").style.width = "100%";
+  $("#refval").textContent = payload.ref;
+  var box = $("#scr_success");
+  box.style.display = "";
+  $("#copybtn").textContent = t("copy_btn");
+  $("#copybtn").onclick = function(){
+    var txt = buildSummaryText(), self = this;
+    function done(){ self.textContent = t("copied"); setTimeout(function(){ self.textContent = t("copy_btn"); }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, done); }
+    else { var ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); }catch(e){} document.body.removeChild(ta); done(); }
+  };
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+/* ===================== init ===================== */
+(function init(){
+  var d = new Date(), iso = d.toISOString().slice(0, 10);
+  $("#target_date").min = iso;
+  applyLang();
+  show(0, true);
+})();
+</script>
+</body>
+</html>
