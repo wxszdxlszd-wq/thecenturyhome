@@ -1,0 +1,31 @@
+{
+  "updated": "2026-11-13 15:50",
+  "link": "zz-test-delete-me",
+  "destination": "Testland",
+  "products": [
+    {
+      "key": "m6pro",
+      "sku": "YG-M6pro",
+      "en": "Instant Camera Pro",
+      "pt": "Câmera Instantânea Pro",
+      "img": "https://www.thecenturyhome.com/order/img/yg-m6pro.png",
+      "qty": "5000",
+      "feats_en": [
+        "Optional printing after shooting",
+        "Screen for image preview",
+        "Bluetooth connection for mobile printing",
+        "Dye-sublimation technology",
+        "Multiple colors available"
+      ],
+      "feats_pt": [
+        "Impressão opcional após a captura",
+        "Ecrã de pré-visualização",
+        "Ligação Bluetooth para impressão móvel",
+        "Tecnologia de sublimação de tinta",
+        "Várias cores disponíveis"
+      ],
+      "acc_en": "Standard accessories: 10 sheets photo paper + USB charging cable",
+      "acc_pt": "Acessórios padrão: 10 folhas de papel fotográfico + cabo USB de carregamento"
+    }
+  ]
+}
