@@ -72,13 +72,25 @@ function pick(map, v, other) {
   return other ? base + " — " + clean(other, 120) : base;
 }
 
-function buildRows(a) {
+/* Products are sent by the page (the list is managed in config.json), so the email
+   report adapts to whatever the order contains. */
+function normProducts(list) {
+  if (!Array.isArray(list)) return [];
+  return list.slice(0, 12).map((p) => ({
+    sku: clean(p && p.sku, 60) || "Item",
+    name: clean(p && p.name, 120),
+    qty: num(p && p.qty),
+    remarks: clean(p && p.remarks, 300),
+  })).filter((p) => p.qty > 0 || p.remarks);
+}
+
+function buildRows(products, a) {
   const rows = [];
-  const q6 = num(a.m6pro_qty), q5 = num(a.mt56i_qty);
-  rows.push([EN.sec_products, "YG-M6pro · Instant Camera Pro — Order Qty", q6 ? fmtNum(q6) + " pcs" : "—"]);
-  if (a.m6pro_remarks) rows.push([EN.sec_products, "YG-M6pro — Remarks", clean(a.m6pro_remarks, 300)]);
-  rows.push([EN.sec_products, "YG-Mt56i · Magnetic Portable Photo Printer — Order Qty", q5 ? fmtNum(q5) + " pcs" : "—"]);
-  if (a.mt56i_remarks) rows.push([EN.sec_products, "YG-Mt56i — Remarks", clean(a.mt56i_remarks, 300)]);
+  products.forEach((p) => {
+    const label = p.sku + (p.name ? " · " + p.name : "");
+    rows.push([EN.sec_products, label + " — Order Qty", p.qty ? fmtNum(p.qty) + " pcs" : "—"]);
+    if (p.remarks) rows.push([EN.sec_products, p.sku + " — Remarks", p.remarks]);
+  });
 
   rows.push([EN.sec_logistics, "Destination Country", clean(a.destination, 80) || "—"]);
   rows.push([EN.sec_logistics, "Incoterms", pick(EN.incoterms, a.incoterms, a.incoterms_other) || "—"]);
@@ -105,15 +117,12 @@ function hhmmBeijing() {
   }
 }
 
-function buildEmail(body) {
+function buildEmail(body, products) {
   const a = body.answers || {};
   const ref = clean(body.ref, 40) || "OC";
   const client = clean(a.client_company, 80) || clean(a.client_name, 60) || "Client";
-  const rows = buildRows(a);
-  const q6 = num(a.m6pro_qty), q5 = num(a.mt56i_qty);
-  const parts = [];
-  if (q6) parts.push("M6pro " + fmtNum(q6) + " pcs");
-  if (q5) parts.push("Mt56i " + fmtNum(q5) + " pcs");
+  const rows = buildRows(products, a);
+  const parts = products.filter((p) => p.qty).map((p) => p.sku + " " + fmtNum(p.qty) + " pcs");
   const subject = ("[Order Confirmation] " + ref + " | " + oneLine(client) + (parts.length ? " | " + parts.join(", ") : "")).slice(0, 160);
 
   const meta = [
@@ -217,18 +226,23 @@ module.exports = async (req, res) => {
 
   const a = body.answers || {};
   body.ip = ip;
+  let products = normProducts(body.products);
+  if (!products.length) {  // legacy payload fallback (older page versions)
+    if (num(a.m6pro_qty) || a.m6pro_remarks) products.push({ sku: "YG-M6pro", name: "Instant Camera Pro", qty: num(a.m6pro_qty), remarks: clean(a.m6pro_remarks, 300) });
+    if (num(a.mt56i_qty) || a.mt56i_remarks) products.push({ sku: "YG-Mt56i", name: "Magnetic Portable Photo Printer", qty: num(a.mt56i_qty), remarks: clean(a.mt56i_remarks, 300) });
+  }
   const missing = [];
   if (!clean(a.destination, 80)) missing.push("destination");
   if (!clean(a.incoterms, 20)) missing.push("incoterms");
   if (!clean(a.shipping, 20)) missing.push("shipping");
-  if (!num(a.m6pro_qty) && !num(a.mt56i_qty)) missing.push("qty");
+  if (!products.some((p) => p.qty > 0)) missing.push("qty");
   if (missing.length) {
     res.status(400).json({ ok: false, error: "missing_fields", fields: missing });
     return;
   }
 
   try {
-    const mail = buildEmail(body);
+    const mail = buildEmail(body, products);
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) throw new Error("smtp_not_configured");
     const to = String(process.env.MAIL_TO || "").split(",").map((s) => s.trim()).filter(Boolean);
     const bcc = String(process.env.MAIL_BCC || "").split(",").map((s) => s.trim()).filter(Boolean);

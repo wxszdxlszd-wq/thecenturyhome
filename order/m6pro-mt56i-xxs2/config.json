@@ -1,0 +1,49 @@
+{
+  "updated": "2026-11-13",
+  "link": "m6pro-mt56i-xxs2",
+  "destination": "Mozambique",
+  "products": [
+    {
+      "key": "m6pro",
+      "sku": "YG-M6pro",
+      "en": "Instant Camera Pro",
+      "pt": "Câmera Instantânea Pro",
+      "img": "https://www.thecenturyhome.com/order/img/yg-m6pro.png",
+      "qty": "5000",
+      "feats_en": [
+        "Optional printing after shooting",
+        "Screen for image preview",
+        "Bluetooth connection for mobile printing",
+        "Dye-sublimation technology",
+        "Multiple colors available"
+      ],
+      "feats_pt": [
+        "Impressão opcional após a captura",
+        "Ecrã de pré-visualização",
+        "Ligação Bluetooth para impressão móvel",
+        "Tecnologia de sublimação de tinta",
+        "Várias cores disponíveis"
+      ],
+      "acc_en": "Standard accessories: 10 sheets photo paper + USB charging cable",
+      "acc_pt": "Acessórios padrão: 10 folhas de papel fotográfico + cabo USB de carregamento"
+    },
+    {
+      "key": "mt56i",
+      "sku": "YG-Mt56i",
+      "en": "Magnetic Portable Photo Printer",
+      "pt": "Impressora Fotográfica Portátil Magnética",
+      "img": "https://www.thecenturyhome.com/order/img/yg-mt56i.png",
+      "qty": "",
+      "feats_en": [
+        "Magnetic, pocket-size portable photo printer",
+        "Pairs with the M6pro for instant printing"
+      ],
+      "feats_pt": [
+        "Impressora fotográfica portátil magnética, tamanho de bolso",
+        "Emparelha com a M6pro para impressão instantânea"
+      ],
+      "acc_en": "Standard accessories: 10 sheets photo paper + USB charging cable",
+      "acc_pt": "Acessórios padrão: 10 folhas de papel fotográfico + cabo USB de carregamento"
+    }
+  ]
+}
