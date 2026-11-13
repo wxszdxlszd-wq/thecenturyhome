@@ -591,18 +591,24 @@ document.addEventListener("click", function(e){
       if (s.kind === "group") s.questions.forEach(function(q){ if (q.id === qid) n = s.step; }); });
   }
   if (n === 0){ show(0, true); window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"}); return; }
+  editReturn = REVIEW;                 /* editing one item returns to the review screen */
   show(n);
   var q = document.querySelector('.q[data-qid="' + qid + '"]');
   if (q){ q.scrollIntoView({behavior:"smooth", block:"center"}); q.style.transition = "background .4s"; var old = q.style.background; q.style.background = "#fffbe8"; setTimeout(function(){ q.style.background = old; }, 1400); }
 });
 
 /* ===================== nav ===================== */
+var editReturn = null;   /* set when the user jumps into a question from the review screen */
 $("#btnnext").addEventListener("click", function(){
   if (this.dataset.action === "submit"){ submit(); return; }
   if (cur === 0){ show(1); return; }
-  if (cur >= 1 && cur <= TOTAL){ if (!validate(cur)) return; show(cur + 1); }
+  if (cur >= 1 && cur <= TOTAL){
+    if (!validate(cur)) return;
+    if (editReturn !== null){ var back = editReturn; editReturn = null; show(back); return; }
+    show(cur + 1);
+  }
 });
-$("#btnback").addEventListener("click", function(){ if (cur > 0) show(cur - 1); });
+$("#btnback").addEventListener("click", function(){ editReturn = null; if (cur > 0) show(cur - 1); });
 $("#langbtn").addEventListener("click", function(){
   if (cur >= 1 && cur <= TOTAL && !validate(cur)) { /* still allow, but keep errors visible */ }
   lang = (lang === "en") ? "pt" : "en";
