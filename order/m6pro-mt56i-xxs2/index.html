@@ -171,8 +171,13 @@ button.btn:disabled{opacity:.6;cursor:default}
 <script>
 /* ===================== config ===================== */
 var TOKEN = "xxs2";
-var API   = "https://thecenturyhome.com/api/order-confirm";
-var SITE  = "https://thecenturyhome.com/order/m6pro-mt56i-xxs2/";
+var API_ABS = "https://www.thecenturyhome.com/api/order-confirm";
+var SITE  = "https://www.thecenturyhome.com/order/m6pro-mt56i-xxs2/";
+/* When the page is served from the site itself, post to the same origin (avoids
+   cross-domain redirects/CORS). The absolute URL is used for the offline copy. */
+function apiEndpoint(){
+  return (location.protocol === "http:" || location.protocol === "https:") ? "/api/order-confirm" : API_ABS;
+}
 /* ===================== i18n ===================== */
 var T = {
   en: {
@@ -429,6 +434,7 @@ function validate(n){
 }
 function show(n, skipScroll){
   cur = n;
+  if (n === REVIEW) renderReview();
   $all(".screen").forEach(function(s){ s.classList.remove("active"); });
   var target = $("#scr" + n); if (target) target.classList.add("active");
   $("#nav").style.display = (n > REVIEW) ? "none" : "";
@@ -675,8 +681,18 @@ function submit(){
   var oldLabel = btn.textContent;
   btn.disabled = true;
   btn.innerHTML = '<span class="spin"></span>' + esc(t("submitting"));
-  fetch(API, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)})
-    .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
+  function doPost(url){
+    return fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)})
+      .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); });
+  }
+  var ep = apiEndpoint();
+  doPost(ep)
+    .catch(function(){ return {ok:false}; })
+    .then(function(j){
+      if (j && j.ok) return j;
+      if (ep !== API_ABS) return doPost(API_ABS);
+      throw new Error("send failed");
+    })
     .then(function(j){
       if (!j || !j.ok) throw new Error("send failed");
       finish(payload);
