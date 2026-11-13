@@ -416,7 +416,10 @@ function validate(n){
           if (si && si.classList.contains("show") && !si.value.trim()) markErr(q.id, t("q_textreq"));
         }
       }
-      if (q.type === "text" && q.required){ if (!$("#" + q.id).value.trim()) markErr(q.id, t("q_textreq")); }
+      if (q.type === "text" && q.required){
+        var ti = $("#" + q.id);
+        if (ti && !ti.value.trim()) markErr(q.id, t("q_textreq"));
+      }
     });
   }
   if (window.__firstErr){
@@ -467,18 +470,18 @@ function readState(){
   };
   DEF[0].products.forEach(function(p){
     var q = $("#" + p.key + "_qty"), r = $("#" + p.key + "_remarks");
-    st.qty[p.key] = q ? q.value : "";
-    st.rem[p.key] = r ? r.value : "";
+    if (q) st.qty[p.key] = q.value;      /* undefined = field not rendered yet -> keep product default */
+    if (r) st.rem[p.key] = r.value;
   });
   DEF.forEach(function(s){
     if (s.kind !== "group") return;
     s.questions.forEach(function(q){
       if (q.type === "radio"){
         var sel = document.querySelector('input[name="' + q.id + '"]:checked');
-        st.radio[q.id] = sel ? sel.value : "";
+        if (sel) st.radio[q.id] = sel.value;   /* undefined = not rendered yet -> keep the default */
         var si = $("#" + q.id + "_other");
         if (si) st.text[q.id + "_other"] = si.value.trim();
-      } else if (q.type === "text"){ st.text[q.id] = $("#" + q.id).value.trim(); }
+      } else if (q.type === "text"){ var tel = $("#" + q.id); if (tel) st.text[q.id] = tel.value.trim(); }
       if (q.id === "pallet"){
         var ph = $("#pallet_height"); if (ph) st.text.pallet_height = ph.value.trim();
       }
